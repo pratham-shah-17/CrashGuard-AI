@@ -16,7 +16,7 @@ dependencies:
   path: ^1.9.1
   flutter_markdown: ^0.7.7
   cupertino_icons: ^1.0.8
-  google_fonts: ^6.3.3
+  google_fonts: ^8.2.1
   supabase_flutter: ^2.14.1
   powersync: ^2.2.0
   sqlite3_flutter_libs: ^0.6.0+eol
