@@ -1,4 +1,4 @@
-# Technical Architecture: RoadSOS
+# Technical Architecture: CrashGuard AI
 
 ## 1. The Emergency Orchestration Pipeline
 The `EmergencyOrchestrator` is the central brain of the system. It manages the state machine:
@@ -16,7 +16,7 @@ We use **AES-GCM-256** for all mesh payloads.
 - **Identity Protection**: Medical profiles are compressed and encrypted, visible only to authorized responders.
 
 ## 3. Data Persistence (PowerSync)
-RoadSOS is **Offline-First**. 
+CrashGuard AI is **Offline-First**. 
 - Local changes are written to SQLite.
 - PowerSync handles background synchronization to Supabase when a signal returns.
 - Row-Level Security (RLS) ensures users can only access their own incident data.

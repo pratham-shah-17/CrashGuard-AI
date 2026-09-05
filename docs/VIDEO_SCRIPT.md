@@ -1,4 +1,4 @@
-# RoadSOS — 3-Minute Hackathon Video Script
+# CrashGuard AI — 3-Minute Hackathon Video Script
 
 **Target:** Gemma 4 Good Hackathon judges  
 **Duration:** 2:55  
@@ -54,10 +54,10 @@ Then a single white line appears, one word at a time:
 
 ### SCENE 3 — SAME CRASH. DIFFERENT OUTCOME.  
 **`[0:42 – 1:02]`**  
-**Visual:** Replay the same crash. Same dark highway. But this time, the downed rider has a phone. The phone detects the impact. RoadSOS screen appears — a 10-second countdown, SOS in red.
+**Visual:** Replay the same crash. Same dark highway. But this time, the downed rider has a phone. The phone detects the impact. CrashGuard AI screen appears — a 10-second countdown, SOS in red.
 
 **Narrator:**  
-> *"RoadSOS detects crashes automatically — accelerometer and GPS fusion. No button press. No internet required. In the next 10 seconds, Gemma 4 takes over."*
+> *"CrashGuard AI detects crashes automatically — accelerometer and GPS fusion. No button press. No internet required. In the next 10 seconds, Gemma 4 takes over."*
 
 **Visual:** The app screen. Microphone waveform. Then — text begins streaming into a triage card in real-time.
 
@@ -89,7 +89,7 @@ A bystander who stopped takes a crash-scene photo. It gets uploaded to the demo.
 **Visual:** First-aid card fills: *"Control severe head bleeding with firm direct pressure. Do not move victim — assume spinal injury from high-speed impact."*
 
 **Narrator:**  
-> *"Simultaneously — an SMS fires to 112 with GPS coordinates. A Bluetooth beacon broadcasts to every RoadSOS phone within 200 metres. The bystander who stopped gets voice-guided first aid instructions — in Hindi."*
+> *"Simultaneously — an SMS fires to 112 with GPS coordinates. A Bluetooth beacon broadcasts to every CrashGuard AI phone within 200 metres. The bystander who stopped gets voice-guided first aid instructions — in Hindi."*
 
 **Visual:** Phone showing Hindi TTS playing: "Sar par pressure daalein..."
 
@@ -136,7 +136,7 @@ Matched keywords: smoke, trapped
 `Tier 2 → Gemma 4 E4B on-device`. Progress shown as a tier diagram lighting up.
 
 **Narrator:**  
-> *"India's national highways span 146,000 kilometres. Most crash clusters are in zero-coverage zones. So RoadSOS carries Gemma 4 on the phone itself — Gemma 4 E4B, quantized to 2.4 GB, running entirely on-device with no internet. Triage still fires. Dispatch still fires via SMS. The golden hour is still reachable."*
+> *"India's national highways span 146,000 kilometres. Most crash clusters are in zero-coverage zones. So CrashGuard AI carries Gemma 4 on the phone itself — Gemma 4 E4B, quantized to 2.4 GB, running entirely on-device with no internet. Triage still fires. Dispatch still fires via SMS. The golden hour is still reachable."*
 
 **Visual:** Tier diagram — Tier 1 (cloud) grayed out, Tier 2 (on-device, LiteRT) glowing blue.
 
@@ -147,14 +147,14 @@ Matched keywords: smoke, trapped
 **Visual:** Animated map of India. Dots appearing on highway crash hotspots — NH-48, NH-44, NH-8. Numbers rising: 170,000 / year.
 
 **Narrator:**  
-> *"RoadSOS is MIT-licensed, open-source, and deployable by any state emergency service in India. It supports English, Hindi, Bengali, Marathi, Tamil, and Telugu — because emergencies happen in every language."*
+> *"CrashGuard AI is MIT-licensed, open-source, and deployable by any state emergency service in India. It supports English, Hindi, Bengali, Marathi, Tamil, and Telugu — because emergencies happen in every language."*
 
 **Visual:** Six language chips appearing on screen.
 
 **Narrator (final line — slow):**  
 > *"Gemma 4. Open-weight. Offline-capable. Multilingual. In a country where the difference between life and death is measured in minutes — that matters."*
 
-**Final frame:** RoadSOS logo. URL. GitHub link. Hackathon badge.  
+**Final frame:** CrashGuard AI logo. URL. GitHub link. Hackathon badge.  
 **Silence for 1 second.**  
 **Fade to black.**
 
@@ -187,17 +187,17 @@ Matched keywords: smoke, trapped
 >
 > The average time to first ambulance contact on rural national highways is 68 minutes. The golden hour is already over.
 >
-> RoadSOS detects crashes automatically — accelerometer and GPS fusion. No button press. No internet required.
+> CrashGuard AI detects crashes automatically — accelerometer and GPS fusion. No button press. No internet required.
 >
 > Gemma 4 27B analyzes the voice description and the crash scene photo together. This is multimodal emergency triage — something no previous open-weight model could do.
 >
-> Simultaneously — an SMS fires to 112 with GPS coordinates. A Bluetooth beacon broadcasts to every RoadSOS phone within 200 metres. The bystander who stopped gets voice-guided first aid instructions in Hindi.
+> Simultaneously — an SMS fires to 112 with GPS coordinates. A Bluetooth beacon broadcasts to every CrashGuard AI phone within 200 metres. The bystander who stopped gets voice-guided first aid instructions in Hindi.
 >
 > Both are looking at the same words. One calls an ambulance. One calls a fire department and rescue team — because it recognizes that a silent occupant in a smoking vehicle means the ambulance will arrive to a fire.
 >
-> India's national highways span 146,000 kilometres. Most crash clusters are in zero-coverage zones. So RoadSOS carries Gemma 4 on the phone itself — Gemma 4 E4B, running entirely on-device, no internet required.
+> India's national highways span 146,000 kilometres. Most crash clusters are in zero-coverage zones. So CrashGuard AI carries Gemma 4 on the phone itself — Gemma 4 E4B, running entirely on-device, no internet required.
 >
-> RoadSOS is MIT-licensed, open-source, and deployable by any state emergency service in India. It supports English, Hindi, Bengali, Marathi, Tamil, and Telugu.
+> CrashGuard AI is MIT-licensed, open-source, and deployable by any state emergency service in India. It supports English, Hindi, Bengali, Marathi, Tamil, and Telugu.
 >
 > Gemma 4. Open-weight. Offline-capable. Multilingual. In a country where the difference between life and death is measured in minutes — that matters."
 
@@ -227,7 +227,7 @@ Switch airplane mode live in demo. Tier 2 lights up. Triage runs. Show it.
 Point to the Supabase Edge Function logs. Show the Twilio webhook config. The SMS path is server-side — no key on device, no fake.
 
 **Q: "Why not just use an existing emergency app?"**  
-India's 108 works when you're conscious, have signal, and can describe your location. RoadSOS works when none of those are true.
+India's 108 works when you're conscious, have signal, and can describe your location. CrashGuard AI works when none of those are true.
 
 **Q: "Is the Hindi/multilingual support real?"**  
 Run Scenario 3 in the notebook live. Gemma 4 takes Hindi/English mixed input and produces correct English triage JSON.

@@ -360,7 +360,7 @@ class _LogoMark extends StatelessWidget {
         const RoadSOSLogo(size: 96),
         const SizedBox(height: 16),
         const Text(
-          'RoadSOS',
+          'CrashGuard AI',
           style: TextStyle(
             color: Colors.white,
             fontSize: 28,

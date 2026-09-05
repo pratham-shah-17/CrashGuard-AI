@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to RoadSOS are documented here. Format follows
+All notable changes to CrashGuard AI are documented here. Format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); this project is
 pre-1.0-stable and does not yet follow strict SemVer between minor versions.
 

@@ -1,4 +1,4 @@
-# RLS and database security — RoadSOS
+# RLS and database security — CrashGuard AI
 
 Snapshot of **public** tables in `supabase/migrations/` and their access pattern. Re-run this audit when adding migrations.
 

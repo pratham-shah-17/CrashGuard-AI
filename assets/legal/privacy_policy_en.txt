@@ -1,8 +1,8 @@
-RoadSOS Privacy Notice (India — Digital Personal Data Protection Act, 2023)
+CrashGuard AI Privacy Notice (India — Digital Personal Data Protection Act, 2023)
 
 Last updated: April 2026
 
-Data fiduciary: RoadSOS operates this application. Contact details should be published on your deployment’s website or in-app support channel.
+Data fiduciary: CrashGuard AI operates this application. Contact details should be published on your deployment’s website or in-app support channel.
 
 What we process
 • Location and motion/crash-related signals to detect emergencies and route help.

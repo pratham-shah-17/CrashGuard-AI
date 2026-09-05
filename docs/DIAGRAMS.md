@@ -1,6 +1,6 @@
 # Architecture Diagrams
 
-Hand-authored diagrams for the flows that matter most in RoadSOS. For the
+Hand-authored diagrams for the flows that matter most in CrashGuard AI. For the
 auto-generated dependency graph, see
 [`docs/architecture/architecture.md`](architecture/architecture.md).
 
@@ -71,8 +71,8 @@ flowchart LR
 ```mermaid
 flowchart TD
     A[Device A: SOS triggered] -->|AES-GCM encrypted beacon| BLE((BLE broadcast))
-    BLE --> B[Device B: nearby RoadSOS user]
-    BLE --> C[Device C: nearby RoadSOS user]
+    BLE --> B[Device B: nearby CrashGuard AI user]
+    BLE --> C[Device C: nearby CrashGuard AI user]
     B --> Decode[Decode bearing + distance<br/>from BLE payload + own GPS]
     C --> Decode
     Decode --> Radar[Bystander Radar UI<br/>real bearing/distance, no fake positions]

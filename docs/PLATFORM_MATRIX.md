@@ -1,4 +1,4 @@
-# Platform matrix — RoadSOS
+# Platform matrix — CrashGuard AI
 
 What works **where**, for judges and PMs. Update when adding native features.
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoadSOS — Gemma 4 Live Demo</title>
+<title>CrashGuard AI — Gemma 4 Live Demo</title>
 <style>
   :root {
     --bg: #080b12;
@@ -133,7 +133,7 @@
 <header class="header">
   <div class="header-logo">🚨</div>
   <div class="header-title">
-    <h1>RoadSOS Live Demo</h1>
+    <h1>CrashGuard AI Live Demo</h1>
     <p>Gemma 4 powered road emergency triage — India</p>
   </div>
   <div class="header-badge">✦ Gemma 4 Good Hackathon</div>
@@ -317,8 +317,8 @@
 </main>
 
 <footer>
-  RoadSOS — Open-weight Gemma 4 emergency triage · No proprietary AI ·
-  <a href="https://github.com/NITISH-R-G/RoadSOS" target="_blank">GitHub</a> ·
+  CrashGuard AI — Open-weight Gemma 4 emergency triage · No proprietary AI ·
+  <a href="https://github.com/pratham-shah-17/CrashGuard-AI" target="_blank">GitHub</a> ·
   Built for Gemma 4 Good Hackathon 2026 ·
   <span style="color:var(--accent)">⚠ Not a substitute for calling 112/108</span>
 </footer>
@@ -375,7 +375,7 @@ const MOCK_RESPONSES = [
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('roadsos_api_key');
+  const saved = localStorage.getItem('crashguard_api_key');
   if (saved) {
     document.getElementById('api-key-input').value = saved;
     tryInitGenAI(saved);
@@ -385,13 +385,13 @@ window.addEventListener('DOMContentLoaded', () => {
 window.saveApiKey = function() {
   const key = document.getElementById('api-key-input').value.trim();
   if (!key) return;
-  localStorage.setItem('roadsos_api_key', key);
+  localStorage.setItem('crashguard_api_key', key);
   tryInitGenAI(key);
   showAlert('API key saved. Ready for live Gemma 4 inference.', 'info');
 };
 
 window.clearApiKey = function() {
-  localStorage.removeItem('roadsos_api_key');
+  localStorage.removeItem('crashguard_api_key');
   genAI = null;
   document.getElementById('api-key-input').value = '';
 };
@@ -400,9 +400,9 @@ async function tryInitGenAI(key) {
   try {
     const { GoogleGenerativeAI } = await import('https://esm.sh/@google/generative-ai@0.21.0');
     genAI = new GoogleGenerativeAI(key);
-    console.log('[RoadSOS] Gemma 4 SDK initialized');
+    console.log('[CrashGuard AI] Gemma 4 SDK initialized');
   } catch(e) {
-    console.error('[RoadSOS] SDK init failed:', e);
+    console.error('[CrashGuard AI] SDK init failed:', e);
   }
 }
 
@@ -640,7 +640,7 @@ function buildTriagePrompt(transcript, hint, lang) {
   const langNote = lang === 'hi'
     ? 'User text is in Hindi or mixed Hindi-English. Respond in JSON only (no Hindi in JSON values).'
     : 'User may write in any Indian language. Respond in JSON only.';
-  return `You are an emergency triage AI for RoadSOS, an Indian road accident emergency platform.
+  return `You are an emergency triage AI for CrashGuard AI, an Indian road accident emergency platform.
 Analyze the situation and respond with ONLY valid JSON (no markdown, no explanation outside JSON):
 {
   "severity_level": <integer 1-5 where 5=life-threatening, 4=critical, 3=serious, 2=moderate, 1=minor>,

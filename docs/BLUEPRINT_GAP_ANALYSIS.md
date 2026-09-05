@@ -1,4 +1,4 @@
-# RoadSOS · Blueprint — Gap Analysis (reconciled with code, May 2026)
+# CrashGuard AI · Blueprint — Gap Analysis (reconciled with code, May 2026)
 
 Honest mapping of the product blueprint to this repository (`lib/`, `supabase/`). Status is **Real** (implemented end-to-end), **Partial** (env-gated, platform-specific, or incomplete vs blueprint), or **Not started** (spec only).
 

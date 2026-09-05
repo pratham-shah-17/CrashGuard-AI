@@ -1,6 +1,6 @@
-# Contributing to RoadSOS
+# Contributing to CrashGuard AI
 
-First off, thank you for considering contributing to RoadSOS. It's people like you that make RoadSOS a reality for billions.
+First off, thank you for considering contributing to CrashGuard AI. It's dedicated contributors like you who help make CrashGuard AI a reliable life-saving emergency platform.
 
 ## Branch Strategy
 We use **Trunk-Based Development**.

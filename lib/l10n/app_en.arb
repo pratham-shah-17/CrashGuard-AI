@@ -1,7 +1,7 @@
 {
   "@@locale": "en",
-  "appTitle": "RoadSOS",
-  "dashboardTitle": "RoadSOS",
+  "appTitle": "CrashGuard AI",
+  "dashboardTitle": "CrashGuard AI",
   "sosButton": "SOS",
   "secondsLabel": "SECONDS",
   "sosDispatchWarning": "Nothing has been sent yet. Cancel now if this was a mistake.",
@@ -21,7 +21,7 @@
   },
   "orchestratorLocationUnavailable": "Location unavailable — enable location services or move to open sky.",
   "orchestratorManualActionRequired": "Manual action required — if automated dispatch fails, dial your emergency number now.",
-  "orchestratorSmsNoGpsPayload": "SOS (no GPS). Please call emergency services now. RoadSOS could not acquire location.",
+  "orchestratorSmsNoGpsPayload": "SOS (no GPS). Please call emergency services now. CrashGuard AI could not acquire location.",
   "orchestratorAiBrief": "Cloud AI is assessing the situation…",
   "orchestratorTriageDone": "Triage complete — severity {level}",
   "@orchestratorTriageDone": {
@@ -80,7 +80,7 @@
   "profileAiLine": "Medical profile helps first aid prompts during SOS.",
   "thinkingOffline": "Offline rules (no cloud).",
   "sttConfirmKeywords": "You can say yes, confirm, or help.",
-  "consentTitle": "Welcome to RoadSOS",
+  "consentTitle": "Welcome to CrashGuard AI",
   "consentSummary": "This app processes location, motion/crash signals, and optional medical profile data to coordinate emergency help. Under India’s Digital Personal Data Protection Act, 2023, we need your informed consent before continuing. Cloud incident summaries are retained for 90 days unless you opt in below.",
   "consentExtendedRetentionLabel": "Keep anonymised cloud incident copies longer than 90 days for safety research (optional)",
   "consentAccept": "I agree — continue",

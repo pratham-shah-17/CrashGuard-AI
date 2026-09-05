@@ -1,4 +1,4 @@
-# RoadSOS Supabase backend
+# CrashGuard AI Supabase backend
 
 Security / RLS overview: **`docs/RLS_AND_SECURITY.md`** (keep in sync when adding migrations).
 

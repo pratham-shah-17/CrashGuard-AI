@@ -1,4 +1,4 @@
-# RoadSOS verification script (fast local gate)
+# CrashGuard AI verification script (fast local gate)
 #
 # Runs the same high-signal checks CI expects from contributors:
 # - dependency resolution
@@ -6,7 +6,7 @@
 # - unit/widget tests
 
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-Write-Host "Verifying RoadSOS..." -ForegroundColor Cyan
+Write-Host "Verifying CrashGuard AI..." -ForegroundColor Cyan
 
 # Resolve Flutter when not on PATH (ZIP installs, CI clones, Android Studio SDK).
 if (!(Get-Command flutter -ErrorAction SilentlyContinue)) {

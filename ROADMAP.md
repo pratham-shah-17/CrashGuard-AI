@@ -1,22 +1,22 @@
 # Roadmap
 
 This roadmap is grounded in work already in flight (open PRs, `docs/BLUEPRINT_GAP_ANALYSIS.md`)
-rather than aspirational features — see [Discussions](https://github.com/NITISH-R-G/RoadSOS/discussions)
+rather than aspirational features — see [Discussions](https://github.com/pratham-shah-17/CrashGuard-AI/discussions)
 to propose new ones.
 
 ## Now — v1.0.x hardening
 
 - [ ] Land the highest-value backlog PRs and close the rest as duplicates (in progress)
-- [ ] Debounce Nominatim autocomplete in Safe Walk ([#281](https://github.com/NITISH-R-G/RoadSOS/pull/281))
-- [ ] `AppLocaleController` unit test coverage ([#77](https://github.com/NITISH-R-G/RoadSOS/pull/77))
-- [ ] Fix insecure CORS `Origin: null` fallback in `family-track` edge function ([#78](https://github.com/NITISH-R-G/RoadSOS/pull/78))
+- [ ] Debounce Nominatim autocomplete in Safe Walk ([#281](https://github.com/pratham-shah-17/CrashGuard-AI/pull/281))
+- [ ] `AppLocaleController` unit test coverage ([#77](https://github.com/pratham-shah-17/CrashGuard-AI/pull/77))
+- [ ] Fix insecure CORS `Origin: null` fallback in `family-track` edge function ([#78](https://github.com/pratham-shah-17/CrashGuard-AI/pull/78))
 - [ ] Set up code coverage reporting so a coverage badge reflects real numbers, not a placeholder
 
 ## Next — v1.1
 
-- [ ] Vehicle rescue module + expanded multi-language localization ([#71](https://github.com/NITISH-R-G/RoadSOS/pull/71))
-- [ ] Scene intelligence — AI crash-scene analyzer via Gemini Vision ([#103](https://github.com/NITISH-R-G/RoadSOS/pull/103))
-- [ ] Family Circle live incident links / iOS glass-UI polish ([#121](https://github.com/NITISH-R-G/RoadSOS/pull/121))
+- [ ] Vehicle rescue module + expanded multi-language localization ([#71](https://github.com/pratham-shah-17/CrashGuard-AI/pull/71))
+- [ ] Scene intelligence — AI crash-scene analyzer via Gemini Vision ([#103](https://github.com/pratham-shah-17/CrashGuard-AI/pull/103))
+- [ ] Family Circle live incident links / iOS glass-UI polish ([#121](https://github.com/pratham-shah-17/CrashGuard-AI/pull/121))
 - [ ] E2E test suite on real devices (currently unit/widget tests only — see `docs/BLUEPRINT_GAP_ANALYSIS.md`)
 
 ## Later — exploratory
@@ -32,4 +32,4 @@ to propose new ones.
 ---
 
 Want to help with any of these? Check [`CONTRIBUTING.md`](CONTRIBUTING.md) and look for issues labeled
-[`good first issue`](https://github.com/NITISH-R-G/RoadSOS/labels/good%20first%20issue).
+[`good first issue`](https://github.com/pratham-shah-17/CrashGuard-AI/labels/good%20first%20issue).

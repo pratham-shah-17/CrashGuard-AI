@@ -9,10 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'RoadSOS';
+  String get appTitle => 'CrashGuard AI';
 
   @override
-  String get dashboardTitle => 'RoadSOS';
+  String get dashboardTitle => 'CrashGuard AI';
 
   @override
   String get sosButton => 'SOS';
@@ -60,7 +60,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get orchestratorSmsNoGpsPayload =>
-      'SOS (no GPS). Please call emergency services now. RoadSOS could not acquire location.';
+      'SOS (no GPS). Please call emergency services now. CrashGuard AI could not acquire location.';
 
   @override
   String get orchestratorAiBrief => 'Cloud AI is assessing the situation…';
@@ -212,7 +212,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sttConfirmKeywords => 'You can say yes, confirm, or help.';
 
   @override
-  String get consentTitle => 'Welcome to RoadSOS';
+  String get consentTitle => 'Welcome to CrashGuard AI';
 
   @override
   String get consentSummary =>

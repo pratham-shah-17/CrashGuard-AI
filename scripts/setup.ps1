@@ -1,6 +1,6 @@
-# RoadSOS Dev Setup Script
+# CrashGuard AI Dev Setup Script
 
-Write-Host "🚀 Initializing RoadSOS Development Environment..." -ForegroundColor Cyan
+Write-Host "🚀 Initializing CrashGuard AI Development Environment..." -ForegroundColor Cyan
 
 # 1. Check Flutter
 if (!(Get-Command flutter -ErrorAction SilentlyContinue)) {
@@ -39,4 +39,4 @@ if (!(Test-Path $envPath)) {
 Write-Host "🔍 Running initial analysis..." -ForegroundColor Yellow
 flutter analyze
 
-Write-Host "✅ Setup complete! You are ready to build RoadSOS." -ForegroundColor Green
+Write-Host "✅ Setup complete! You are ready to build CrashGuard AI." -ForegroundColor Green

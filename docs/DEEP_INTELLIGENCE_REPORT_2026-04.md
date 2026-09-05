@@ -1,8 +1,8 @@
 # Deep Intelligence Report · April 2026
 
-**RoadSOS** — Analysis  
+**CrashGuard AI** — Analysis  
 A competitive, product, and market teardown, plus an honest list of gaps versus peers.  
-**Repo:** NITISH-R-G · **Framework:** Flutter / Dart · **Competitors scanned:** 14+ · **Gaps tracked:** 24  
+**Repo:** PRATHAM · **Framework:** Flutter / Dart · **Competitors scanned:** 14+ · **Gaps tracked:** 24  
 
 *This revision aligns narrative claims with the repository as of April 2026 (triage stack, SMS, localization, publishing).*
 
@@ -10,9 +10,9 @@ A competitive, product, and market teardown, plus an honest list of gaps versus 
 
 ## 01 — Product overview
 
-### What RoadSOS is
+### What CrashGuard AI is
 
-RoadSOS is an enterprise-grade, life-safety Flutter app for road-accident emergencies. Core thesis: emergency access when connectivity is poor or absent by combining **edge/offline triage**, **BLE mesh relay**, and **offline-first persistence**. That problem is acute in India (~170k road deaths/year, patchy coverage outside metros).
+CrashGuard AI is an enterprise-grade, life-safety Flutter app for road-accident emergencies. Core thesis: emergency access when connectivity is poor or absent by combining **edge/offline triage**, **BLE mesh relay**, and **offline-first persistence**. That problem is acute in India (~170k road deaths/year, patchy coverage outside metros).
 
 ### Architecture summary
 
@@ -56,7 +56,7 @@ The **EmergencyOrchestrator** drives a state machine: Idle → Countdown → Tri
 
 ## 03 — Competitor analysis (global landscape)
 
-RoadSOS sits at the intersection of **personal safety**, **crash detection**, and **offline emergency** tools.
+CrashGuard AI sits at the intersection of **personal safety**, **crash detection**, and **offline emergency** tools.
 
 | Product | Origin | Core tech | Monetisation | Crash (auto) | Offline | AI triage | Mesh | Scale |
 |--------|--------|-----------|--------------|----------------|---------|-----------|------|-------|
@@ -79,9 +79,9 @@ RoadSOS sits at the intersection of **personal safety**, **crash detection**, an
 
 ## 04 — Feature matrix
 
-**RoadSOS** row highlighted. ✓ = present · ◑ = partial · — = absent.
+**CrashGuard AI** row highlighted. ✓ = present · ◑ = partial · — = absent.
 
-| Feature | RoadSOS | Apple | Life360 | Noonlight | OtoZen | OnStar | 112 India | bSafe | Waze |
+| Feature | CrashGuard AI | Apple | Life360 | Noonlight | OtoZen | OnStar | 112 India | bSafe | Waze |
 |---------|---------|-------|---------|-----------|--------|--------|-----------|-------|------|
 | Crash detection (auto) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — | — | — |
 | SOS button (manual) | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | — |
@@ -121,7 +121,7 @@ Ranked by criticality. Items appear in at least one major competitor or are tabl
 
 1. **Distribution / store presence** — `publish_to: 'none'` blocks **pub.dev package** publication; consumer impact is **Play/App Store listing and release ops**. Until the app is installable at scale, reach is negligible.
 2. **No professional human dispatch** — Peers (Noonlight, OtoZen, OnStar) bridge to humans who call emergency services. SMS-only cannot help an unconscious user; need call-back loop or certified dispatch / deep 112 integration.
-3. **Panic UX / design evidence** — Polished competitors invest in high-contrast, large targets, tested emergency flows. RoadSOS needs explicit design system + panic-state review + optional screenshots in README when ready.
+3. **Panic UX / design evidence** — Polished competitors invest in high-contrast, large targets, tested emergency flows. CrashGuard AI needs explicit design system + panic-state review + optional screenshots in README when ready.
 4. **False-positive / false-negative crash policy** — Countdown helps; long-term needs multi-sensor validation, fleet learning, and clear user education (drops, potholes, roller coasters).
 5. **Triage transparency** — Document clearly: Gemini requires key + network; offline classifier path is deterministic; no multi-GB on-device model — set expectations for rural/offline users.
 
@@ -154,7 +154,7 @@ Ranked by criticality. Items appear in at least one major competitor or are tabl
 
 ## Verdict
 
-RoadSOS has a **credible differentiated core** (offline-first + mesh + structured triage). The gap between **strong engineering direction** and **mass-market life-safety product** is mostly **distribution, human-in-the-loop emergency escalation, panic UX maturity, and operational hardening** — not a missing line in `pubspec.yaml`.
+CrashGuard AI has a **credible differentiated core** (offline-first + mesh + structured triage). The gap between **strong engineering direction** and **mass-market life-safety product** is mostly **distribution, human-in-the-loop emergency escalation, panic UX maturity, and operational hardening** — not a missing line in `pubspec.yaml`.
 
 **High-leverage next steps (suggested):**  
 (1) Ship to Play Store with clear disclaimers and support path.  
@@ -164,4 +164,4 @@ RoadSOS has a **credible differentiated core** (offline-first + mesh + structure
 
 ---
 
-*RoadSOS Deep Analysis · April 2026 — 14+ competitors · feature matrix · 24 gaps (repo-aligned).*
+*CrashGuard AI Deep Analysis · April 2026 — 14+ competitors · feature matrix · 24 gaps (repo-aligned).*

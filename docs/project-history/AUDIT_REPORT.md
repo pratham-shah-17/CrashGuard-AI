@@ -1,4 +1,4 @@
-# Audit Report: RoadSOS (Updated May 2026)
+# Audit Report: CrashGuard AI (Updated May 2026)
 
 This document tracks identified issues and their resolution status.
 
@@ -144,7 +144,7 @@ were found and fixed across four agile sprints on branch
 
 ### 🔶 Background crash detection reliability
 - **Android**: Multi-stage crash detection (accel + GPS speed + stillness) works with foreground service.
-- **iOS**: Severely limited by OS background execution policy. System Crash Detection (Apple) is not exposed to third-party apps. RoadSOS crash detection works while app is active.
+- **iOS**: Severely limited by OS background execution policy. System Crash Detection (Apple) is not exposed to third-party apps. CrashGuard AI crash detection works while app is active.
 - **Fix priority**: Post-hackathon — requires iOS background mode entitlements review.
 
 ### 🔶 BLE mesh requires both devices to have app running

@@ -1,6 +1,6 @@
 {
-  "id": "nitishrg/roadsos-gemma4-triage-demo",
-  "title": "RoadSOS — Gemma 4 Emergency Triage Demo",
+  "id": "pratham-shah-17/crashguard-ai-gemma4-triage-demo",
+  "title": "CrashGuard AI — Gemma 4 Emergency Triage Demo",
   "code_file": "gemma4_triage_demo.ipynb",
   "language": "python",
   "kernel_type": "notebook",

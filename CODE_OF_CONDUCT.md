@@ -20,7 +20,7 @@ Examples of behavior that contributes to a positive environment:
 - Being respectful of differing opinions, viewpoints, and experiences
 - Giving and gracefully accepting constructive feedback
 - Accepting responsibility and apologizing to those affected by our mistakes
-- Focusing on what is best for the community and the people RoadSOS serves
+- Focusing on what is best for the community and the people CrashGuard AI serves
 
 Examples of unacceptable behavior:
 

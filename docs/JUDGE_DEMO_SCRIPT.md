@@ -1,4 +1,4 @@
-# Judge demo script — RoadSOS
+# Judge demo script — CrashGuard AI
 
 Reproducible flow for hackathon / sponsor demos. Complete **pre-flight** before recording.
 

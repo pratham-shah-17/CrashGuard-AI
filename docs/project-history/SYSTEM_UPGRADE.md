@@ -1,4 +1,4 @@
-# RoadSOS — Google-Level System Upgrade Analysis
+# CrashGuard AI — Google-Level System Upgrade Analysis
 
 > Performed as if by a combined Android OS + Google AI + Google Cloud staff engineering team.
 > Scope: deep audit of all 91 Dart files, AndroidManifest, pubspec, notebooks, and service architecture.
@@ -127,7 +127,7 @@ Power Button SOS (Android 12+) ────────────────�
   Zero user effort — no Accessibility service required.
 
 Android Auto (future) ─────────────────────────────────────────
-  CarAppService + Session = RoadSOS dashboard on head unit.
+  CarAppService + Session = CrashGuard AI dashboard on head unit.
   Single large SOS button. Crash detection runs on phone.
   CarHardwareManager provides vehicle speed from CAN bus
   (more accurate than GPS for crash detection).

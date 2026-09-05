@@ -4,7 +4,7 @@
 
 ### Project overview
 
-RoadSOS is a Flutter mobile app (Dart) with Supabase Edge Functions (TypeScript/Deno) as the backend. The primary development loop is Flutter-based: `flutter pub get`, `dart analyze`, `flutter test`, `flutter build web`.
+CrashGuard AI is a Flutter mobile app (Dart) with Supabase Edge Functions (TypeScript/Deno) as the backend. The primary development loop is Flutter-based: `flutter pub get`, `dart analyze`, `flutter test`, `flutter build web`.
 
 ### Flutter SDK
 

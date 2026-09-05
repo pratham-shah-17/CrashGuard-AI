@@ -1,15 +1,15 @@
-# RoadSOS — Gemma 4 Road Emergency Platform
+# CrashGuard AI — Gemma 4 Emergency Intelligence Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Gemma 4](https://img.shields.io/badge/AI-Gemma%204-blue)](https://ai.google.dev/gemma)
 [![Hackathon](https://img.shields.io/badge/Gemma%204%20Good%20Hackathon-2026-orange)](https://www.kaggle.com/competitions/gemma-4-good-hackathon)
-[![CodeQL](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/codeql.yml/badge.svg)](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/codeql.yml)
-[![Flutter CI](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/flutter_ci.yml)
-[![Latest Release](https://img.shields.io/github/v/release/NITISH-R-G/RoadSOS)](https://github.com/NITISH-R-G/RoadSOS/releases/latest)
-[![Last Commit](https://img.shields.io/github/last-commit/NITISH-R-G/RoadSOS)](https://github.com/NITISH-R-G/RoadSOS/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/NITISH-R-G/RoadSOS)](https://github.com/NITISH-R-G/RoadSOS/graphs/contributors)
+[![CodeQL](https://github.com/pratham-shah-17/CrashGuard-AI/actions/workflows/codeql.yml/badge.svg)](https://github.com/pratham-shah-17/CrashGuard-AI/actions/workflows/codeql.yml)
+[![Flutter CI](https://github.com/pratham-shah-17/CrashGuard-AI/actions/workflows/flutter_ci.yml/badge.svg)](https://github.com/pratham-shah-17/CrashGuard-AI/actions/workflows/flutter_ci.yml)
+[![Latest Release](https://img.shields.io/github/v/release/pratham-shah-17/CrashGuard-AI)](https://github.com/pratham-shah-17/CrashGuard-AI/releases/latest)
+[![Last Commit](https://img.shields.io/github/last-commit/pratham-shah-17/CrashGuard-AI)](https://github.com/pratham-shah-17/CrashGuard-AI/commits/main)
+[![Contributors](https://img.shields.io/github/contributors/pratham-shah-17/CrashGuard-AI)](https://github.com/pratham-shah-17/CrashGuard-AI/graphs/contributors)
 
-**[Latest Release](https://github.com/NITISH-R-G/RoadSOS/releases/latest)** · **[Roadmap](ROADMAP.md)** · **[Changelog](CHANGELOG.md)** · **[Architecture Diagrams](docs/DIAGRAMS.md)** · **[Contributing](CONTRIBUTING.md)** · **[Security](SECURITY.md)**
+**[Latest Release](https://github.com/pratham-shah-17/CrashGuard-AI/releases/latest)** · **[Roadmap](ROADMAP.md)** · **[Changelog](CHANGELOG.md)** · **[Architecture Diagrams](docs/DIAGRAMS.md)** · **[Contributing](CONTRIBUTING.md)** · **[Security](SECURITY.md)**
 
 ---
 
@@ -31,7 +31,7 @@ The existing solution — call 108 — fails when the victim is unconscious, whe
 
 ## The Solution
 
-RoadSOS is an offline-first, life-safety platform that:
+CrashGuard AI is an offline-first, life-safety platform that:
 
 1. **Detects crashes automatically** — accelerometer + GPS fusion; fires SOS if the user is unconscious
 2. **Triages severity using Gemma 4** — multimodal: analyzes a crash-scene photo + voice description
@@ -84,7 +84,7 @@ The app automatically selects the highest-quality available tier at emergency ti
 
 This JSON triggers:
 - Automated SMS to 108/112 ERSS with GPS coordinates and severity
-- BLE beacon broadcast for nearby RoadSOS users
+- BLE beacon broadcast for nearby CrashGuard AI users
 - Real-time database record for emergency responders
 - Voice-guided first aid in the user's language
 
@@ -135,7 +135,7 @@ EmergencyOrchestrator
 
 This is the question that eliminates 90% of hackathon submissions: *"Could you replace Gemma 4 with GPT-4o or any other model?"*
 
-For RoadSOS, the answer is no — and the reasons are architectural, not cosmetic:
+For CrashGuard AI, the answer is no — and the reasons are architectural, not cosmetic:
 
 | Capability required | Generic cloud LLM | Gemma 4 |
 |--------------------|-------------------|---------|
@@ -157,7 +157,7 @@ For RoadSOS, the answer is no — and the reasons are architectural, not cosmeti
 
 ## Agentic Emergency Response
 
-RoadSOS is not a chatbot. It is an emergency response agent that takes real-world actions:
+CrashGuard AI is not a chatbot. It is an emergency response agent that takes real-world actions:
 
 ```
 AGENT LOOP (fires within 10 seconds of crash detection):
@@ -168,17 +168,17 @@ AGENT LOOP (fires within 10 seconds of crash detection):
 │  ACT        → dispatch_emergency() + lookup_trauma_center()  │
 │               + get_first_aid_instructions()                 │
 │  GUIDE      → TTS first aid to bystander in their language   │
-│  MESH       → BLE beacon broadcast to nearby RoadSOS phones  │
+│  MESH       → BLE beacon broadcast to nearby CrashGuard phones│
 └─────────────────────────────────────────────────────────────┘
 ```
 
-Gemma 4's function calling is what makes the PLAN → ACT step real. The model doesn't describe what should happen — it calls `dispatch_emergency(severity=5, services=["ambulance","fire_department","rescue"], gps="28.62,77.37", sms="RoadSOS SOS...")`. The Kaggle notebook (Cell 11) shows this live.
+Gemma 4's function calling is what makes the PLAN → ACT step real. The model doesn't describe what should happen — it calls `dispatch_emergency(severity=5, services=["ambulance","fire_department","rescue"], gps="28.62,77.37", sms="CrashGuard AI SOS...")`. The Kaggle notebook (Cell 11) shows this live.
 
 ---
 
 ## Scoring Rubric Map
 
-| Judging Criterion | Weight | RoadSOS evidence |
+| Judging Criterion | Weight | CrashGuard AI evidence |
 |------------------|--------|-----------------|
 | **Impact & Vision** | 40% | 170,000 deaths/year. 350M+ target users. MIT licensed for any state EMS. Deployable with zero custom infra. |
 | **Video Storytelling** | 30% | Full 3-min script in `docs/VIDEO_SCRIPT.md`. Emotional hook → live demo → wow moment → scale. Keyword vs Gemma split-screen. |
@@ -197,7 +197,7 @@ Gemma 4's function calling is what makes the PLAN → ACT step real. The model d
 
 ## Special Prize Alignment
 
-| Prize | How RoadSOS qualifies |
+| Prize | How CrashGuard AI qualifies |
 |-------|----------------------|
 | **Cactus** — "local-first mobile routing between models" | Tier 1→2→3→4 automatic routing; on-device Gemma 4 E4B via LiteRT |
 | **LiteRT** — "best on-device inference" | flutter_gemma uses LiteRT under MediaPipe; Q4_K_M quantized Gemma 4 E4B |
@@ -270,7 +270,7 @@ The notebook includes pre-run outputs (8/10 exact severity match, 10/10 within �
 - Bystander intervention before EMS arrival improves survival by up to 40%
 - Potential reach: 350 million+ smartphone users in India who drive regularly
 
-RoadSOS exists because the difference between life and death on an Indian highway is often measured in minutes — and those minutes are lost to two problems: no one knew, and no one knew what to do. Gemma 4 solves both.
+CrashGuard AI exists because the difference between life and death on an Indian highway is often measured in minutes — and those minutes are lost to two problems: no one knew, and no one knew what to do. Gemma 4 solves both.
 
 ---
 
@@ -305,7 +305,7 @@ MIT license. No dependency on US cloud providers. Runs on existing 108/112 infra
 
 Contributions are welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md) for the workflow and
 [`ROADMAP.md`](ROADMAP.md) for what's planned next. New here? Look for issues labeled
-[`good first issue`](https://github.com/NITISH-R-G/RoadSOS/labels/good%20first%20issue).
+[`good first issue`](https://github.com/pratham-shah-17/CrashGuard-AI/labels/good%20first%20issue).
 This project follows a [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Security
@@ -320,49 +320,14 @@ encryption/privacy design — rather than opening a public issue.
 MIT — open-weight AI, open-source code, open to any state emergency service in India.
 See [`CHANGELOG.md`](CHANGELOG.md) for release history.
 <!-- AUTO-GEN: TECH-STACK -->
-- Flutter
-- Dart
-- Supabase Edge Functions
-- Deno/TypeScript
+- Flutter & Dart
+- Supabase Edge Functions (Deno / TypeScript)
+- Gemma 4 (27B & E4B models)
+- BLE Encrypted Mesh Network
 <!-- /AUTO-GEN: TECH-STACK -->
-<!-- AUTO-GEN: ARCHITECTURE -->
+
 [View Detailed Architecture Diagrams](docs/architecture/architecture.md)
-<!-- /AUTO-GEN: ARCHITECTURE -->
-<!-- AUTO-GEN: BADGES -->
-[![CI/CD Automation](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/ci_cd.yml/badge.svg)](https://github.com/NITISH-R-G/RoadSOS/actions/workflows/ci_cd.yml)
-<!-- /AUTO-GEN: BADGES -->
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/stars/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="GitHub Stars" src="https://www.shieldcn.dev/github/stars/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/forks/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="GitHub Forks" src="https://www.shieldcn.dev/github/forks/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/watchers/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Watchers" src="https://www.shieldcn.dev/github/watchers/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/branches/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=dark"><img alt="Branches" src="https://www.shieldcn.dev/github/branches/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/contributors/vercel/next.js.svg?theme=emerald&amp;size=sm&amp;mode=dark"><img alt="Contributors" src="https://www.shieldcn.dev/github/contributors/vercel/next.js.svg?theme=emerald&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/last-commit/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Last commit" src="https://www.shieldcn.dev/github/last-commit/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/commits/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Commits" src="https://www.shieldcn.dev/github/commits/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/open-issues/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Open issues" src="https://www.shieldcn.dev/github/open-issues/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/closed-issues/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=dark"><img alt="Closed issues" src="https://www.shieldcn.dev/github/closed-issues/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/open-prs/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Open PRs" src="https://www.shieldcn.dev/github/open-prs/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/closed-prs/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=dark"><img alt="Closed PRs" src="https://www.shieldcn.dev/github/closed-prs/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/merged-prs/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=dark"><img alt="Merged PRs" src="https://www.shieldcn.dev/github/merged-prs/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/release/vercel/next.js.svg?size=sm&amp;mode=dark"><img alt="Release" src="https://www.shieldcn.dev/github/release/vercel/next.js.svg?size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/ci/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="CI" src="https://www.shieldcn.dev/github/ci/vercel/next.js.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/github/license/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=dark"><img alt="License" src="https://www.shieldcn.dev/github/license/vercel/next.js.svg?variant=ghost&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Private-package-red.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Private package" src="https://www.shieldcn.dev/badge/Private-package-red.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Package_mgr-pnpm-F69220.svg?logo=pnpm&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Package mgr · pnpm" src="https://www.shieldcn.dev/badge/Package_mgr-pnpm-F69220.svg?logo=pnpm&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Language-TypeScript-3178C6.svg?logo=typescript&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Language · TypeScript" src="https://www.shieldcn.dev/badge/Language-TypeScript-3178C6.svg?logo=typescript&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Lint-ESLint-4B32C3.svg?logo=eslint&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Lint · ESLint" src="https://www.shieldcn.dev/badge/Lint-ESLint-4B32C3.svg?logo=eslint&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Format-Prettier-F7B93E.svg?logo=prettier&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Format · Prettier" src="https://www.shieldcn.dev/badge/Format-Prettier-F7B93E.svg?logo=prettier&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Monorepo-Turborepo-EF4444.svg?logo=turborepo&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Monorepo · Turborepo" src="https://www.shieldcn.dev/badge/Monorepo-Turborepo-EF4444.svg?logo=turborepo&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Tests-Jest-C21325.svg?logo=jest&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Tests · Jest" src="https://www.shieldcn.dev/badge/Tests-Jest-C21325.svg?logo=jest&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Hosting-Vercel-000000.svg?logo=vercel&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Hosting · Vercel" src="https://www.shieldcn.dev/badge/Hosting-Vercel-000000.svg?logo=vercel&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Next.js-000000.svg?logo=nextdotjs&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Next.js" src="https://www.shieldcn.dev/badge/Stack-Next.js-000000.svg?logo=nextdotjs&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Firebase-DD2C00.svg?logo=firebase&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Firebase" src="https://www.shieldcn.dev/badge/Stack-Firebase-DD2C00.svg?logo=firebase&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Husky-3B82F6.svg?logo=husky&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Husky" src="https://www.shieldcn.dev/badge/Stack-Husky-3B82F6.svg?logo=husky&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-lint--staged-F05032.svg?logo=git&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="lint-staged" src="https://www.shieldcn.dev/badge/Stack-lint--staged-F05032.svg?logo=git&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Playwright-2EAD33.svg?logo=playwright&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Playwright" src="https://www.shieldcn.dev/badge/Stack-Playwright-2EAD33.svg?logo=playwright&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-React-61DAFB.svg?logo=react&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="React" src="https://www.shieldcn.dev/badge/Stack-React-61DAFB.svg?logo=react&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Tailwind_CSS-06B6D4.svg?logo=tailwindcss&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Tailwind CSS" src="https://www.shieldcn.dev/badge/Stack-Tailwind_CSS-06B6D4.svg?logo=tailwindcss&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Stack-Webpack-8DD6F9.svg?logo=webpack&amp;variant=branded&amp;size=sm&amp;mode=dark"><img alt="Webpack" src="https://www.shieldcn.dev/badge/Stack-Webpack-8DD6F9.svg?logo=webpack&amp;variant=branded&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Monorepo-yes-2563eb.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Monorepo yes" src="https://www.shieldcn.dev/badge/Monorepo-yes-2563eb.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-<picture><source media="(prefers-color-scheme: dark)" srcset="https://www.shieldcn.dev/badge/Agent--friendly-AGENTS.md-D97757.svg?variant=secondary&amp;size=sm&amp;mode=dark"><img alt="Agent-friendly AGENTS.md" src="https://www.shieldcn.dev/badge/Agent--friendly-AGENTS.md-D97757.svg?variant=secondary&amp;size=sm&amp;mode=light"></picture>
-![Alt](https://repobeats.axiom.co/api/embed/c2dc59ddd594ef4222204eb75bd29f3e0612ed41.svg "Repobeats analytics image")
+
+---
+Developed with ❤️ for saving lives on highways.
 

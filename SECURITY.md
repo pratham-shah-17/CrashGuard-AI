@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-RoadSOS is pre-1.x and does not yet maintain parallel release branches.
+CrashGuard AI is pre-1.x and does not yet maintain parallel release branches.
 Security fixes land on `main` and the latest tagged release; only the most
 recent release receives patches.
 
@@ -13,7 +13,7 @@ recent release receives patches.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability within RoadSOS, please send an e-mail to security@roadsos.io rather than opening a public issue. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within CrashGuard AI, please send an e-mail to security@crashguard.ai rather than opening a public issue. All security vulnerabilities will be promptly addressed.
 
 Please include:
 - A description of the vulnerability.
@@ -22,7 +22,7 @@ Please include:
 
 ## Threat Model
 
-RoadSOS handles emergency dispatch for potentially unconscious victims, so
+CrashGuard AI handles emergency dispatch for potentially unconscious victims, so
 the primary threats are: (1) an attacker preventing a real SOS from firing,
 (2) an attacker triggering false SOS floods, and (3) leaking a victim's
 real-time location or medical data.
@@ -53,5 +53,5 @@ real-time location or medical data.
   into the app.
 
 This threat model is a living document — please open an issue or email
-security@roadsos.io if you believe a surface above is missing or
+security@crashguard.ai if you believe a surface above is missing or
 under-mitigated.

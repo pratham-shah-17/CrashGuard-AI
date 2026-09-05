@@ -1,10 +1,10 @@
-# Support reply macros — RoadSOS
+# Support reply macros — CrashGuard AI
 
 Copy-paste for **Discord / email / GitHub issues**. Adjust tone for audience.
 
 ## SMS did not send
 
-> RoadSOS tries **automated SMS through our secure relay** (Twilio + Supabase Edge). Please confirm: (1) Android SMS permission granted, (2) project secrets deployed on Supabase, (3) device has signal. If the **Dispatch status** panel shows failed for SMS, use **Dial 112/108** shown in-app — that path always remains available. We never claim SMS delivery without carrier confirmation.
+> CrashGuard AI tries **automated SMS through our secure relay** (Twilio + Supabase Edge). Please confirm: (1) Android SMS permission granted, (2) project secrets deployed on Supabase, (3) device has signal. If the **Dispatch status** panel shows failed for SMS, use **Dial 112/108** shown in-app — that path always remains available. We never claim SMS delivery without carrier confirmation.
 
 ## GPS unknown / inaccurate
 
@@ -16,7 +16,7 @@ Copy-paste for **Discord / email / GitHub issues**. Adjust tone for audience.
 
 ## BLE mesh / radar empty
 
-> Mesh requires **Bluetooth on** and typically **another RoadSOS user nearby** with the app active — it’s a **supplement** to SMS and emergency numbers, not a guarantee. iOS background BLE is **more limited** than Android.
+> Mesh requires **Bluetooth on** and typically **another CrashGuard AI user nearby** with the app active — it’s a **supplement** to SMS and emergency numbers, not a guarantee. iOS background BLE is **more limited** than Android.
 
 ## iOS vs Android differences
 

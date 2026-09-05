@@ -1,4 +1,4 @@
-# Release checklist — RoadSOS
+# Release checklist — CrashGuard AI
 
 Use before **store submission**, **major demo**, or **production Supabase** cutover.
 

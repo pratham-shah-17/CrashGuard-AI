@@ -2,7 +2,7 @@
   "nodes": [
     {
       "id": "flutter_app",
-      "label": "Roadsos",
+      "label": "CrashGuard AI",
       "type": "client"
     },
     {

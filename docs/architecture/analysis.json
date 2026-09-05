@@ -7,7 +7,7 @@
   ],
   "pubspec_data": {
     "name": "roadsos",
-    "description": "RoadSOS \u2014 Gemma 4 powered offline-first road emergency platform for India.",
+    "description": "CrashGuard AI \u2014 Gemma 4 powered offline-first road emergency platform for India.",
     "version": "1.0.0+1",
     "dependencies": [
       "flutter",

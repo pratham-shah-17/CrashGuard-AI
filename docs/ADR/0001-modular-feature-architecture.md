@@ -4,7 +4,7 @@
 Accepted
 
 ## Context
-As RoadSOS scales to billions of users and multiple development teams, the monolithic `lib/` structure becomes a bottleneck for merge conflicts and domain clarity.
+As CrashGuard AI scales to billions of users and multiple development teams, the monolithic `lib/` structure becomes a bottleneck for merge conflicts and domain clarity.
 
 ## Decision
 We will adopt a **Modular Feature-First Architecture**.

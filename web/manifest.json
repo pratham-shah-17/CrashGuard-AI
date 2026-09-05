@@ -1,6 +1,6 @@
 {
-    "name": "RoadSOS",
-    "short_name": "RoadSOS",
+    "name": "CrashGuard AI",
+    "short_name": "CrashGuard AI",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
