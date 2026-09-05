@@ -44,7 +44,7 @@ jobs:
         run: python .github/scripts/update_readme.py
 
       - name: Commit and Push Changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "docs: auto-update architecture, diagrams, and README"
           file_pattern: "README.md docs/**/*.md docs/**/*.json"
