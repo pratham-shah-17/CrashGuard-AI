@@ -64,7 +64,7 @@ jobs:
         run: flutter build web --release
 
       - name: Upload Web Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: roadsos-web-build
           path: build/web

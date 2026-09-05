@@ -156,7 +156,7 @@ jobs:
       # ── Upload release: arm64 APK (recommended for install) ─────────────────
       - name: Upload arm64-v8a APK (recommended)
         if: ${{ env.BUILD_TYPE != 'debug' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: roadsos-release-arm64-v8a-${{ env.SHORT_SHA }}
           path: ${{ env.APK_ARM64 }}
@@ -165,7 +165,7 @@ jobs:
       # ── Upload release: all split APKs in one zip ────────────────────────────
       - name: Upload all split APKs
         if: ${{ env.BUILD_TYPE != 'debug' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: roadsos-release-all-abis-${{ env.SHORT_SHA }}
           path: ${{ env.APK_DIR }}/roadsos-release-*.apk
@@ -174,7 +174,7 @@ jobs:
       # ── Upload debug symbol maps (for crash symbolication) ───────────────────
       - name: Upload debug symbols
         if: ${{ env.BUILD_TYPE != 'debug' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: roadsos-debug-symbols-${{ env.SHORT_SHA }}
           path: build/debug-info/
@@ -183,7 +183,7 @@ jobs:
       # ── Upload debug APK ─────────────────────────────────────────────────────
       - name: Upload debug APK
         if: ${{ env.BUILD_TYPE == 'debug' }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: roadsos-debug-${{ env.SHORT_SHA }}
           path: ${{ env.APK_DEBUG }}
