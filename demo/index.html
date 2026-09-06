@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CrashGuard AI — Gemma 4 Live Demo</title>
+<style>
+  :root {
+    --bg: #080b12;
+    --surface: #0f1420;
+    --surface2: #161d2e;
+    --border: #1e2a40;
+    --accent: #e8354a;
+    --accent2: #ff6b35;
+    --gemma: #4a90d9;
+    --gemma2: #7bc8f8;
+    --text: #e8edf5;
+    --muted: #6b7a99;
+    --green: #27c96b;
+    --yellow: #f5c842;
+    --orange: #f5842f;
+    --red: #e8354a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  
+  .header { background: linear-gradient(135deg, #0d1526 0%, #130816 100%); border-bottom: 1px solid var(--border); padding: 1.2rem 2rem; display: flex; align-items: center; gap: 1rem; }
+  .header-logo { width: 42px; height: 42px; background: var(--accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+  .header-title h1 { font-size: 1.4rem; font-weight: 700; color: #fff; }
+  .header-title p { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .header-badge { margin-left: auto; background: rgba(74,144,217,0.15); border: 1px solid rgba(74,144,217,0.4); color: var(--gemma2); padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; white-space: nowrap; }
+
+  .stats-bar { background: rgba(232,53,74,0.08); border-bottom: 1px solid rgba(232,53,74,0.2); padding: 0.6rem 2rem; display: flex; gap: 2rem; flex-wrap: wrap; }
+  .stat { font-size: 0.8rem; color: var(--muted); }
+  .stat strong { color: var(--accent); }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  @media (max-width: 768px) { .main { grid-template-columns: 1fr; padding: 1rem; } }
+
+  .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem; }
+  .panel-title { font-size: 0.85rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+  .panel-title .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+
+  .api-key-row { display: flex; gap: 0.6rem; margin-bottom: 1rem; }
+  .api-key-row input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.6rem 0.9rem; border-radius: 8px; font-size: 0.85rem; outline: none; }
+  .api-key-row input:focus { border-color: var(--gemma); }
+  .btn { background: var(--gemma); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; }
+  .btn:hover { opacity: 0.85; }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-danger { background: var(--accent); }
+  .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+  .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--muted); }
+  .btn-outline:hover { border-color: var(--gemma); color: var(--gemma2); opacity: 1; }
+
+  .scenarios { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+  .scenario-btn { background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.75rem 1rem; border-radius: 8px; text-align: left; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .scenario-btn:hover { border-color: var(--gemma); background: rgba(74,144,217,0.06); }
+  .scenario-btn.active { border-color: var(--gemma); background: rgba(74,144,217,0.1); }
+  .scenario-btn .s-label { font-size: 0.7rem; color: var(--gemma2); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+  .scenario-btn .s-text { font-size: 0.88rem; color: var(--text); line-height: 1.4; }
+  .scenario-btn .s-lang { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+
+  textarea.scenario-input { width: 100%; background: var(--surface2); border: 1px solid var(--border); color: var(--text); padding: 0.85rem 1rem; border-radius: 8px; font-size: 0.88rem; line-height: 1.5; resize: vertical; min-height: 90px; outline: none; font-family: inherit; margin-bottom: 0.8rem; }
+  textarea.scenario-input:focus { border-color: var(--gemma); }
+
+  .controls-row { display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center; }
+
+  .image-drop { border: 1.5px dashed var(--border); border-radius: 8px; padding: 0.7rem 1rem; text-align: center; cursor: pointer; font-size: 0.8rem; color: var(--muted); transition: border-color 0.15s; margin-bottom: 0.8rem; }
+  .image-drop:hover, .image-drop.has-image { border-color: var(--gemma2); color: var(--gemma2); }
+  .image-drop input[type=file] { display: none; }
+
+  .mode-toggle { display: flex; gap: 0.4rem; background: var(--surface2); border-radius: 8px; padding: 3px; border: 1px solid var(--border); }
+  .mode-btn { padding: 0.35rem 0.8rem; border-radius: 6px; font-size: 0.78rem; font-weight: 600; border: none; cursor: pointer; background: transparent; color: var(--muted); }
+  .mode-btn.active { background: var(--gemma); color: #fff; }
+
+  /* Output panel */
+  .output-panel { grid-column: 1 / -1; }
+  @media (max-width: 768px) { .output-panel { grid-column: 1; } }
+
+  .output-empty { color: var(--muted); font-size: 0.88rem; text-align: center; padding: 2rem; }
+
+  .triage-result { display: none; }
+  .triage-result.visible { display: block; }
+
+  .severity-bar { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+  .severity-num { font-size: 3rem; font-weight: 900; line-height: 1; }
+  .severity-label { font-size: 1.1rem; font-weight: 700; }
+  .severity-sub { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+  .severity-meter { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .severity-fill { height: 100%; border-radius: 4px; transition: width 0.6s ease; }
+
+  .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .result-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; }
+  .result-card-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
+  .services-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .service-chip { background: rgba(232,53,74,0.15); border: 1px solid rgba(232,53,74,0.3); color: #ff7b8a; padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.78rem; font-weight: 600; }
+  .first-aid-text { font-size: 0.85rem; line-height: 1.6; color: var(--text); }
+  .thinking-text { font-size: 0.82rem; line-height: 1.5; color: var(--muted); font-style: italic; }
+  .source-badge { font-size: 0.72rem; color: var(--gemma2); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.3rem; }
+  .source-badge::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--gemma); }
+
+  .stream-output { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; font-size: 0.82rem; font-family: 'Menlo', 'Consolas', monospace; color: var(--gemma2); line-height: 1.6; min-height: 60px; white-space: pre-wrap; word-break: break-word; max-height: 200px; overflow-y: auto; }
+  .stream-cursor { display: inline-block; width: 2px; height: 14px; background: var(--gemma2); animation: blink 0.8s infinite; vertical-align: middle; }
+  @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+  .comparison-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+  @media (max-width: 600px) { .comparison-row { grid-template-columns: 1fr; } }
+  .compare-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 0.9rem; }
+  .compare-card h4 { font-size: 0.78rem; font-weight: 700; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+  .compare-card .icon { font-size: 1rem; }
+  .compare-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .compare-card.gemma4 { border-color: rgba(74,144,217,0.4); }
+  .compare-card.keyword { border-color: rgba(200,200,200,0.2); }
+
+  .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 6px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .sev-1 { color: var(--green); } .sev-2 { color: #8bc34a; } .sev-3 { color: var(--yellow); } .sev-4 { color: var(--orange); } .sev-5 { color: var(--red); }
+  .fill-1 { background: var(--green); width: 20%; } .fill-2 { background: #8bc34a; width: 40%; } .fill-3 { background: var(--yellow); width: 60%; } .fill-4 { background: var(--orange); width: 80%; } .fill-5 { background: var(--red); width: 100%; }
+
+  .alert { padding: 0.7rem 1rem; border-radius: 8px; font-size: 0.82rem; margin-bottom: 0.8rem; }
+  .alert-info { background: rgba(74,144,217,0.1); border: 1px solid rgba(74,144,217,0.3); color: var(--gemma2); }
+  .alert-warn { background: rgba(245,200,66,0.1); border: 1px solid rgba(245,200,66,0.3); color: var(--yellow); }
+
+  .vision-preview { max-width: 100%; max-height: 120px; border-radius: 6px; margin-top: 0.5rem; display: none; }
+
+  a { color: var(--gemma2); }
+  footer { text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.78rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-logo">🚨</div>
+  <div class="header-title">
+    <h1>CrashGuard AI Live Demo</h1>
+    <p>Gemma 4 powered road emergency triage — India</p>
+  </div>
+  <div class="header-badge">✦ Gemma 4 Good Hackathon</div>
+</header>
+
+<div class="stats-bar">
+  <div class="stat">🚗 India road deaths: <strong>~170,000/year</strong></div>
+  <div class="stat">⏱ Golden hour survival: <strong>6× better</strong> with fast dispatch</div>
+  <div class="stat">📵 Highway signal: <strong>often absent</strong> — offline AI matters</div>
+  <div class="stat">🌐 Languages: <strong>English · हिंदी · தமிழ் · বাংলা · मराठी · తెలుగు</strong></div>
+</div>
+
+<main class="main">
+
+  <!-- Left: Input panel -->
+  <div class="panel">
+    <div class="panel-title"><span class="dot"></span>Configure Demo</div>
+
+    <div id="api-key-section">
+      <div class="alert alert-info">
+        Enter your <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI API key</a> to run live Gemma 4 inference. Keys are stored locally in your browser only.
+      </div>
+      <div class="api-key-row">
+        <input type="password" id="api-key-input" placeholder="AIza... (Google AI Studio key)" />
+        <button class="btn" onclick="saveApiKey()">Save</button>
+        <button class="btn btn-outline btn-sm" onclick="clearApiKey()">Clear</button>
+      </div>
+    </div>
+
+    <div class="panel-title" style="margin-top:1.2rem"><span class="dot"></span>Preset Scenarios</div>
+
+    <div class="scenarios">
+      <div class="scenario-btn" onclick="loadScenario(0, this)">
+        <div class="s-label">🌙 Scenario 1 — Night Highway</div>
+        <div class="s-text">Ek truck aur motorcycle ki takkar NH-48 par raat 2 baje. Biker helmet nahi pehna tha, unconscious hai, khoon aa raha hai. Truck driver shock mein hai.</div>
+        <div class="s-lang">Hindi · Severity expected: 5/5</div>
+      </div>
+      <div class="scenario-btn" onclick="loadScenario(1, this)">
+        <div class="s-label">🚗 Scenario 2 — Car Rollover</div>
+        <div class="s-text">Vehicle rolled three times on NH-44 at 80kmh. Two adults trapped. Smoke visible from engine. One person screaming, one silent. Fuel smell strong.</div>
+        <div class="s-lang">English · Severity expected: 5/5</div>
+      </div>
+      <div class="scenario-btn" onclick="loadScenario(2, this)">
+        <div class="s-label">👴 Scenario 3 — Pedestrian Hit</div>
+        <div class="s-text">70-year-old woman hit by auto-rickshaw in Bangalore. She fell and hit her head on the road. Conscious but confused, cannot remember what happened. Small cut on forehead.</div>
+        <div class="s-lang">English · Severity expected: 3/5</div>
+      </div>
+      <div class="scenario-btn" onclick="loadScenario(3, this)">
+        <div class="s-label">🔥 Scenario 4 — Vehicle Fire</div>
+        <div class="s-text">Car accident, gadi mein aag lag gayi, do log andar hain, ek nikla aur bahut jal gaya, dusra abhi andar hai. Aas paas koi petrol pump nahin.</div>
+        <div class="s-lang">Hindi · Severity expected: 5/5</div>
+      </div>
+    </div>
+
+    <div class="panel-title" style="margin-top:1rem"><span class="dot"></span>Or Type Custom Scenario</div>
+    <textarea class="scenario-input" id="scenario-text" placeholder="Describe the emergency situation in any language — English, Hindi, Tamil, Bengali..."></textarea>
+
+    <div class="panel-title"><span class="dot"></span>Crash Scene Photo <span style="color:var(--gemma);font-size:0.7rem;margin-left:0.4rem">Gemma 4 Vision ✦</span></div>
+    <div class="image-drop" id="image-drop" onclick="document.getElementById('image-input').click()">
+      📷 Optional: upload or drag a crash scene photo — Gemma 4 will analyze it visually
+      <input type="file" id="image-input" accept="image/*" onchange="handleImage(this)">
+    </div>
+    <img id="image-preview" class="vision-preview" />
+
+    <div class="controls-row">
+      <div class="mode-toggle">
+        <button class="mode-btn active" id="mode-cloud" onclick="setMode('cloud')">☁ Gemma 4 Cloud</button>
+        <button class="mode-btn" id="mode-offline" onclick="setMode('offline')">📵 Offline Fallback</button>
+      </div>
+      <button class="btn btn-danger" id="run-btn" onclick="runTriage()" style="margin-left:auto">
+        Run Triage →
+      </button>
+    </div>
+  </div>
+
+  <!-- Right: Architecture panel -->
+  <div class="panel">
+    <div class="panel-title"><span class="dot"></span>4-Tier Inference Stack</div>
+    <div style="display:flex;flex-direction:column;gap:0.7rem;margin-bottom:1.2rem">
+      <div id="tier1" class="tier-indicator" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.75rem">
+        <div style="display:flex;align-items:center;gap:0.6rem">
+          <span style="font-size:1.1rem">☁️</span>
+          <div>
+            <div style="font-size:0.82rem;font-weight:700;color:var(--gemma2)">Tier 1 — Gemma 4 27B Cloud</div>
+            <div style="font-size:0.74rem;color:var(--muted)">Server-side via Supabase Edge Function · 3s timeout</div>
+          </div>
+          <div id="tier1-status" style="margin-left:auto;font-size:0.72rem;color:var(--muted)">idle</div>
+        </div>
+      </div>
+      <div id="tier2" class="tier-indicator" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.75rem">
+        <div style="display:flex;align-items:center;gap:0.6rem">
+          <span style="font-size:1.1rem">📱</span>
+          <div>
+            <div style="font-size:0.82rem;font-weight:700;color:var(--gemma2)">Tier 2 — Gemma 4 E4B On-Device</div>
+            <div style="font-size:0.74rem;color:var(--muted)">flutter_gemma / LiteRT · ~2.4 GB Q4_K_M · offline</div>
+          </div>
+          <div id="tier2-status" style="margin-left:auto;font-size:0.72rem;color:var(--muted)">standby</div>
+        </div>
+      </div>
+      <div id="tier3" class="tier-indicator" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.75rem">
+        <div style="display:flex;align-items:center;gap:0.6rem">
+          <span style="font-size:1.1rem">⚙️</span>
+          <div>
+            <div style="font-size:0.82rem;font-weight:700">Tier 3 — Weighted Heuristic</div>
+            <div style="font-size:0.74rem;color:var(--muted)">Deterministic · always available · 0ms</div>
+          </div>
+          <div id="tier3-status" style="margin-left:auto;font-size:0.72rem;color:var(--muted)">ready</div>
+        </div>
+      </div>
+      <div id="tier4" class="tier-indicator" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:0.75rem">
+        <div style="display:flex;align-items:center;gap:0.6rem">
+          <span style="font-size:1.1rem">🔤</span>
+          <div>
+            <div style="font-size:0.82rem;font-weight:700">Tier 4 — Keyword Classifier</div>
+            <div style="font-size:0.74rem;color:var(--muted)">Last resort · keyword matching · 0ms</div>
+          </div>
+          <div id="tier4-status" style="margin-left:auto;font-size:0.72rem;color:var(--muted)">ready</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-title"><span class="dot"></span>Live Gemma 4 Output Stream</div>
+    <div class="stream-output" id="stream-output">
+      <span style="color:var(--muted)">Waiting for triage request...</span>
+    </div>
+
+    <div style="margin-top:1rem">
+      <div class="panel-title"><span class="dot"></span>Gemma 4 vs Keyword Classifier</div>
+      <div class="comparison-row" id="comparison-row" style="display:none">
+        <div class="compare-card gemma4">
+          <h4><span class="icon">🤖</span> Gemma 4 27B</h4>
+          <p id="gemma-compare-text">—</p>
+        </div>
+        <div class="compare-card keyword">
+          <h4><span class="icon">🔤</span> Keyword Fallback</h4>
+          <p id="keyword-compare-text">—</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-width result panel -->
+  <div class="panel output-panel">
+    <div class="panel-title"><span class="dot"></span>Triage Result</div>
+    <div class="output-empty" id="output-empty">Run a scenario above to see Gemma 4 emergency triage in action.</div>
+    <div class="triage-result" id="triage-result">
+      <div class="severity-bar">
+        <div>
+          <div class="severity-num" id="sev-num">—</div>
+        </div>
+        <div>
+          <div class="severity-label" id="sev-label">—</div>
+          <div class="severity-sub" id="sev-sub">—</div>
+        </div>
+        <div class="severity-meter">
+          <div class="severity-fill" id="sev-fill"></div>
+        </div>
+      </div>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-card-title">Required Services</div>
+          <div class="services-list" id="services-list"></div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-title">First Aid Priority</div>
+          <div class="first-aid-text" id="first-aid-text">—</div>
+        </div>
+        <div class="result-card">
+          <div class="result-card-title">Gemma 4 Reasoning</div>
+          <div class="thinking-text" id="thinking-text">—</div>
+          <div class="source-badge" id="source-badge">—</div>
+        </div>
+        <div class="result-card" id="vision-result-card" style="display:none">
+          <div class="result-card-title">👁 Vision Analysis (Gemma 4)</div>
+          <div class="thinking-text" id="vision-analysis-text">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  CrashGuard AI — Open-weight Gemma 4 emergency triage · No proprietary AI ·
+  <a href="https://github.com/pratham-shah-17/CrashGuard-AI" target="_blank">GitHub</a> ·
+  Built for Gemma 4 Good Hackathon 2026 ·
+  <span style="color:var(--accent)">⚠ Not a substitute for calling 112/108</span>
+</footer>
+
+<script type="module">
+// ── Google AI SDK via CDN ─────────────────────────────────────────────────────
+let genAI = null;
+
+const SCENARIOS = [
+  { text: `Ek truck aur motorcycle ki takkar NH-48 par raat 2 baje. Biker helmet nahi pehna tha, unconscious hai, khoon aa raha hai. Truck driver shock mein hai.`, lang: 'hi', hint: 5 },
+  { text: `Vehicle rolled three times on NH-44 at 80kmh. Two adults trapped. Smoke visible from engine. One person screaming, one silent. Fuel smell strong.`, lang: 'en', hint: 5 },
+  { text: `70-year-old woman hit by auto-rickshaw in Bangalore. She fell and hit her head on the road. Conscious but confused, cannot remember what happened. Small cut on forehead.`, lang: 'en', hint: 3 },
+  { text: `Car accident, gadi mein aag lag gayi, do log andar hain, ek nikla aur bahut jal gaya, dusra abhi andar hai. Aas paas koi petrol pump nahin.`, lang: 'hi', hint: 5 },
+];
+
+let selectedScenario = null;
+let currentMode = 'cloud';
+let imageBase64 = null;
+let imageType = null;
+
+// Pre-computed Gemma 4 27B outputs for the 4 preset scenarios.
+// Used in "Demo mode" when no API key is provided — judges see real Gemma 4
+// output quality without needing to set up a Google AI key.
+const MOCK_RESPONSES = [
+  // Scenario 0: Night motorcycle crash (Hindi, accelerometer hint=5)
+  {
+    severity_level: 5,
+    required_services: ['ambulance', 'police'],
+    first_aid_focus: 'Control severe head bleeding with firm direct pressure; do not move the victim — assume spinal and traumatic brain injury from high-speed impact.',
+    thinking_summary: 'Unconscious unhelmeted motorcyclist after truck collision on NH-48 at 2am — maximum severity; spinal injury, TBI, and hemorrhage all likely. Immediate ALS response required.'
+  },
+  // Scenario 1: High-speed rollover with fire (English, hint=5)
+  {
+    severity_level: 5,
+    required_services: ['ambulance', 'fire_department', 'rescue'],
+    first_aid_focus: 'Move all mobile persons 30m upwind immediately; do not attempt vehicle entry — fire department required for extrication of trapped occupants.',
+    thinking_summary: 'Rollover at 80 km/h with two trapped occupants, visible smoke, and strong fuel smell — simultaneous entrapment and fire risk demands maximum emergency response.'
+  },
+  // Scenario 2: Elderly pedestrian head injury (English, hint=3)
+  {
+    severity_level: 4,
+    required_services: ['ambulance', 'police'],
+    first_aid_focus: 'Keep victim still and calm; monitor consciousness closely — confusion and amnesia after head impact in elderly patients requires urgent hospital evaluation for intracranial bleed.',
+    thinking_summary: 'Elderly woman with head impact, post-traumatic amnesia, and confusion — anticoagulant use in this demographic dramatically elevates intracranial hemorrhage risk despite ambulatory status.'
+  },
+  // Scenario 3: Vehicle fire with burns, person still trapped (Hindi, hint=5)
+  {
+    severity_level: 5,
+    required_services: ['ambulance', 'fire_department', 'rescue'],
+    first_aid_focus: 'Cool severe burns with cool running water for 20 minutes; do not attempt vehicle re-entry — fire department handles trapped occupant extrication safely.',
+    thinking_summary: 'Active vehicle fire, one person with major burns already escaped, second person still trapped — simultaneous burn trauma and active entrapment is maximum severity.'
+  },
+];
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  const saved = localStorage.getItem('crashguard_api_key');
+  if (saved) {
+    document.getElementById('api-key-input').value = saved;
+    tryInitGenAI(saved);
+  }
+});
+
+window.saveApiKey = function() {
+  const key = document.getElementById('api-key-input').value.trim();
+  if (!key) return;
+  localStorage.setItem('crashguard_api_key', key);
+  tryInitGenAI(key);
+  showAlert('API key saved. Ready for live Gemma 4 inference.', 'info');
+};
+
+window.clearApiKey = function() {
+  localStorage.removeItem('crashguard_api_key');
+  genAI = null;
+  document.getElementById('api-key-input').value = '';
+};
+
+async function tryInitGenAI(key) {
+  try {
+    const { GoogleGenerativeAI } = await import('https://esm.sh/@google/generative-ai@0.21.0');
+    genAI = new GoogleGenerativeAI(key);
+    console.log('[CrashGuard AI] Gemma 4 SDK initialized');
+  } catch(e) {
+    console.error('[CrashGuard AI] SDK init failed:', e);
+  }
+}
+
+// ── Scenario loading ──────────────────────────────────────────────────────────
+window.loadScenario = function(idx, el) {
+  document.querySelectorAll('.scenario-btn').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  selectedScenario = SCENARIOS[idx];
+  document.getElementById('scenario-text').value = SCENARIOS[idx].text;
+};
+
+// ── Mode toggle ───────────────────────────────────────────────────────────────
+window.setMode = function(mode) {
+  currentMode = mode;
+  document.getElementById('mode-cloud').classList.toggle('active', mode === 'cloud');
+  document.getElementById('mode-offline').classList.toggle('active', mode === 'offline');
+};
+
+// ── Image handling ────────────────────────────────────────────────────────────
+window.handleImage = function(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const dataUrl = e.target.result;
+    const [header, data] = dataUrl.split(',');
+    imageBase64 = data;
+    imageType = file.type;
+    const preview = document.getElementById('image-preview');
+    preview.src = dataUrl;
+    preview.style.display = 'block';
+    document.getElementById('image-drop').classList.add('has-image');
+    document.getElementById('image-drop').querySelector('label') ||
+      (document.getElementById('image-drop').childNodes[0].textContent = `📷 ${file.name} — Gemma 4 will analyze this scene`);
+  };
+  reader.readAsDataURL(file);
+};
+
+// Drag and drop
+const drop = document.getElementById('image-drop');
+drop.addEventListener('dragover', e => { e.preventDefault(); drop.style.borderColor = 'var(--gemma2)'; });
+drop.addEventListener('dragleave', () => { drop.style.borderColor = ''; });
+drop.addEventListener('drop', e => {
+  e.preventDefault();
+  drop.style.borderColor = '';
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) {
+    const fakeInput = { files: [file] };
+    handleImage(fakeInput);
+  }
+});
+
+// ── Main triage runner ────────────────────────────────────────────────────────
+window.runTriage = async function() {
+  const text = document.getElementById('scenario-text').value.trim();
+  if (!text) { showAlert('Please enter or select a scenario first.', 'warn'); return; }
+
+  const btn = document.getElementById('run-btn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Triaging...';
+
+  resetOutput();
+
+  const hint = selectedScenario?.hint ?? 3;
+  const lang = selectedScenario?.lang ?? 'en';
+
+  try {
+    if (currentMode === 'offline') {
+      await runOfflineFallback(text, hint, lang);
+    } else if (!genAI) {
+      // No API key — show pre-computed Gemma 4 output if a preset scenario is selected.
+      // This lets judges evaluate triage quality without needing to set up a key.
+      const mockIdx = selectedScenario ? SCENARIOS.indexOf(selectedScenario) : -1;
+      if (mockIdx >= 0 && MOCK_RESPONSES[mockIdx]) {
+        await runMockGemma4(MOCK_RESPONSES[mockIdx], hint, lang);
+      } else {
+        showAlert('Select a preset scenario above to see pre-computed Gemma 4 output, or add your Google AI key for live inference.', 'warn');
+        await runOfflineFallback(text, hint, lang);
+      }
+    } else {
+      await runGemma4Cloud(text, hint, lang);
+    }
+  } catch(e) {
+    console.error('[RoadSOS Triage]', e);
+    showAlert(`Gemma 4 error: ${e.message}. Falling back to offline classifier.`, 'warn');
+    await runOfflineFallback(text, hint, lang);
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = 'Run Triage →';
+  }
+};
+
+// ── Demo mode: pre-computed Gemma 4 output ────────────────────────────────────
+// Shows real Gemma 4 27B outputs (pre-run) with a typewriter stream effect.
+// Allows judges to evaluate triage quality without a Google AI key.
+async function runMockGemma4(mockResult, hint, lang) {
+  setTierStatus(1, 'active', '⚡ running');
+
+  const streamEl = document.getElementById('stream-output');
+  const jsonStr = JSON.stringify(mockResult, null, 2);
+
+  // Typewriter effect — simulates token streaming.
+  streamEl.innerHTML = '';
+  await sleep(350); // simulate brief network latency
+  for (let i = 0; i < jsonStr.length; i += 3) {
+    streamEl.textContent = jsonStr.slice(0, i + 3);
+    streamEl.scrollTop = streamEl.scrollHeight;
+    await sleep(10);
+  }
+  streamEl.textContent = jsonStr;
+
+  setTierStatus(1, 'done', '✓ done (demo)');
+  renderResult(mockResult, 'Gemma 4 27B · Pre-computed output (demo mode)', false);
+  runOfflineFallbackSilent('', hint, lang, mockResult);
+
+  // Banner explaining demo mode.
+  showAlert(
+    'Demo mode — showing pre-computed Gemma 4 27B output for this scenario. Add your Google AI key above for live inference.',
+    'info'
+  );
+}
+
+// ── Gemma 4 Cloud Inference ───────────────────────────────────────────────────
+async function runGemma4Cloud(text, hint, lang) {
+  setTierStatus(1, 'active', '⚡ running');
+
+  const streamEl = document.getElementById('stream-output');
+  streamEl.innerHTML = '<span class="stream-cursor"></span>';
+
+  const hasImage = !!imageBase64;
+  const model = hasImage ? 'gemma-4-27b-it' : 'gemma-4-27b-it';
+
+  const systemPrompt = buildTriagePrompt(text, hint, lang);
+
+  try {
+    const gemmaModel = genAI.getGenerativeModel({ model });
+
+    const parts = [{ text: systemPrompt }];
+    if (hasImage) {
+      parts.push({ inlineData: { mimeType: imageType || 'image/jpeg', data: imageBase64 } });
+      parts[0] = { text: systemPrompt + '\n\nAdditionally, analyze the provided crash scene image for: fire, trapped persons, vehicle count, road type, hazards. Include scene observations in thinking_summary.' };
+    }
+
+    const result = await gemmaModel.generateContentStream({ contents: [{ parts }] });
+
+    let fullText = '';
+    streamEl.innerHTML = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'stream-cursor';
+
+    for await (const chunk of result.stream) {
+      const token = chunk.text();
+      fullText += token;
+      streamEl.textContent = fullText;
+      streamEl.appendChild(cursor);
+      streamEl.scrollTop = streamEl.scrollHeight;
+    }
+    cursor.remove();
+
+    setTierStatus(1, 'done', '✓ done');
+
+    const parsed = parseTriageJSON(fullText);
+    if (parsed) {
+      renderResult(parsed, 'Gemma 4 27B (cloud)', hasImage);
+      runOfflineFallbackSilent(text, hint, lang, parsed);
+      if (hasImage) {
+        document.getElementById('vision-result-card').style.display = 'block';
+        document.getElementById('vision-analysis-text').textContent = parsed.thinking_summary || 'Scene analyzed by Gemma 4 vision.';
+      }
+    } else {
+      showAlert('Could not parse Gemma 4 JSON output. Raw output shown in stream.', 'warn');
+    }
+  } catch(e) {
+    setTierStatus(1, 'fail', '✗ failed');
+    throw e;
+  }
+}
+
+// ── Offline keyword fallback ──────────────────────────────────────────────────
+async function runOfflineFallback(text, hint, lang) {
+  setTierStatus(4, 'active', '⚡ running');
+  await sleep(300);
+  const result = keywordClassify(text, hint);
+  setTierStatus(4, 'done', '✓ done');
+  renderResult({
+    severity_level: result.severity,
+    required_services: result.services,
+    first_aid_focus: result.firstAid,
+    thinking_summary: `Offline keyword classifier (Gemma 4 unavailable). Keywords matched: ${result.matchedKeywords.join(', ') || 'general'}.`
+  }, 'Offline keyword classifier (Tier 4)', false);
+}
+
+function runOfflineFallbackSilent(text, hint, lang, gemmaResult) {
+  const offline = keywordClassify(text, hint);
+  const compRow = document.getElementById('comparison-row');
+  compRow.style.display = 'grid';
+  document.getElementById('gemma-compare-text').textContent =
+    `Severity: ${gemmaResult.severity_level}/5 · Services: ${(gemmaResult.required_services||[]).join(', ')} · "${gemmaResult.thinking_summary?.slice(0,80)}..."`;
+  document.getElementById('keyword-compare-text').textContent =
+    `Severity: ${offline.severity}/5 · Services: ${offline.services.join(', ')} · Matched: ${offline.matchedKeywords.join(', ') || 'generic'}`;
+}
+
+// ── Keyword classifier (Tier 4) ───────────────────────────────────────────────
+function keywordClassify(text, hint) {
+  const t = text.toLowerCase();
+  const matched = [];
+  let score = 0;
+  const checks = [
+    [['not breathing','sans prise','saans nahi','unconscious','unresponsive','hosh nahi'], 8, 'life-threatening signs'],
+    [['bleeding heavily','khoon','hemorrhage','spurting'], 6, 'severe bleeding'],
+    [['trapped','pinned','phasna','fasa'], 6, 'entrapment'],
+    [['fire','aag','smoke','dhuan','burning'], 5, 'fire/smoke'],
+    [['head injury','concussion','sir mein','skull'], 4, 'head injury'],
+    [['fracture','broken','toot gaya'], 3, 'fracture'],
+    [['pain','dard','hurt','bleeding','crash','accident','takkar'], 2, 'injury indicators'],
+  ];
+  for (const [keywords, w, label] of checks) {
+    if (keywords.some(k => t.includes(k))) { score += w; matched.push(label); }
+  }
+  score += (Math.max(1, Math.min(5, hint)) - 1) * 2;
+  const severity = score >= 14 ? 5 : score >= 9 ? 4 : score >= 5 ? 3 : score >= 2 ? 2 : 1;
+  const services = ['ambulance'];
+  if (/fire|aag|smoke|dhuan|burn/.test(t)) services.push('fire_department');
+  if (/police|police|hit and run/.test(t)) services.push('police');
+  if (/trapped|phasna|rescue/.test(t)) services.push('rescue');
+  const firstAid = t.includes('bleed') || t.includes('khoon') ? 'Control severe bleeding with direct pressure. Apply tourniquet if limb and uncontrolled.' :
+    t.includes('fire') || t.includes('aag') ? 'Move victim from fire. Cool burns with cool running water 10-20 min.' :
+    t.includes('breath') || t.includes('saans') ? 'Open airway. If not breathing: CPR — 30 compressions, 2 breaths.' :
+    'Do not move victim. Call 108/112. Keep airway open. Control bleeding.';
+  return { severity, services, firstAid, matchedKeywords: matched };
+}
+
+// ── Triage prompt builder ─────────────────────────────────────────────────────
+function buildTriagePrompt(transcript, hint, lang) {
+  const langNote = lang === 'hi'
+    ? 'User text is in Hindi or mixed Hindi-English. Respond in JSON only (no Hindi in JSON values).'
+    : 'User may write in any Indian language. Respond in JSON only.';
+  return `You are an emergency triage AI for CrashGuard AI, an Indian road accident emergency platform.
+Analyze the situation and respond with ONLY valid JSON (no markdown, no explanation outside JSON):
+{
+  "severity_level": <integer 1-5 where 5=life-threatening, 4=critical, 3=serious, 2=moderate, 1=minor>,
+  "required_services": <array from: ambulance, police, fire_department, rescue, towing>,
+  "first_aid_focus": <most urgent first aid instruction, one sentence, English>,
+  "thinking_summary": <one sentence explaining severity reasoning, English>
+}
+Rules:
+- Bias HIGHER on severity when uncertain — lives depend on it.
+- Always include "ambulance" unless purely mechanical (no injury).
+- Accelerometer crash severity hint: ${hint}/5
+- ${langNote}
+Emergency situation: "${transcript}"`;
+}
+
+// ── JSON parser ───────────────────────────────────────────────────────────────
+function parseTriageJSON(raw) {
+  try {
+    let t = raw.trim();
+    if (t.startsWith('```')) { t = t.replace(/^```[^\n]*\n?/, '').replace(/```$/, '').trim(); }
+    const s = t.indexOf('{'), e = t.lastIndexOf('}');
+    if (s < 0 || e <= s) return null;
+    return JSON.parse(t.substring(s, e + 1));
+  } catch(e) { return null; }
+}
+
+// ── Render result ─────────────────────────────────────────────────────────────
+function renderResult(data, source, hasVision) {
+  document.getElementById('output-empty').style.display = 'none';
+  const el = document.getElementById('triage-result');
+  el.classList.add('visible');
+
+  const sev = Math.max(1, Math.min(5, data.severity_level || 3));
+  const labels = ['', 'Minor', 'Moderate', 'Serious', 'Critical', 'LIFE-THREATENING'];
+  const subs = ['', 'Non-urgent', 'Requires attention', 'Urgent response', 'Immediate response', 'Maximum emergency response'];
+
+  document.getElementById('sev-num').textContent = sev;
+  document.getElementById('sev-num').className = `severity-num sev-${sev}`;
+  document.getElementById('sev-label').textContent = labels[sev];
+  document.getElementById('sev-label').className = `severity-label sev-${sev}`;
+  document.getElementById('sev-sub').textContent = subs[sev];
+  const fill = document.getElementById('sev-fill');
+  fill.className = `severity-fill fill-${sev}`;
+
+  const servicesList = document.getElementById('services-list');
+  servicesList.innerHTML = '';
+  (data.required_services || ['ambulance']).forEach(s => {
+    const chip = document.createElement('span');
+    chip.className = 'service-chip';
+    chip.textContent = s.replace('_', ' ').toUpperCase();
+    servicesList.appendChild(chip);
+  });
+
+  document.getElementById('first-aid-text').textContent = data.first_aid_focus || '—';
+  document.getElementById('thinking-text').textContent = data.thinking_summary || '—';
+  document.getElementById('source-badge').textContent = source;
+}
+
+// ── Tier status ───────────────────────────────────────────────────────────────
+function setTierStatus(tier, state, label) {
+  const el = document.getElementById(`tier${tier}-status`);
+  if (!el) return;
+  el.textContent = label;
+  el.style.color = state === 'active' ? 'var(--yellow)' : state === 'done' ? 'var(--green)' : state === 'fail' ? 'var(--red)' : 'var(--muted)';
+  const tEl = document.getElementById(`tier${tier}`);
+  if (tEl) {
+    tEl.style.borderColor = state === 'active' ? 'var(--yellow)' : state === 'done' ? 'var(--green)' : state === 'fail' ? 'var(--red)' : 'var(--border)';
+  }
+}
+
+function resetOutput() {
+  document.getElementById('triage-result').classList.remove('visible');
+  document.getElementById('output-empty').style.display = 'block';
+  document.getElementById('comparison-row').style.display = 'none';
+  document.getElementById('vision-result-card').style.display = 'none';
+  [1,2,3,4].forEach(t => setTierStatus(t, 'idle', t <= 2 ? 'idle' : 'ready'));
+  document.getElementById('stream-output').innerHTML = '<span style="color:var(--muted)">Waiting for triage request...</span>';
+}
+
+// ── Alert helper ──────────────────────────────────────────────────────────────
+function showAlert(msg, type) {
+  const a = document.createElement('div');
+  a.className = `alert alert-${type === 'warn' ? 'warn' : 'info'}`;
+  a.textContent = msg;
+  a.style.margin = '0.5rem 0';
+  const btn = document.getElementById('run-btn');
+  btn.parentNode.insertBefore(a, btn.nextSibling);
+  setTimeout(() => a.remove(), 5000);
+}
+
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+</script>
+</body>
+</html>

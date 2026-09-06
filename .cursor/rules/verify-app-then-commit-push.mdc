@@ -1,0 +1,33 @@
+---
+description: Run the app, smoke-test affected features, then commit and push only when checks pass.
+alwaysApply: true
+---
+
+# Verify App, Then Commit + Push
+
+## Order of operations
+
+1. **Implement** the change.
+2. **Run** the app or automated checks (see below) and **manually or programmatically verify** behavior for the surfaces you touched (and quick regression on closely related flows).
+3. **Only if verification passes**, follow **`commit-and-push-after-every-change`** (`git status`/`diff`, no secrets, stage, commit, push).
+
+Do **not** commit or push while the app is broken, tests are failing, or core flows are untested after a runtime-affecting change.
+
+## What to run
+
+- Prefer commands documented in **README**, root **`pubspec.yaml`** / **`package.json`**, or CI config (e.g. `flutter test`, `flutter run`, web dev server, backend smoke).
+- If the repo defines **fast** lint/typecheck/tests, run them **before** push when practical (same gate as the commit rule).
+
+## Scope of “test features”
+
+- **Runtime-affecting change** (UI, API, env, routing, native): run the app or integration path and exercise the changed feature end-to-end.
+- **Docs-only or comments-only**: no full app run required; still avoid committing secrets.
+- **Ambiguous**: default to **running** at least the smallest check that proves the change works.
+
+## When something fails
+
+- Fix or report the failure; **do not** push a “known broken” state unless the user explicitly asked to checkpoint work-in-progress (then say so in the commit message).
+
+## Relation to other rules
+
+- After green verification, **commit and push** per **`commit-and-push-after-every-change`** (atomic commits, clear messages, retry push once on network failure).

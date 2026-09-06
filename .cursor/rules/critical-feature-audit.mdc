@@ -1,0 +1,57 @@
+---
+description: Critical feature audit — verify completeness/usability/authenticity/flexibility; flag simulated/half-built/hardcoded features with severity.
+alwaysApply: true
+---
+
+# Critical feature audit (do not assume features are valid)
+
+When asked to evaluate the system, **treat every “feature” claim as untrusted** until verified in code and/or runtime behavior.
+
+## Required evaluation dimensions (per feature)
+
+- **Completeness**: fully implemented vs partial/placeholder vs TODO stub
+- **Usability**: practical, intuitive, and actually useful to a real user
+- **Authenticity**: real outcomes vs simulated / mocked / “demo only” behavior
+- **Flexibility**: avoids hardcoded values, static workflows, brittle logic, or environment-specific assumptions
+
+## Explicitly flag (always)
+
+- **Half-implemented or abandoned features** (stubs, TODOs, unreachable code paths, dead UI)
+- **Hardcoded workflows** (static responses, fixed numbers/regions, non-configurable toggles)
+- **Simulated / mock features** that **do not deliver real outcomes**
+- **Non-solutions**: features that exist but do not meaningfully solve a user problem
+
+## Severity rubric (must use High / Medium / Low)
+
+- **High**:
+  - Safety-critical or trust-critical feature is simulated/placeholder but presented as real
+  - Dispatch / emergency / consent / privacy / medical triage outcomes are non-authentic or unverified
+  - Hardcoded behavior that can cause harm, false reassurance, or silent failure
+- **Medium**:
+  - Feature works but is brittle (hardcoded paths, weak error handling, incomplete edge cases)
+  - UX traps (confusing flows, unclear states, unclear success criteria, poor recoverability)
+- **Low**:
+  - Cosmetic gaps, minor usability issues, small refactor needs, non-blocking tech debt
+
+## Required output format (structured)
+
+Produce findings in this structure (no markdown tables required):
+
+- **Feature name**
+  - **Severity**: High | Medium | Low
+  - **Verdict**: Complete | Partial | Placeholder | Simulated
+  - **Completeness**: …
+  - **Usability**: …
+  - **Authenticity**: …
+  - **Flexibility**: …
+  - **Evidence**: file paths, functions, key lines, runtime signals (what proves it)
+  - **Flags**: half-implemented | hardcoded | simulated/mock | non-solution (any that apply)
+  - **User impact**: what user expects vs what actually happens
+  - **Fix direction**: concrete next step (smallest change that makes it real/useful)
+
+## Evidence standards
+
+- Prefer **code evidence** (exact files/functions) over assumptions.
+- If runtime behavior can’t be verified, label the finding **“Unverified”** and treat as **at most Partial** until proven.
+- If a feature has both real + simulated branches, document **when each branch triggers** and what the UI claims.
+

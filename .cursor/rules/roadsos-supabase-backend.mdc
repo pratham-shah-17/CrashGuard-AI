@@ -1,0 +1,20 @@
+---
+description: RoadSOS Supabase migrations, Edge Functions — RLS, secrets, Gemini server-side (from master rulebook Phases 2–5).
+globs: supabase/**/*
+alwaysApply: false
+---
+
+# RoadSOS — Supabase and backend rules
+
+Canonical detail: **`docs/DEVELOPMENT_RULEBOOK.md`** (Phase 2 Data architecture, Phase 5 Security, Phase 4 Location / Overpass).
+
+## Mandatory `[SECURITY]` `[CRITICAL]`
+
+- **RLS on every table** before production writes; migrations committed before client assumes schema.
+- **No Gemini or third-party secrets** in Edge Function source committed to repo — use Supabase secrets / GitHub Secrets in CI.
+- **Rate limiting** on triage and sensitive Edge Functions; validate request/response **schemas** server-side.
+- Overpass / heavy facility fetch: **server-side only** (cron + Edge Function), not mobile client.
+
+## Compliance `[INDIA]`
+
+- Retention (e.g. incident TTL) and DPDP-aligned handling per rulebook; medical data encrypted client-side before storage where applicable.

@@ -1,0 +1,548 @@
+[
+  {
+    "id": "general-road-emergency-india",
+    "title": "Motor vehicle / road traffic — first actions (India context)",
+    "body": "1) Make the scene safe: turn off ignitions, use hazard lights, use a triangle or flares if you can do it without risk.\n2) Call 108 (or 112 ERSS) and state location, number of people hurt, and whether anyone is trapped. Follow the dispatcher.\n3) Do not move injured people unless fire, drowning, or traffic puts them at immediate risk.\n4) Help breathing problems first; control severe bleeding with firm pressure.\n5) Stay until EMS arrives unless instructed otherwise.",
+    "tags": "road traffic motor vehicle accident mva rta crash general emergency trauma india 108 112",
+    "source": "Condensed from public first-responder training; align with current local EMS policy"
+  },
+  {
+    "id": "india-108-erss",
+    "title": "Calling 108 / 112 in India (ERSS)",
+    "body": "1) Dial 108 where available for ambulance-linked dispatch in many states; 112 is the national Emergency Response Support System number.\n2) Say where you are clearly (highway marker, landmark, GPS reading if asked).\n3) Describe consciousness, breathing, bleeding, and entrapment.\n4) Keep the line open; answer follow-up questions.\n5) If no signal, try SMS where your operator supports emergency SMS or move to regain signal — do not delay life-saving actions you are trained for.",
+    "tags": "108 112 india emergency ambulance dispatch erss",
+    "source": "Public information on Government of India ERSS; verify with state operator guidance"
+  },
+  {
+    "id": "who-bls-adult-cpr",
+    "title": "Adult CPR — chest compressions (BLS-aligned summary)",
+    "body": "1) Ensure safety; tap and shout; if unresponsive and not breathing normally (or only gasping), call emergency services / get an AED.\n2) Place hands on the lower half of the breastbone; compress hard and fast about 5–6 cm depth at 100–120/min, allowing full recoil.\n3) Minimize interruptions; if trained and willing, give 30 compressions then 2 rescue breaths; if not trained, continuous compressions are acceptable in many protocols.\n4) Use an AED as soon as it arrives — follow voice prompts.\n5) Continue until EMS takes over or the person shows obvious signs of life.",
+    "tags": "cpr cardiac arrest bls compressions aed breathing heart attack pulse",
+    "source": "Summary aligned with WHO/ILCOR lay-rescuer emphasis on quality compressions; confirm with current AHA/ERC/India RC guidelines"
+  },
+  {
+    "id": "recovery-position",
+    "title": "Recovery position (unresponsive, breathing normally)",
+    "body": "1) Use when an adult is unresponsive but breathing normally and no spinal injury is suspected.\n2) Kneel beside them; place the arm nearest you at a right angle.\n3) Bring the far arm across the chest; hold the far hip and roll toward you onto their side.\n4) Tilt the head slightly to keep the airway open; adjust the upper hand under the cheek if needed.\n5) Monitor breathing continuously until EMS arrives.",
+    "tags": "recovery position unconscious breathing airway",
+    "source": "Standard first-aid teaching; verify with national first-aid curriculum"
+  },
+  {
+    "id": "severe-bleeding",
+    "title": "Severe bleeding (life-threatening external bleeding)",
+    "body": "1) Apply firm, direct pressure with a clean cloth or gloved hands; add layers on top if blood soaks through — do not remove soaked dressings.\n2) Help the person lie down; elevate the bleeding part if fractures are not suspected.\n3) If limb bleeding cannot be controlled and you are trained, apply a commercial tourniquet 5–7 cm above the wound, tight enough to stop arterial bleeding; note time applied; do not loosen once placed — EMS will manage.\n4) Treat for shock: keep warm, reassure, monitor breathing.\n5) Never remove embedded objects — stabilize and pad around them.",
+    "tags": "bleeding hemorrhage tourniquet wound pressure arterial",
+    "source": "Bleeding-control consensus (Stop the Bleed-style principles); verify device-specific training"
+  },
+  {
+    "id": "burns-cooling",
+    "title": "Thermal burns — immediate cooling",
+    "body": "1) Cool the burn with cool running water for at least 10–20 minutes as soon as possible (small / moderate burns).\n2) Remove rings, watches, or tight clothing near the burn unless stuck to skin.\n3) Cover loosely with sterile wrap or clean plastic film — do not use fluffy cotton.\n4) Do not apply creams, oils, butter, or ice directly to deep burns.\n5) Seek urgent care for large/deep burns, airway involvement, chemical/electrical burns, or burns to face, hands, genitals, or joints.",
+    "tags": "burn scald thermal cool water fire skin",
+    "source": "WHO injury care summaries and major burn-center first-aid guidance"
+  },
+  {
+    "id": "fracture-splint",
+    "title": "Suspected fracture / limb injury",
+    "body": "1) Help the person stay still; do not force alignment.\n2) Splint in the position found using rigid boards, rolled newspapers, or slings as available.\n3) Check circulation beyond the injury (color, warmth, sensation, movement) before and after splinting.\n4) Apply ice packs wrapped in cloth for swelling if skin is intact.\n5) Arrange EMS transport — open fractures need urgent hospital care.",
+    "tags": "fracture broken bone splint limb orthopedic",
+    "source": "Orthopedic first-aid principles taught in standardized courses"
+  },
+  {
+    "id": "head-spinal-precaution",
+    "title": "Head injury & spinal precautions (road crashes)",
+    "body": "1) Assume spinal injury after significant crash forces until cleared by professionals.\n2) Keep the head aligned with the neck; stabilize manually if trained — avoid twisting.\n3) Do not remove helmets unless airway obstruction trained protocols require it.\n4) Monitor level of consciousness, pupil changes, vomiting, or worsening headache.\n5) Rapid EMS transport; even 'mild' head injury warrants assessment if symptoms are worsening.",
+    "tags": "head injury concussion c spine spinal helmet tbi",
+    "source": "Prehospital trauma spine-stabilization teaching (PHTLS-aligned summary)"
+  },
+  {
+    "id": "choking-adult",
+    "title": "Choking — responsive adult",
+    "body": "1) Ask 'Can you speak?' If they cannot cough effectively, give 5 back blows between shoulder blades.\n2) Then 5 abdominal thrusts (Heimlich) in midline above the navel; repeat cycles.\n3) If the person becomes unresponsive, lower them carefully and start CPR — look in the mouth for visible object each time before breaths.\n4) Call emergency services if not already done.\n5) Pregnant or very large persons: use chest thrusts instead of abdominal thrusts.",
+    "tags": "choking heimlich airway obstructed swallow",
+    "source": "ILCOR/AHA choking algorithm summary for lay rescuers"
+  },
+  {
+    "id": "shock-care",
+    "title": "Shock (circulatory compromise) after trauma",
+    "body": "1) Lay the person flat unless breathing is easier sitting.\n2) Keep them warm with a blanket; loosen tight clothing.\n3) Do not give food or drink.\n4) Control obvious bleeding and cover open wounds.\n5) Monitor breathing and responsiveness; be ready to start CPR if breathing stops.",
+    "tags": "shock trauma pale weak pulse rapid hemorrhagic",
+    "source": "Trauma first-aid fundamentals; professional care required"
+  },
+  {
+    "id": "eye-injury",
+    "title": "Eye injury & chemical exposure",
+    "body": "1) For chemicals: flush the eye immediately with clean water or saline for 15–20 minutes; remove contact lenses after the first few minutes if easy.\n2) Do not rub the eye.\n3) Cover penetrating injuries with a rigid shield (cup) — do not apply pressure on the globe.\n4) Impaled objects: stabilize in place — do not remove.\n5) Seek emergency ophthalmology / EMS depending on severity.",
+    "tags": "eye chemical burn cornea vision",
+    "source": "Ophthalmic emergency triage summaries"
+  },
+  {
+    "id": "chest-pain-suspected-mi",
+    "title": "Chest pain / suspected heart attack",
+    "body": "1) Call EMS immediately — do not self-transport if symptoms are severe.\n2) Help the person rest in a comfortable position.\n3) If not allergic and locally appropriate, chewing aspirin may be advised by dispatch — follow professional instruction.\n4) If unconscious and not breathing normally, begin CPR and use AED if available.\n5) Note time of symptom onset for clinicians.",
+    "tags": "chest pain heart attack mi stemi cardiac",
+    "source": "Public ACS first-aid messaging; aspirin use per local medical direction"
+  },
+  {
+    "id": "stroke-fast",
+    "title": "Stroke recognition (FAST-style summary)",
+    "body": "1) Face drooping — ask them to smile; unevenness suggests stroke.\n2) Arm drift — raise both arms; one drifting is concerning.\n3) Speech — slurred or strange words.\n4) Time — call EMS immediately; note time last known well.\n5) Do not give food, drink, or aspirin unless EMS instructs — stroke treatment is time-critical.",
+    "tags": "stroke fast brain cva paralysis slurred",
+    "source": "WHO stroke awareness materials; FAST acronym in public campaigns"
+  },
+  {
+    "id": "seizure-first-aid",
+    "title": "Seizure (convulsion) — bystander care",
+    "body": "1) Time the seizure; cushion the head; clear nearby sharp objects.\n2) Do not restrain or put anything in the mouth.\n3) After it stops, place in recovery position if breathing normally.\n4) Call EMS for first seizure, prolonged seizure >5 minutes, repeated seizures, pregnancy, injury, or breathing difficulty.\n5) Stay with the person until they are fully oriented.",
+    "tags": "seizure epilepsy convulsion fitting",
+    "source": "Epilepsy foundation / ILAE public guidance"
+  },
+  {
+    "id": "hypoglycemia",
+    "title": "Diabetic emergency — low blood sugar",
+    "body": "1) If conscious and able to swallow, give fast-acting sugar (glucose gel, juice, sweets).\n2) Recheck responsiveness in 10–15 minutes; repeat once if needed per training.\n3) If unconscious, do not give food — place in recovery position if breathing normally; call EMS.\n4) If not breathing normally, begin CPR.\n5) Always encourage medical follow-up after significant hypoglycemia.",
+    "tags": "diabetes insulin sugar hypo low glucose",
+    "source": "Diabetes first-aid basics; glucose dosing per clinician on repeated events"
+  },
+  {
+    "id": "heat-illness",
+    "title": "Heat exhaustion / heat stroke",
+    "body": "1) Move to shade/cool area; loosen clothing.\n2) Cool with fans, wet cloths, or immersion if safe for responsive adults.\n3) Sip cool water if fully conscious and not vomiting.\n4) Heat stroke (altered mental status, hot dry skin): call EMS immediately — rapid cooling is critical.\n5) Monitor breathing while cooling.",
+    "tags": "heat stroke sun exhaustion dehydration hot weather",
+    "source": "WHO heat-health action plan public advice"
+  },
+  {
+    "id": "hypothermia-cold",
+    "title": "Hypothermia (cold exposure)",
+    "body": "1) Move to shelter; remove wet clothing; insulate from the ground.\n2) Rewarm gradually with blankets; give warm sweet drinks only if fully conscious.\n3) Handle gently — rough movement can trigger arrhythmia in severe hypothermia.\n4) Do not rub frostbitten tissue; protect and seek care.\n5) Call EMS for confusion, severe shivering stopping, or unconsciousness.",
+    "tags": "cold hypothermia frostbite winter exposure",
+    "source": "Wilderness / EMS hypothermia triage summaries"
+  },
+  {
+    "id": "drowning",
+    "title": "Drowning / rescued from water",
+    "body": "1) Ensure scene safety — use rescue aids; avoid unsupported water entry unless trained.\n2) If breathing normally, keep warm and monitor.\n3) If not breathing, open airway; give 5 rescue breaths then start CPR if trained.\n4) All submersion victims should be medically evaluated — secondary drowning risk is evaluated in hospital.\n5) Call EMS for any breathing difficulty after water incident.",
+    "tags": "drowning water rescue swimming pool lake",
+    "source": "ILCOR drowning resuscitation summaries for lay rescuers"
+  },
+  {
+    "id": "electrical-injury",
+    "title": "Electrical injury / lightning",
+    "body": "1) Ensure power is off before touching the victim — use non-conductive tools.\n2) Call EMS; begin CPR if unresponsive and not breathing normally.\n3) Expect hidden deep burns — cover burns lightly.\n4) Monitor rhythm risk — continue care until EMS arrives.\n5) Lightning: reverse triage — apparently dead victims may respond to CPR.",
+    "tags": "electric shock lightning wire burn power",
+    "source": "Electrical injury emergency management principles"
+  },
+  {
+    "id": "anaphylaxis-note",
+    "title": "Severe allergic reaction (possible anaphylaxis)",
+    "body": "1) Call EMS immediately for difficulty breathing, throat/lip swelling, widespread hives with systemic symptoms.\n2) Help the person sit up if breathing is difficult (unless hypotensive — then lie with legs elevated per training).\n3) If prescribed, assist with auto-injector use as labeled — thigh, hold, seek help.\n4) Be prepared to start CPR if breathing stops.\n5) Avoid known triggers while waiting for EMS.",
+    "tags": "allergy anaphylaxis epipen hive breathing",
+    "source": "WAO anaphylaxis public guidance; injector use per prescription"
+  },
+  {
+    "id": "penetrating-trauma",
+    "title": "Penetrating trauma (stab / impalement)",
+    "body": "1) Control external bleeding without removing embedded objects.\n2) Stabilize impaled objects with bulky dressings; move as one unit.\n3) Seal open chest wounds that suck with a commercial or improvised chest seal only if trained — otherwise keep still and support breathing.\n4) Call EMS; monitor for tension pneumothorax signs.\n5) Do not pull objects from deep wounds.",
+    "tags": "stab wound chest seal impaled knife",
+    "source": "Tactical / prehospital penetrating trauma basics"
+  },
+  {
+    "id": "psychological-first-aid",
+    "title": "Psychological first aid after a frightening crash",
+    "body": "1) Stay calm; offer a safe, quiet space away from hazards.\n2) Listen without forcing the person to retell trauma; avoid judgment.\n3) Help them contact family or friends; keep children with caregivers.\n4) Encourage professional mental health follow-up after serious events.\n5) Do not dismiss dissociation, trembling, or confusion — these are stress responses.",
+    "tags": "panic anxiety stress ptsd mental health bystander",
+    "source": "WHO Psychological First Aid (PFA) field guide — condensed"
+  },
+  {
+    "id": "internal-bleeding",
+    "title": "Suspected internal bleeding",
+    "body": "1) Suspect internal bleeding after high-energy crashes even if no external wound: rigid abdomen, rapid pulse, pale clammy skin, dropping consciousness.\n2) Do NOT give food or drink.\n3) Keep the person still and warm; do not leave them alone.\n4) Treat for shock: lay flat, elevate legs slightly unless head/spinal injury suspected.\n5) Call EMS immediately — internal bleeding requires surgical management; field treatment is supportive only.",
+    "tags": "internal bleeding abdomen abdominal trauma rupture spleen liver",
+    "source": "Trauma surgery fundamentals — public safety summary"
+  },
+  {
+    "id": "traumatic-brain-injury",
+    "title": "Traumatic brain injury (TBI) — recognition and care",
+    "body": "1) Warning signs: loss of consciousness (any duration), confusion, amnesia, repeated vomiting, unequal pupils, worsening headache, weakness in limbs.\n2) Do not remove a helmet unless necessary for airway access.\n3) Assume cervical spine injury in any high-energy head trauma — keep head aligned with neck.\n4) If unconscious and breathing: recovery position with spinal precautions.\n5) Rapid EMS transport is critical — outcomes worsen with every minute of untreated raised intracranial pressure.",
+    "tags": "tbi head injury brain concussion unconscious pupils",
+    "source": "PHTLS / ATLS public-facing TBI management summary"
+  },
+  {
+    "id": "spinal-cord-injury",
+    "title": "Spinal cord injury — recognition and immobilization",
+    "body": "1) Suspect SCI if: numbness, tingling, or weakness in limbs after a crash; victim cannot move arms or legs; neck or back pain after force.\n2) Tell the victim not to move; manually stabilize the head in a neutral position.\n3) Do NOT attempt to log-roll or move unless trained — movement of an unstable cervical fracture can cause or worsen paralysis.\n4) If movement is absolutely required (fire, imminent threat), use a coordinated log-roll keeping head-neck-spine aligned.\n5) Call EMS — spinal cord injury management requires a spine board, collar, and hospital imaging.",
+    "tags": "spinal cord injury sci cervical spine paralysis quadriplegia",
+    "source": "PHTLS public summary; spine precaution guidelines"
+  },
+  {
+    "id": "crush-injury-compartment",
+    "title": "Crush injury and compartment syndrome",
+    "body": "1) Crush injuries (vehicle weight, trapped limb) can cause massive hidden tissue damage even without external wounds.\n2) Do NOT rapidly release a prolonged crush (>1 hour) without medical personnel present — reperfusion can cause fatal cardiac arrhythmia (crush syndrome).\n3) While waiting for EMS: keep the person warm, do NOT elevate a crushed limb, control external bleeding with pressure.\n4) Signs of compartment syndrome: severe pain out of proportion, tight/swollen limb, numbness — requires fasciotomy in hospital.\n5) Call EMS immediately and describe entrapment duration.",
+    "tags": "crush injury entrapment compartment syndrome reperfusion rhabdomyolysis",
+    "source": "Trauma surgery / prehospital crush injury guidelines"
+  },
+  {
+    "id": "hemorrhagic-shock-classes",
+    "title": "Recognizing hemorrhagic shock severity (field guide)",
+    "body": "Class I (minor): slight increase in heart rate, normal blood pressure, anxiety. Class II (moderate): HR 100–120, pale skin, thirst, confusion starting — about 750–1500 mL lost. Class III (major): HR >120, very pale/clammy, confused, barely speaking — 1500–2000 mL lost. Class IV (critical): HR >140, undetectable BP, unconscious — >2000 mL lost, immediately life-threatening.\nField action: For Class II or higher — direct pressure, tourniquet if limb, keep warm and flat, call EMS URGENT. Time to OR is the only treatment for Class III/IV.",
+    "tags": "shock hemorrhagic blood loss class vital signs pale clammy",
+    "source": "ATLS shock classification adapted for lay-rescuer recognition"
+  },
+  {
+    "id": "tension-pneumothorax-recognition",
+    "title": "Tension pneumothorax — recognition (bystander)",
+    "body": "1) Occurs when air enters the chest cavity and cannot escape, compressing the heart and lungs.\n2) Warning signs after chest trauma: increasing breathing difficulty, one side of chest not moving, trachea appearing off-center, rapidly dropping consciousness, absent breath sounds on one side.\n3) Bystander action: keep the victim still; support breathing; call EMS IMMEDIATELY.\n4) If trained in needle decompression: second intercostal space, mid-clavicular line — bystanders without training should NOT attempt this.\n5) Seal any open chest wound with a vented chest seal or improvised vent if trained.",
+    "tags": "tension pneumothorax chest trauma breathing difficulty",
+    "source": "TCCC / PHTLS pneumothorax recognition for non-clinical responders"
+  },
+  {
+    "id": "flail-chest",
+    "title": "Flail chest — recognition and support",
+    "body": "1) Occurs when 3 or more consecutive ribs break in two places, creating a free-floating segment.\n2) Recognition: paradoxical movement — the segment moves IN when the victim breathes IN (opposite to normal).\n3) Field care: DO NOT bind the chest tightly. Position the victim on the injured side (if conscious and comfortable) to splint the segment.\n4) Provide oxygen if available; assist ventilation if breathing becomes inadequate.\n5) Flail chest almost always accompanies serious underlying lung injury — EMS transport is urgent.",
+    "tags": "flail chest rib fracture paradoxical movement breathing",
+    "source": "Trauma first-aid summary — PHTLS-aligned"
+  },
+  {
+    "id": "pelvic-fracture",
+    "title": "Suspected pelvic fracture",
+    "body": "1) Suspect pelvic fracture in high-energy crashes (motorcycle, car rollover) with groin/hip pain, inability to stand, or instability when pressing gently on pelvis.\n2) Do NOT repeatedly compress the pelvis to 'test' for instability — this worsens bleeding.\n3) Pelvic fractures bleed massively into the pelvis; external bleeding may be minimal — treat for severe shock.\n4) Improvised pelvic binder: fold a sheet or jacket, place under the hips at the greater trochanter level, tie firmly around both hips.\n5) Absolutely do not allow the victim to walk — keep still and warm; urgent EMS.",
+    "tags": "pelvis fracture hip injury binder shock instability",
+    "source": "Pre-hospital pelvic fracture management guidelines"
+  },
+  {
+    "id": "amputation-traumatic",
+    "title": "Traumatic amputation — tourniquet and limb care",
+    "body": "1) Apply a tourniquet immediately: 5–7 cm above the amputation; tighten until bleeding stops completely; note time.\n2) Cover the stump with a clean dressing — do not remove the tourniquet once placed.\n3) Wrap the amputated part in a clean damp cloth, then in a dry bag; place the bag on ice — do NOT put the part directly on ice.\n4) Get both the victim and the part to the same hospital — replantation has a time window of 6 hours (digit) to 4 hours (major limb) in cold ischemia.\n5) Call EMS immediately and inform them of the amputation — they will pre-alert the trauma center.",
+    "tags": "amputation tourniquet replantation limb stump",
+    "source": "Replantation surgery guidelines adapted for lay first responder"
+  },
+  {
+    "id": "pediatric-crash",
+    "title": "Child injured in road crash",
+    "body": "1) Children have proportionally larger heads — spinal precautions are critical; pad under the torso to keep head neutral when supine.\n2) Normal vital signs differ by age; tachycardia in children (>120 in an older child, >160 in infant) may indicate shock even with normal BP.\n3) Children compensate better initially then crash suddenly — do not wait for BP drop to act on shock.\n4) Keep the child with a familiar caregiver if at all possible — separation worsens anxiety and assessment.\n5) Call EMS and specify a child is involved — pediatric trauma centers use specialized protocols.",
+    "tags": "child pediatric kid road crash head spine",
+    "source": "PALS / PHTLS pediatric trauma summary"
+  },
+  {
+    "id": "elderly-crash",
+    "title": "Elderly person injured in road crash",
+    "body": "1) Older adults sustain serious injuries at lower impact speeds — bone density, thin skin, and pre-existing conditions amplify harm.\n2) Head injury: anticoagulants (warfarin, eliquis) dramatically increase intracranial bleed risk; any head impact in an anticoagulated elder is a medical emergency.\n3) Hip fracture: common in pedestrian/fall-from-vehicle; do not weight-bear; splint and transport.\n4) Drugs and underlying illness may mask pain or alter mental status — assess carefully; confusion after trauma is not 'just dementia'.\n5) Get full medication list for EMS handover — drug interactions affect trauma care.",
+    "tags": "elderly older adult geriatric anticoagulant hip fracture",
+    "source": "Geriatric trauma triage adaptations — clinical summary"
+  },
+  {
+    "id": "two-wheeler-crash-india",
+    "title": "Two-wheeler (motorcycle/scooter) crash — India specific",
+    "body": "1) Motorcyclists without helmets sustain TBI at much lower speeds — assume serious head injury even for a 'minor' fall.\n2) Road rash (abrasion): may cover large body areas; irrigate with clean water; cover with clean cloth; risk of infection is high in dusty Indian conditions.\n3) Lower limb fractures are very common in motorcycle crashes — immobilize before moving.\n4) Radiating shoulder pain after a crash may indicate acromioclavicular injury or brachial plexus stretch.\n5) Two-wheelers with fuel leaks: move the victim away from the vehicle before any assessment.",
+    "tags": "motorcycle scooter two wheeler road rash helmet bike india",
+    "source": "Indian road trauma patterns; WHO motorcycle safety first aid"
+  },
+  {
+    "id": "vehicle-fire",
+    "title": "Vehicle fire — egress and victim extraction",
+    "body": "1) Modern car fires can become catastrophic in under 2 minutes — evacuate all occupants immediately.\n2) Turn off ignition; do NOT open bonnet/hood if engine is on fire.\n3) If a victim is trapped and fire is advancing: use any available tool to break a side window (corner of window is weakest); pull the victim by the clothing or underarms, supporting the head as best you can.\n4) Once out, move upwind at least 30 meters — fuel tank can explode.\n5) Treat burns with cool running water (NOT ice); call EMS and fire department.",
+    "tags": "vehicle fire car fire extraction burn egress",
+    "source": "Fire safety and vehicle extraction basics"
+  },
+  {
+    "id": "fuel-spill-fire-risk",
+    "title": "Fuel spill at crash scene — fire risk management",
+    "body": "1) A strong fuel smell means ignition risk — turn off all vehicles if safe, prohibit smoking.\n2) Do not operate flares near a fuel spill — use reflective triangles instead.\n3) If fuel is actively pooling under a victim, move the victim upwind before treating injuries.\n4) Call fire department along with EMS for fuel-spill crashes.\n5) Do not use water to wash away petrol/diesel on the road — it spreads the risk.",
+    "tags": "fuel spill petrol diesel fire risk ignition",
+    "source": "Hazmat / emergency vehicle fire safety guidelines"
+  },
+  {
+    "id": "rollover-extraction",
+    "title": "Vehicle rollover — victim extraction",
+    "body": "1) Assume spinal injury in any rollover — the forces involved are severe.\n2) Do not extract a victim from a rolled vehicle unless fire, flooding, or entrapment risk makes remaining inside more dangerous.\n3) If extraction is necessary: keep head, neck, and torso aligned; use multiple helpers; turn the whole body as one unit.\n4) Turn off the ignition; stabilize the vehicle with wheel wedges or rocks to prevent further rolling.\n5) Call EMS and describe the vehicle position — rescue teams have specific protocols for extrication from rolled vehicles.",
+    "tags": "rollover vehicle overturned extraction spine",
+    "source": "PHTLS vehicle rescue fundamentals"
+  },
+  {
+    "id": "night-crash-visibility",
+    "title": "Night crash — scene safety and visibility",
+    "body": "1) At night, the biggest danger at a crash scene is a second collision from oncoming vehicles.\n2) Park your own vehicle behind the crash with hazard lights on; use your headlights to illuminate the scene.\n3) Never stand in a live traffic lane; approach and work from the roadside barrier side.\n4) Signal with a torch/phone light toward oncoming traffic early (200 m minimum on NH highways).\n5) Call police along with EMS — night crashes on national highways need traffic management.",
+    "tags": "night dark highway visibility secondary collision traffic",
+    "source": "Road accident scene safety principles"
+  },
+  {
+    "id": "monsoon-road-crash",
+    "title": "Monsoon / wet road crash — India specific",
+    "body": "1) Wet road crashes frequently involve hydroplaning, sliding into ditches, or flooding — assess scene for ongoing water risk.\n2) If a vehicle is partially submerged: allow pressure to equalize before opening doors; do not open if water is rising rapidly — break a side window only when water inside equals outside level.\n3) Hypothermia risk in monsoon: even 25°C water causes heat loss over time — get victims out and covered.\n4) Electricity hazard: downed power lines + standing water = lethal — do not approach; call fire/electricity board.\n5) Signal visibility is reduced in heavy rain — use phone lights, horn, and try to move scene to a covered location if safe.",
+    "tags": "monsoon flood rain wet road hydroplane waterlogging india",
+    "source": "Monsoon road safety first responder guidance — India context"
+  },
+  {
+    "id": "animal-collision-india",
+    "title": "Animal collision (cattle/buffalo/dog) — India",
+    "body": "1) Very common on Indian roads, especially at night. A cattle collision at speed causes significant vehicle damage and occupant injury.\n2) Do NOT pull a live large animal off the road yourself — they can injure bystanders when panicked.\n3) Turn on hazard lights; place reflective triangles; call local police for animal removal.\n4) Assess vehicle occupants for injuries; a sudden collision even at 40 km/h can cause whiplash, airbag deployment, and TBI.\n5) If an animal is injured and blocking the road, call 108 or local municipality — do not attempt to restrain it.",
+    "tags": "cow buffalo animal collision cattle india highway night",
+    "source": "Indian road hazard patterns — first responder adaptation"
+  },
+  {
+    "id": "mass-casualty-start-triage",
+    "title": "Mass casualty incident — START triage basics",
+    "body": "START triage (Simple Triage And Rapid Treatment) for multiple victims:\nRED (immediate): not breathing after airway opening, or RR >30 or <10, or no radial pulse, or cannot follow simple commands.\nYELLOW (delayed): breathing normal, pulse present, follows commands — serious but can wait.\nGREEN (minor): walking wounded — direct to safe area.\nBLACK (deceased/expectant): no breathing after airway repositioning — do not attempt CPR in mass casualty if resources overwhelmed.\nPriority: Red first, then Yellow, then Green. Call EMS and give total victim count.",
+    "tags": "mass casualty mci triage start multiple victims",
+    "source": "START triage system — public emergency training"
+  },
+  {
+    "id": "good-samaritan-india",
+    "title": "Good Samaritan Law — India (2016 Supreme Court guidelines)",
+    "body": "The Supreme Court of India (2016) and Motor Vehicles Act amendments protect Good Samaritans who help road accident victims:\n1) You cannot be forced to give personal details to police beyond a basic voluntary statement.\n2) You cannot be detained against your will after helping.\n3) You are not liable for any harm that results from good-faith first aid assistance.\n4) You may transport a victim to hospital without waiting for formalities — the hospital MUST provide treatment without delay for police paperwork.\n5) If harassed by police or hospital for helping, you can cite the Savukku Shankar guidelines and MV Act amendments; the Suraksha Mitra app (NHIDCL) provides legal support.",
+    "tags": "good samaritan law india legal protection volunteer bystander",
+    "source": "Supreme Court of India Good Samaritan guidelines 2016; MV Act 2019 amendments"
+  },
+  {
+    "id": "bystander-protection-ppe",
+    "title": "Bystander protection without PPE",
+    "body": "1) Use plastic bags as improvised gloves if available — blood-borne pathogen risk is real even through cuts on your hands.\n2) Avoid mouth-to-mouth if blood is visible around the mouth — compression-only CPR is acceptable per ILCOR guidelines.\n3) Wash hands thoroughly with soap and water after first aid — use hand sanitizer if available.\n4) HIV/Hepatitis B risk from single-exposure contact with intact skin is very low — broken skin or mucous membrane contact warrants medical advice after the emergency.\n5) Report blood exposure to a doctor within 2–4 hours if concerned — post-exposure prophylaxis is time-sensitive.",
+    "tags": "bystander ppe gloves blood-borne infection protection",
+    "source": "ILCOR / WHO blood-borne pathogen guidance for lay rescuers"
+  },
+  {
+    "id": "aed-operation",
+    "title": "AED (defibrillator) — step by step",
+    "body": "1) Turn on the AED and follow voice prompts.\n2) Expose the chest; attach pads as shown on the diagrams — upper right chest, lower left ribs.\n3) Ensure no one is touching the patient while AED analyses rhythm — say 'Stand clear' loudly.\n4) If AED advises shock: press button; ensure everyone is clear first.\n5) Immediately resume CPR after shock (30:2 or compression-only) — do not wait to check pulse. AEDs significantly improve cardiac arrest survival when used within minutes.",
+    "tags": "aed defibrillator cardiac arrest shock pads",
+    "source": "ILCOR/AHA AED lay-rescuer guidelines"
+  },
+  {
+    "id": "avpu-consciousness",
+    "title": "AVPU scale — rapid consciousness assessment",
+    "body": "AVPU is a quick 4-level consciousness check:\nA — Alert: Patient is awake, aware, and responding normally.\nV — Voice: Patient responds only when spoken to (opens eyes, moves, or speaks).\nP — Pain: Patient responds only to pain stimulus (sternal rub, nail bed pressure).\nU — Unresponsive: No response to voice or pain.\nAny patient below 'A' (alert) requires urgent EMS — include AVPU level in your 108/112 call.",
+    "tags": "avpu consciousness alert unresponsive level",
+    "source": "Pre-hospital triage teaching — standard AVPU scale"
+  },
+  {
+    "id": "gcs-simplified",
+    "title": "Glasgow Coma Scale — simplified lay-rescuer version",
+    "body": "GCS measures Eye opening (1-4), Verbal response (1-5), Motor response (1-6). Total 15=normal, <8=severe TBI.\nSimplified field guide:\n- Eyes open spontaneously? +4; to voice? +3; to pain? +2; none? +1\n- Talking normally? +5; confused? +4; only words? +3; only sounds? +2; none? +1\n- Follows commands? +6; purposeful response to pain? +5; withdraws? +4; abnormal flexion? +3; extension? +2; none? +1\nGCS ≤8: severe TBI — urgent airway protection and EMS transport.",
+    "tags": "gcs glasgow coma scale consciousness score tbi",
+    "source": "GCS clinical reference adapted for lay-rescuer use"
+  },
+  {
+    "id": "blood-loss-estimation",
+    "title": "Estimating blood loss at scene",
+    "body": "Rough field guides for blood loss volume:\n- 1 soaked standard dressing: ~50–100 mL\n- Palm-sized pool on road: ~150–200 mL\n- Large shoe-box-sized pool: ~500 mL\nAn average adult has ~5 litres of blood; loss of >1000 mL (1 litre) can be life-threatening.\nField warning signs of significant blood loss: HR >100, pale/clammy skin, restlessness, thirst, decreased alertness.\nDo NOT delay treatment while estimating — the estimate is only useful for EMS handover.",
+    "tags": "blood loss estimation volume hemorrhage assessment",
+    "source": "Trauma nursing / EMS estimation guides"
+  },
+  {
+    "id": "tourniquet-detailed",
+    "title": "Tourniquet application — correct technique",
+    "body": "Indications: life-threatening limb bleeding uncontrolled by direct pressure.\n1) Apply tourniquet 5–7 cm (2–3 fingers) above the wound, NOT over a joint.\n2) Pull the strap tight and secure; then turn the windlass rod until bleeding stops — verify no pulse distal to tourniquet.\n3) Write the time of application on the tourniquet or on the victim's forehead/palm with a marker.\n4) Do NOT loosen or remove once applied — severe pain is expected and does not indicate incorrect placement.\n5) If no commercial tourniquet: fold a strip of cloth 7–10 cm wide, wrap twice around limb, tie with a stick, and twist until bleeding stops.\nNote: Improvised tourniquets are less reliable — upgrade to commercial device when EMS arrives.",
+    "tags": "tourniquet application technique limb bleeding windlass",
+    "source": "Stop the Bleed campaign; TCCC tourniquet guidelines"
+  },
+  {
+    "id": "wound-packing",
+    "title": "Wound packing (junctional / non-limb bleeding)",
+    "body": "For deep wounds where a tourniquet cannot be placed (groin, armpit, neck):\n1) Apply firm direct pressure for 3 full minutes before packing — reduces amount of gauze needed.\n2) Pack the wound: push gauze firmly into the deepest part of the wound using a finger — pack layer by layer.\n3) Apply constant firm pressure over the packed wound for a minimum of 3–5 minutes without releasing.\n4) Wrap or hold in place; do not remove packing — EMS will manage.\n5) Commercial hemostatic gauze (QuikClot, Celox) is preferred but regular gauze is effective when properly packed.",
+    "tags": "wound packing hemostatic gauze junctional bleeding groin armpit",
+    "source": "TCCC / Stop the Bleed junctional hemorrhage control"
+  },
+  {
+    "id": "airway-head-tilt-chin-lift",
+    "title": "Opening the airway — head-tilt chin-lift",
+    "body": "1) Place one hand on the forehead; place the tips of two fingers under the bony part of the chin.\n2) Gently tilt the head back and lift the chin — this pulls the tongue forward and opens the airway.\n3) Look for chest rise, listen and feel for air movement.\n4) If the victim is breathing, maintain this position or place in recovery position.\n5) Caution: DO NOT use head-tilt chin-lift if spinal injury is suspected — use jaw thrust instead.",
+    "tags": "airway head tilt chin lift open obstruction",
+    "source": "BLS / AHA airway management guidelines for lay rescuers"
+  },
+  {
+    "id": "jaw-thrust-spinal",
+    "title": "Jaw thrust (spinal injury suspected)",
+    "body": "1) Use jaw thrust when spinal injury is suspected — it opens the airway without moving the neck.\n2) Kneel above the victim's head; place your hands on each side of the jaw.\n3) Hook your fingertips behind the angles of the jaw; apply upward and forward pressure to push the jaw forward.\n4) Keep the head still and neutral throughout.\n5) This technique is tiring — use only when spinal injury is genuinely suspected and you can maintain it until EMS arrives.",
+    "tags": "jaw thrust spinal airway neutral position",
+    "source": "PHTLS/BLS airway guidelines with spinal precaution"
+  },
+  {
+    "id": "pediatric-cpr",
+    "title": "CPR for children (1–8 years) and infants (<1 year)",
+    "body": "Child (1–8 years): 30 compressions to 2 breaths. Compress with one hand only (or two if large child). Depth: one-third chest diameter. Rate: 100–120/min.\nInfant (<1 year): Use two fingers on centre of chest (just below nipple line) OR encircling technique with two thumbs. Depth: 4 cm. Rate: 100–120/min.\nFor both: open airway gently — less extension than adults. Rescue breaths: just enough to see chest rise — avoid over-inflation.\nAED: use paediatric pads if available; if not, adult pads with lower dose setting.",
+    "tags": "pediatric child infant cpr bls breathe compressions",
+    "source": "ILCOR/AHA/ERC pediatric BLS guidelines"
+  },
+  {
+    "id": "pregnancy-trauma",
+    "title": "Pregnant woman in road crash",
+    "body": "1) After 20 weeks of pregnancy, the uterus compresses the main blood vessels when lying flat — tilt the victim 15–30 degrees to the left (left lateral tilt) when possible, or have a helper pull the uterus to the left while the victim remains on their back.\n2) Fetal wellbeing cannot be assessed in the field — all pregnant trauma victims need hospital evaluation regardless of apparent severity.\n3) Placental abruption (placenta separates from uterus) can occur with no external injury and be life-threatening to both mother and fetus.\n4) CPR for pregnant women: standard rate/depth on a left-tilted surface.\n5) Inform EMS of pregnancy duration so appropriate team is pre-alerted.",
+    "tags": "pregnancy pregnant trauma crash fetal abruption",
+    "source": "MOET / ALSO obstetric trauma guidelines"
+  },
+  {
+    "id": "pulse-manual-check",
+    "title": "Manual pulse check — field technique",
+    "body": "Carotid pulse (adults): place two fingers in the groove between the trachea and neck muscle (either side) — do not compress both sides simultaneously.\nRadial pulse (wrist): two fingers on the inner wrist at the base of the thumb — present if systolic BP is roughly >80 mmHg.\nBrachial pulse (infants): inner upper arm — used in infant assessment.\nIf no pulse is found within 10 seconds: begin CPR. Lay rescuers are encouraged to start CPR if unsure rather than searching for a pulse.\nField normal: 60–100 bpm regular; weak/absent in shock; >120 bpm = tachycardia (likely shock).",
+    "tags": "pulse check carotid radial brachial field assessment",
+    "source": "BLS guidelines — pulse check technique"
+  },
+  {
+    "id": "respiratory-rate-assessment",
+    "title": "Counting respiratory rate in the field",
+    "body": "1) Count breaths for 30 seconds and multiply by 2 (or 60 seconds for irregular breathing).\n2) Normal adult: 12–20 breaths/min. Child: 20–30/min. Infant: 30–40/min.\n3) Danger signs: RR <10 (bradypnoea — brain injury, drug overdose) or RR >25 (tachypnoea — pain, blood loss, chest injury, shock).\n4) Gurgling or stridor (high-pitched noisy breathing) indicates partial airway obstruction — needs immediate airway management.\n5) Agonal gasping (slow, irregular gasping after cardiac arrest) is NOT normal breathing — begin CPR.",
+    "tags": "respiratory rate breathing assessment count field",
+    "source": "Pre-hospital assessment fundamentals"
+  },
+  {
+    "id": "sample-history",
+    "title": "SAMPLE history — what to tell EMS",
+    "body": "Gather this information for EMS handover:\nS — Symptoms: what the victim is experiencing (pain, nausea, shortness of breath)\nA — Allergies: especially to medications\nM — Medications: current regular medications and doses\nP — Past medical history: heart disease, diabetes, epilepsy, anticoagulants\nL — Last oral intake: last food and drink (important for surgical planning)\nE — Events leading to incident: how did the crash/emergency happen?\nHaving this information ready dramatically speeds clinical decision-making in the ER.",
+    "tags": "sample history ems handover medical history",
+    "source": "Pre-hospital assessment standard — SAMPLE mnemonic"
+  },
+  {
+    "id": "opqrst-pain",
+    "title": "OPQRST — pain assessment for EMS relay",
+    "body": "O — Onset: When did the pain start? Sudden or gradual?\nP — Provocation/Palliation: What makes it worse or better? (position, breathing, movement)\nQ — Quality: Describe the pain — sharp, dull, burning, crushing, tearing?\nR — Radiation: Does it spread anywhere? (arm, jaw, back = cardiac; back/flank = aortic)\nS — Severity: Score 1–10\nT — Time: How long has it been present? Is it constant or intermittent?\nRelay this to EMS — a '10/10 tearing pain radiating to the back' after a crash suggests aortic injury.",
+    "tags": "pain assessment opqrst score radiation onset quality",
+    "source": "Pre-hospital assessment mnemonic"
+  },
+  {
+    "id": "hypothermia-trauma-prevention",
+    "title": "Preventing hypothermia in trauma victims",
+    "body": "1) Hypothermia occurs in trauma victims even in warm weather — blood loss causes rapid heat loss.\n2) The 'lethal triad' in trauma: acidosis + coagulopathy + hypothermia each worsen the others.\n3) Field prevention: remove wet clothing; use emergency blankets (space blankets); cover head; protect from ground conduction.\n4) Do not give cold IV fluids if trained to administer them.\n5) Monitor shivering — if it stops in a still-injured patient, hypothermia may be worsening rather than improving.",
+    "tags": "hypothermia trauma prevention warm blanket lethal triad",
+    "source": "Trauma hypothermia prevention protocols"
+  },
+  {
+    "id": "needle-decompression-awareness",
+    "title": "Needle decompression — awareness only",
+    "body": "Needle decompression treats tension pneumothorax. This is a trained medical procedure — do NOT attempt without specific training.\nSite: 2nd intercostal space, mid-clavicular line, above the rib (to avoid neurovascular bundle). A large-bore needle is inserted until air escapes; replaced with a chest seal.\nFor bystanders without training: recognize the signs (see tension-pneumothorax entry), seal any open chest wound with a vented chest seal or improvised vent if trained.",
+    "tags": "needle decompression tension pneumothorax chest procedure awareness",
+    "source": "TCCC / PHTLS clinical reference — for awareness only"
+  },
+  {
+    "id": "open-chest-wound-seal",
+    "title": "Open chest wound (sucking chest wound) — improvised seal",
+    "body": "1) An open chest wound that makes a sucking sound when the victim breathes is a life threat — air is entering the chest through the wound.\n2) Commercial chest seals are ideal — apply over the wound (both inlet and outlet if through-and-through).\n3) Improvised: use a plastic bag or foil packet; tape three sides down to create a flutter valve (allows air out, prevents air in).\n4) If the victim deteriorates after sealing (breathing becomes harder): partially lift the seal to release trapped air — may be developing tension pneumothorax.\n5) Maintain the seal and urgent EMS transport — re-expansion requires hospital-level care.",
+    "tags": "open chest wound sucking seal pneumothorax flutter valve",
+    "source": "TCCC / military first aid — adapted for civilian first responders"
+  },
+  {
+    "id": "log-roll-technique",
+    "title": "Log roll — moving a suspected spinal injury victim",
+    "body": "Use ONLY when movement is absolutely necessary (fire, rising water, unstable vehicle).\n1) Minimum 3 people: one stabilizes the head in neutral position throughout, one controls the torso, one controls the hips/legs.\n2) Head controller calls the commands — everyone moves on the count of three.\n3) Roll the victim as a rigid unit — head, neck, and spine must remain aligned throughout.\n4) Stop and reassess if the victim reports significant pain, numbness, or tingling during the roll.\n5) The head controller does not let go until the victim is completely on the spine board or at the final position.",
+    "tags": "log roll spinal spine injury move technique",
+    "source": "PHTLS spinal motion restriction guidelines"
+  },
+  {
+    "id": "femur-fracture-traction",
+    "title": "Femur (thigh) fracture — field management",
+    "body": "1) Mid-shaft femur fracture can cause 1.5–2 litres of blood loss into the thigh — treat as significant hemorrhage.\n2) Immobilize in whatever position of comfort the limb is in — do not force to straight.\n3) Commercial traction splints (Sager, Kendrick) apply longitudinal traction and dramatically reduce pain and bleeding — trained responders should apply them.\n4) Improvised: pad and bind two long rigid boards (ankle to beyond hip) — bind the hip/thigh/knee/ankle; do not bind across the fracture site.\n5) Check distal pulse, sensation, and movement before and after splinting; urgent EMS transport.",
+    "tags": "femur thigh fracture traction splint blood loss",
+    "source": "PHTLS femur fracture management — first responder"
+  },
+  {
+    "id": "heat-illness-india",
+    "title": "Heat emergency on Indian roads (summer / hot weather)",
+    "body": "1) Indian summer road conditions (April–June) create a 'greenhouse' effect inside stopped vehicles — never leave anyone locked in a car.\n2) Heat stroke (temperature >40°C/104°F, confusion, hot skin, not sweating): COOL IMMEDIATELY — remove from hot environment, remove excess clothing, pour cool water over body, fan vigorously.\n3) Heat cramps (muscle spasms after exertion): stretch, cool, oral hydration with electrolytes.\n4) Heat exhaustion (heavy sweating, dizziness, weakness, cool clammy skin): move to shade, lie down, cool fluids, rest.\n5) Call EMS for heat stroke — victims can deteriorate rapidly without IV cooling.",
+    "tags": "heat stroke india summer road temperature vehicle",
+    "source": "WHO heat-health action plan; India IMD heat wave guidance"
+  },
+  {
+    "id": "alcohol-intoxication-trauma",
+    "title": "Intoxicated crash victim — assessment challenges",
+    "body": "1) Alcohol masks pain and alters consciousness — a 'drunk' victim who was in a crash must be assessed for TBI and internal injuries, not dismissed as merely intoxicated.\n2) Slurred speech, confusion, and incoordination in a crash victim = serious injury until proven otherwise.\n3) Do NOT induce vomiting in an intoxicated victim — aspiration risk is high.\n4) Recovery position is important — airway protection is the priority.\n5) Inform EMS of alcohol involvement — it affects anesthesia, drug interactions, and pain assessment.",
+    "tags": "alcohol drunk intoxicated crash trauma assessment",
+    "source": "Trauma assessment with intoxication — clinical guideline"
+  },
+  {
+    "id": "crush-syndrome-prolonged",
+    "title": "Crush syndrome (prolonged entrapment >1 hour)",
+    "body": "1) Crush syndrome occurs when muscle tissue is compressed for >1 hour; on release, massive amounts of myoglobin and potassium flood the bloodstream.\n2) This causes lethal cardiac arrhythmia and acute kidney failure.\n3) KEY RULE: Do NOT release a crush >1 hour without IV fluid resuscitation already running — this requires ALS paramedics or physician on scene.\n4) While waiting: keep the victim as still as possible; do NOT provide any food or drink; do NOT elevate the crushed limb; give oral fluids only if conscious and not vomiting.\n5) Inform EMS of entrapment duration immediately — it changes their response team composition.",
+    "tags": "crush syndrome entrapment prolonged rhabdomyolysis kidney",
+    "source": "Disaster medicine crush syndrome protocols"
+  },
+  {
+    "id": "golden-hour-importance",
+    "title": "The golden hour — why time matters in trauma",
+    "body": "The 'Golden Hour' is the concept that seriously injured trauma patients have approximately 60 minutes from injury to definitive surgical care before outcomes deteriorate significantly.\nIndia road context: the average time from crash to hospital in rural India is 80–120 minutes. Reducing this gap by 15 minutes can meaningfully improve survival.\nWhat this means for bystanders: every minute of delay matters. Call EMS (108/112) immediately — do not wait to see if the victim improves. Provide your GPS location clearly. Stay on the line. Help load the victim into the ambulance if safe. Do not wait for police if the victim needs immediate transport to hospital.",
+    "tags": "golden hour trauma time hospital india ambulance",
+    "source": "WHO trauma care time-to-treatment guidelines; India-specific delay data"
+  },
+  {
+    "id": "epipen-auto-injector",
+    "title": "Epinephrine auto-injector (EpiPen) — assisted use",
+    "body": "1) Only assist with an auto-injector that has been prescribed to this patient and they cannot administer themselves.\n2) Remove the blue safety cap; place orange tip against outer mid-thigh (can be through clothing).\n3) Press firmly until a click is heard; hold for 10 seconds; massage injection site for 10 seconds.\n4) Call EMS regardless — anaphylaxis may recur 1–8 hours later (biphasic reaction).\n5) Note the time of injection for EMS — a second auto-injector may be given after 5–15 min if no improvement and a second device is available.",
+    "tags": "epipen epinephrine auto-injector anaphylaxis allergy",
+    "source": "WAO / prescribing guidelines — lay-assisted administration"
+  },
+  {
+    "id": "oxygen-administration-basics",
+    "title": "Supplemental oxygen — when and how (for trained responders)",
+    "body": "1) Oxygen is indicated for: respiratory distress, chest pain/suspected MI, altered consciousness, shock, CO poisoning, near-drowning.\n2) High-flow (10–15 L/min via non-rebreather mask): for serious trauma, SpO2 <94%, respiratory distress.\n3) Low-flow (2–4 L/min via nasal cannula): for mild symptoms, COPD history.\n4) Do NOT withhold oxygen in emergencies out of concern for COPD — the risk of hypoxia outweighs theoretical risk in short-term emergency use.\n5) Oxygen cylinders: check gauge before leaving base; store valve-up; never use near fuel or fire.",
+    "tags": "oxygen supplemental non-rebreather mask spo2 respiratory",
+    "source": "Pre-hospital oxygen therapy guidelines — for equipped first responders"
+  },
+  {
+    "id": "spinal-injury-clearing",
+    "title": "When spinal injury precautions can be relaxed (NEXUS-based)",
+    "body": "Spinal precautions can be relaxed for LOW-RISK patients (NEXUS criteria, for trained assessors):\n1) No midline neck/back tenderness\n2) No focal neurological deficit\n3) Normal level of alertness\n4) No intoxication\n5) No distracting painful injury\nIf ALL five criteria are met and the mechanism was low-energy: standard transport may be acceptable.\nIn any doubt — high-energy crash, altered consciousness, intoxication, pain anywhere near spine: FULL precautions. In the field without diagnostic tools, err strongly toward precautions.",
+    "tags": "spinal clearing nexus c-spine precautions low risk",
+    "source": "NEXUS criteria — adapted for trained field assessment"
+  },
+  {
+    "id": "stab-abdominal",
+    "title": "Abdominal stab / penetrating abdominal trauma",
+    "body": "1) Do NOT remove any impaled object from the abdomen.\n2) If abdominal organs are eviscerated (protruding): do not push them back in; cover with a clean damp dressing.\n3) Keep the victim lying still with knees slightly bent to relax abdominal muscles.\n4) Do NOT give food or water — surgery may be required.\n5) Assume internal bleeding regardless of external wound size — abdominal stab wounds are frequently more serious than they appear.",
+    "tags": "abdominal stab penetrating trauma evisceration organs",
+    "source": "Trauma first aid — abdominal wound management"
+  },
+  {
+    "id": "road-rage-scene-security",
+    "title": "Road rage / violent scene — bystander safety first",
+    "body": "1) If a crash scene has active violence or weapon threats: do NOT approach until police have secured the scene.\n2) Call 100 (police) in addition to 108 — describe the threat as well as the injuries.\n3) Your safety matters — an incapacitated bystander cannot help anyone.\n4) From a safe distance, provide information to dispatchers: number of aggressors, vehicle descriptions, direction of travel.\n5) In India, under Section 134 of the Motor Vehicles Act, drivers involved in accidents are legally obligated to provide assistance — but this does not require you to endanger yourself.",
+    "tags": "road rage violence scene security safety police bystander",
+    "source": "Emergency scene safety protocols"
+  },
+  {
+    "id": "snakebite-road-adjacent",
+    "title": "Snakebite (road/roadside — India)",
+    "body": "1) In India, snakebite is a significant rural emergency; it can occur near road edges, especially after rain.\n2) Do NOT cut, suck, or apply tourniquet — these worsen outcomes.\n3) Keep the victim calm and still — activity spreads venom faster.\n4) Immobilize the bitten limb at or below heart level using an improvised splint.\n5) Call 108 immediately and describe the snake if safe to observe. Anti-snake venom (ASV) is the only effective treatment and is widely stocked in Indian government hospitals.",
+    "tags": "snakebite venom india roadside rural emergency",
+    "source": "WHO snakebite management guidelines; India NTEP guidance"
+  },
+  {
+    "id": "asthma-attack-road",
+    "title": "Severe asthma attack — roadside first aid",
+    "body": "1) Sit the person upright and leaning forward — this is the position of best airway function.\n2) Assist with their prescribed inhaler: shake, one puff into a spacer or directly into mouth, inhale slowly, hold 10 seconds — repeat up to 10 puffs if severe.\n3) If no improvement after 10 puffs or victim cannot speak in full sentences: call EMS immediately.\n4) Do not lay the person flat — it worsens airflow.\n5) Silent chest (no wheeze despite obvious breathing effort) is an ominous sign — silent chest in asthma = near-fatal attack; EMS priority.",
+    "tags": "asthma attack inhaler wheeze breathing road",
+    "source": "British Thoracic Society / GINA acute asthma guidelines — lay version"
+  },
+  {
+    "id": "puncture-tire-roadside",
+    "title": "Roadside mechanical — safety first (non-medical)",
+    "body": "1) Pull fully off the travel lane; hazard lights on; reflective vest if available.\n2) Use wheel wedges; work on flat, stable ground — not in live traffic.\n3) Call police/road assistance on high-speed corridors if unsafe to change a wheel yourself.\n4) For medical needs (injury after crash), revert to EMS and trauma first-aid topics.\n5) Never work under a vehicle supported only by a jack.",
+    "tags": "puncture flat tire mechanic roadside safety towing",
+    "source": "General road-safety guidance; align with NH / state highway rules"
+  },
+  {
+    "id": "muscle-tear-strain",
+    "title": "Muscle tear / strain",
+    "body": "1) Rest: stop the activity that caused the injury.\n2) Ice: apply cold packs for 15-20 minutes every few hours (not directly on skin).\n3) Compression: use an elastic bandage to reduce swelling.\n4) Elevation: keep the injured limb raised above heart level.\n5) Seek medical advice if pain is severe, you cannot move the limb, or there is significant deformity.",
+    "tags": "muscle tear strain pull cramp sports injury",
+    "source": "General orthopedic first aid"
+  },
+  {
+    "id": "bruises-contusions",
+    "title": "Bruises (Contusions)",
+    "body": "1) Apply a cold compress or ice pack (wrapped in a towel) for 15 minutes to reduce swelling and pain.\n2) Elevate the bruised area if possible.\n3) Rest the affected part.\n4) If the bruise is very large, extremely painful, or follows a severe impact, seek medical evaluation for underlying fracture or internal injury.\n5) Do not 'massage' the bruise, as this can worsen tissue damage.",
+    "tags": "bruise contusion swelling impact black and blue",
+    "source": "Standard first aid guidance"
+  },
+  {
+    "id": "sprains-joint",
+    "title": "Sprains (Ankle, Wrist, etc.)",
+    "body": "1) Follow R.I.C.E: Rest, Ice, Compression, Elevation.\n2) Use a brace or bandage to stabilize the joint — do not wrap so tight that it cuts off circulation.\n3) Avoid putting weight on the injured joint.\n4) Seek medical care if you hear a 'pop' at the time of injury, cannot bear weight at all, or if the joint feels unstable.\n5) X-rays may be needed to rule out fractures.",
+    "tags": "sprain joint ankle wrist twist ligament",
+    "source": "Orthopedic first aid consensus"
+  },
+  {
+    "id": "dislocation-joint",
+    "title": "Joint Dislocation",
+    "body": "1) Do NOT attempt to 'pop' the joint back in — this can cause nerve or vessel damage.\n2) Immobilize the joint in the position it was found using a sling or splint.\n3) Apply ice packs to the area to reduce swelling and pain.\n4) Seek emergency medical care immediately for professional reduction.\n5) Check for pulse and sensation beyond the joint — if absent, this is a critical emergency.",
+    "tags": "dislocation joint shoulder elbow finger deformity",
+    "source": "Emergency medicine protocols"
+  }
+]

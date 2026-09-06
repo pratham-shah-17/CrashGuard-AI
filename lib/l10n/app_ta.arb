@@ -1,0 +1,21 @@
+{
+  "@@locale": "ta",
+  "sosButton": "எச்சரிக்கை",
+  "secondsLabel": "விநாடிகள்",
+  "sosDispatchWarning": "இன்னும் எதுவும் அனுப்பப்படவில்லை — தவறு என்றால் கீழே ரத்து செய்க.",
+  "sosIdleTools": "மேலும்",
+  "sosIdleToolsTitle": "அவசர கருவிகள் & நிலை",
+  "sosButtonSub": "அவசரத்தைத் தொடங்க அழுத்தவும்",
+  "cancelSos": "ரத்து",
+  "orchestratorAcquiringLocation": "இடம் கிடைக்கிறது…",
+  "orchestratorAiBrief": "மேகக் கணினி நிலை மதிப்பீடு…",
+  "orchestratorDispatching": "அனைத்து சேனல்களிலும் அனுப்புகிறது…",
+  "orchestratorSosLive": "SOS செயலில்",
+  "triageResultTitle": "AI மதிப்பீடு",
+  "triageDegradedTitle": "AI (இணைப்பில்லை)",
+  "firstAidGuidance": "முதலுதவி",
+  "settingsLanguage": "மொழி",
+  "settingsLanguageSubtitle": "இடைமுகம் மற்றும் குரல்",
+  "incidentVoiceHint": "என்ன காண்கிறீர்கள் என்று சொல்லுங்கள்…",
+  "thinkingOffline": "இணைப்பில்லா விதிகள்."
+}

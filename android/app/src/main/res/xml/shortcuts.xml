@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Long-press the RoadSOS launcher icon to get instant access.
+         The SOS shortcut opens the app directly to the panic screen
+         (the big red button) so the user can trigger with one more tap. -->
+    <shortcut
+        android:shortcutId="emergency_sos"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_sos_short"
+        android:shortcutLongLabel="@string/shortcut_sos_long"
+        android:shortcutDisabledMessage="@string/shortcut_sos_disabled">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass=".MainActivity"
+            android:targetPackage="${applicationId}" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <!-- Safe Walk shortcut — starts the app and opens the safe-walk dialog. -->
+    <shortcut
+        android:shortcutId="safe_walk"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/shortcut_safewalk_short"
+        android:shortcutLongLabel="@string/shortcut_safewalk_long"
+        android:shortcutDisabledMessage="@string/shortcut_safewalk_disabled">
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass=".MainActivity"
+            android:targetPackage="${applicationId}" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+</shortcuts>

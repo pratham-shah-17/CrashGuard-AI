@@ -1,0 +1,37 @@
+---
+description: RoadSOS Flutter — emergency dispatch, orchestration, sensors, AI triage, maps, BLE (from master rulebook Phase 4).
+globs: lib/**/*.dart
+alwaysApply: false
+---
+
+# RoadSOS — `lib/` emergency and app rules
+
+Use with **`docs/DEVELOPMENT_RULEBOOK.md`**. Highlights for Dart code:
+
+## Dispatch and orchestration `[CRITICAL]`
+
+- Life-safety path: **blocking / await** outcomes — no fire-and-forget where user safety depends on knowing success or failure.
+- Dispatch channels (SMS, BLE, cloud): fire **in parallel**; each channel returns **explicit success/failure** (typed results, never assumed success).
+- Anonymous Supabase sign-in before sync init; **USSD `tel:`** last resort for India emergency numbers; parallel dispatch per rulebook.
+- SOS UX: countdown **cancellable** with **≥88×88 dp** control; no optimistic “success” UI until confirmed.
+
+## Services
+
+- Single responsibility per service; orchestrator does not parse GPS; expose **`isReady()` / `healthCheck()`**; surface errors as **typed `Result`s**, not uncaught throws.
+- Offline path and queue/retry behavior must remain testable without hardware where possible.
+
+## Crash detection
+
+- Use **`userAccelerometerEventStream()`** (not deprecated stream API); debounce (~50 ms); isolate for heavy work; three-stage gate per rulebook.
+
+## AI triage `[AI/ML]`
+
+- Structured typed output only; tiers with timeouts (3 s / 6 s); heuristic tier works **offline**; never present as medical advice — India disclaimer string per rulebook.
+
+## UI / localization `[INDIA]`
+
+- Strings via **ARB**; large SOS control; honest dispatch log; replace **`.withOpacity()`** with **`.withValues(alpha:)`**.
+
+## Logging
+
+- No **`print()`** — use a logger stripped or gated in release; never log raw GPS or medical fields (Phase 5).

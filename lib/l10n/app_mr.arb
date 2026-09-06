@@ -1,0 +1,21 @@
+{
+  "@@locale": "mr",
+  "sosButton": "आपत्कालीन",
+  "secondsLabel": "सेकंद",
+  "sosDispatchWarning": "अद्याप काहीही पाठवले नाही — चूक असेल तर आता रद्द करा.",
+  "sosIdleTools": "अजून",
+  "sosIdleToolsTitle": "आणीबाणी उपकरणे आणि स्थिती",
+  "sosButtonSub": "आणीबाणी सुरू करण्यासाठी दाबा",
+  "cancelSos": "रद्द",
+  "orchestratorAcquiringLocation": "स्थान मिळवत आहे…",
+  "orchestratorAiBrief": "क्लाउड AI परिस्थिती तपासत आहे…",
+  "orchestratorDispatching": "सर्व चॅनेलवर पाठवत आहे…",
+  "orchestratorSosLive": "SOS सक्रिय",
+  "triageResultTitle": "AI ट्रायज परिणाम",
+  "triageDegradedTitle": "AI (ऑफलाइन)",
+  "firstAidGuidance": "प्रथमोपचार",
+  "settingsLanguage": "भाषा",
+  "settingsLanguageSubtitle": "इंटरफेस आणि आवाज",
+  "incidentVoiceHint": "जे दिसते ते सांगा…",
+  "thinkingOffline": "ऑफलाइन नियम."
+}

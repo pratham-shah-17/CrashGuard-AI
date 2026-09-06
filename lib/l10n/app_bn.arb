@@ -1,0 +1,21 @@
+{
+  "@@locale": "bn",
+  "sosButton": "জরুরি",
+  "secondsLabel": "সেকেন্ড",
+  "sosDispatchWarning": "এখনো কিছু পাঠানো হয়নি। ভুল হলে নিচে বাতিল করুন।",
+  "sosIdleTools": "আরও",
+  "sosIdleToolsTitle": "জরুরি সরঞ্জাম ও অবস্থা",
+  "sosButtonSub": "জরুরি শুরু করতে চাপুন",
+  "cancelSos": "বাতিল",
+  "orchestratorAcquiringLocation": "অবস্থান নেওয়া হচ্ছে…",
+  "orchestratorAiBrief": "ক্লাউড AI পরিস্থিতি যাচাই করছে…",
+  "orchestratorDispatching": "সব চ্যানেলে পাঠানো হচ্ছে…",
+  "orchestratorSosLive": "SOS সক্রিয়",
+  "triageResultTitle": "AI ট্রায়েজ ফল",
+  "triageDegradedTitle": "AI (অফলাইন)",
+  "firstAidGuidance": "প্রাথমিক চিকিৎসা",
+  "settingsLanguage": "ভাষা",
+  "settingsLanguageSubtitle": "ইন্টারফেস ও ভয়েস",
+  "incidentVoiceHint": "যা দেখছেন বলুন…",
+  "thinkingOffline": "অফলাইন নিয়ম।"
+}

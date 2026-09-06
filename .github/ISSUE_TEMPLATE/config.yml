@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/pratham-shah-17/CrashGuard-AI/security/policy
+    about: Please report vulnerabilities privately per SECURITY.md — do not open a public issue.
+  - name: Discussions
+    url: https://github.com/pratham-shah-17/CrashGuard-AI/discussions
+    about: Ask questions, share ideas, or get help from the community.

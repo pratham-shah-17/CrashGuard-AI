@@ -1,0 +1,7 @@
+# Core Infrastructure
+*       @pratham-shah-17
+
+# Specialized Modules
+/lib/services/ai_triage_service.dart      @pratham-shah-17
+/lib/services/mesh_network_service.dart   @pratham-shah-17
+/lib/database/                            @pratham-shah-17

@@ -1,0 +1,102 @@
+{
+  "version": 1,
+  "source_note": "Illustrative records for development. Replace with full NHM / Ayushman Bharat open-data merge (data.gov.in) using tool/merge_gov_facilities.md",
+  "facilities": [
+    {
+      "id": "nhm_UP_UN_0001",
+      "name": "PHC — Unnao (rural block, seed)",
+      "type": "primary_health_centre",
+      "latitude": 26.58,
+      "longitude": 80.42,
+      "contact_number": null,
+      "capabilities": "NHM facility registry (pre-seed)",
+      "data_source": "gov_nhm",
+      "state_code": "UP",
+      "district": "Unnao"
+    },
+    {
+      "id": "nhm_UP_UN_0002",
+      "name": "CHC — Unnao district (seed)",
+      "type": "hospital",
+      "latitude": 26.55,
+      "longitude": 80.50,
+      "contact_number": null,
+      "capabilities": "NHM CHC (pre-seed)",
+      "data_source": "gov_nhm",
+      "state_code": "UP",
+      "district": "Unnao"
+    },
+    {
+      "id": "ab_pmjay_MH_NA_0001",
+      "name": "Empanelled hospital — Nagpur Rural (Ayushman seed)",
+      "type": "hospital",
+      "latitude": 21.09,
+      "longitude": 79.09,
+      "contact_number": null,
+      "capabilities": "Ayushman Bharat PM-JAY list (pre-seed)",
+      "data_source": "gov_ayushman",
+      "state_code": "MH",
+      "district": "Nagpur"
+    },
+    {
+      "id": "ab_pmjay_MH_WD_0001",
+      "name": "Empanelled hospital — Wardha (Vidarbha seed)",
+      "type": "hospital",
+      "latitude": 20.74,
+      "longitude": 78.60,
+      "contact_number": null,
+      "capabilities": "Ayushman Bharat PM-JAY list (pre-seed)",
+      "data_source": "gov_ayushman",
+      "state_code": "MH",
+      "district": "Wardha"
+    },
+    {
+      "id": "ab_pmjay_MH_YVT_0001",
+      "name": "Empanelled hospital — Yavatmal (Vidarbha seed)",
+      "type": "hospital",
+      "latitude": 20.40,
+      "longitude": 78.13,
+      "contact_number": null,
+      "capabilities": "Ayushman Bharat PM-JAY list (pre-seed)",
+      "data_source": "gov_ayushman",
+      "state_code": "MH",
+      "district": "Yavatmal"
+    },
+    {
+      "id": "nhm_MH_NA_0001",
+      "name": "District Hospital — Nagpur (NHM seed)",
+      "type": "hospital",
+      "latitude": 21.146,
+      "longitude": 79.088,
+      "contact_number": null,
+      "capabilities": "NHM / public health facility (pre-seed)",
+      "data_source": "gov_nhm",
+      "state_code": "MH",
+      "district": "Nagpur"
+    },
+    {
+      "id": "nhm_BR_PT_0001",
+      "name": "PHC — Patna district (seed)",
+      "type": "primary_health_centre",
+      "latitude": 25.59,
+      "longitude": 85.14,
+      "contact_number": null,
+      "capabilities": "NHM facility registry (pre-seed)",
+      "data_source": "gov_nhm",
+      "state_code": "BR",
+      "district": "Patna"
+    },
+    {
+      "id": "nhm_KA_BLR_R_0001",
+      "name": "Primary care — Bengaluru Rural (seed)",
+      "type": "primary_health_centre",
+      "latitude": 13.20,
+      "longitude": 77.38,
+      "contact_number": null,
+      "capabilities": "NHM facility registry (pre-seed)",
+      "data_source": "gov_nhm",
+      "state_code": "KA",
+      "district": "Bengaluru Rural"
+    }
+  ]
+}

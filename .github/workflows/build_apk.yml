@@ -1,0 +1,225 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type (release = optimised ~35 MB/ABI, debug = dev only ~200 MB)'
+        required: false
+        default: 'release'
+        type: choice
+        options: [release, debug]
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  FLUTTER_VERSION: 'stable'
+  JAVA_VERSION: '17'
+
+jobs:
+  build:
+    name: Build APK (${{ github.event.inputs.build_type || 'release' }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    env:
+      # workflow_dispatch can request debug; push/PR default to release.
+      BUILD_TYPE: ${{ github.event.inputs.build_type || 'release' }}
+
+    steps:
+      # ── Checkout ────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Java ────────────────────────────────────────────────────────────────
+      - name: Set up Java ${{ env.JAVA_VERSION }}
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      # ── Flutter ─────────────────────────────────────────────────────────────
+      - name: Set up Flutter ${{ env.FLUTTER_VERSION }}
+        uses: subosito/flutter-action@v2
+        with:
+                    channel: stable
+          cache: true
+          cache-key: flutter-${{ env.FLUTTER_VERSION }}
+
+      # ── Pub cache ───────────────────────────────────────────────────────────
+      - name: Cache pub packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.pub-cache
+          key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+          restore-keys: pub-${{ runner.os }}-
+
+      # ── Gradle cache ────────────────────────────────────────────────────────
+      - name: Cache Gradle
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            android/.gradle
+          key: gradle-${{ runner.os }}-${{ hashFiles('android/gradle/wrapper/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      # ── Dependencies ────────────────────────────────────────────────────────
+      - name: Install Flutter dependencies
+        run: flutter pub get
+
+      # ── Release build (default) ─────────────────────────────────────────────
+      # --split-per-abi: produces 3 APKs (~30-45 MB each) instead of one fat
+      #                  universal APK (~90 MB).  arm64-v8a covers >95% of
+      #                  modern Android phones in India.
+      # --obfuscate + --split-debug-info: strips Dart identifiers from the APK
+      #                  and stores symbol maps as a separate CI artifact.
+      # R8/minification is enabled in android/app/build.gradle.kts for release.
+      - name: Build Release APK (split per ABI)
+        if: ${{ env.BUILD_TYPE != 'debug' }}
+        run: |
+          flutter build apk --release \
+            --split-per-abi \
+            --obfuscate \
+            --split-debug-info=build/debug-info \
+            --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
+            --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" \
+            --dart-define=POWERSYNC_URL="${{ secrets.POWERSYNC_URL }}" \
+            --dart-define=SMS_DISPATCH_URL="${{ secrets.SMS_DISPATCH_URL }}" \
+            --dart-define=SMS_DISPATCH_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}"
+
+      # ── Debug build (explicit opt-in only) ──────────────────────────────────
+      # Debug APKs are large (~180-200 MB) and include the Dart Observatory
+      # server.  Only use for local device debugging, never for distribution.
+      - name: Build Debug APK
+        if: ${{ env.BUILD_TYPE == 'debug' }}
+        run: |
+          flutter build apk --debug \
+            --dart-define=SUPABASE_URL="${{ secrets.SUPABASE_URL }}" \
+            --dart-define=SUPABASE_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}" \
+            --dart-define=POWERSYNC_URL="${{ secrets.POWERSYNC_URL }}" \
+            --dart-define=SMS_DISPATCH_URL="${{ secrets.SMS_DISPATCH_URL }}" \
+            --dart-define=SMS_DISPATCH_ANON_KEY="${{ secrets.SUPABASE_ANON_KEY }}"
+
+      # ── Rename release APKs ─────────────────────────────────────────────────
+      - name: Rename release APKs
+        if: ${{ env.BUILD_TYPE != 'debug' }}
+        run: |
+          SHORT_SHA="${{ github.sha }}"
+          SHORT_SHA="${SHORT_SHA:0:7}"
+          APK_DIR="build/app/outputs/flutter-apk"
+          ls -la "$APK_DIR" || true
+          for ABI in arm64-v8a armeabi-v7a x86_64; do
+            SRC="$APK_DIR/app-${ABI}-release.apk"
+            if [ -f "$SRC" ]; then
+              mv "$SRC" "$APK_DIR/crashguard-release-${ABI}-${SHORT_SHA}.apk"
+              echo "  ✅ renamed ${ABI} APK"
+            fi
+          done
+          # Resolve the arm64 artifact robustly (Flutter output names can change).
+          ARM64="$(ls -1 "$APK_DIR"/crashguard-release-arm64-v8a-"$SHORT_SHA".apk 2>/dev/null || true)"
+          if [ -z "$ARM64" ]; then
+            ARM64="$(ls -1 "$APK_DIR"/*arm64*release*.apk 2>/dev/null | head -n 1 || true)"
+          fi
+          if [ -z "$ARM64" ]; then
+            echo "❌ arm64 release APK not found in $APK_DIR" >&2
+            ls -la "$APK_DIR" || true
+            exit 1
+          fi
+          echo "APK_ARM64=$ARM64" >> "$GITHUB_ENV"
+          echo "APK_DIR=$APK_DIR" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${SHORT_SHA}" >> "$GITHUB_ENV"
+
+      # ── Rename debug APK ────────────────────────────────────────────────────
+      - name: Rename debug APK
+        if: ${{ env.BUILD_TYPE == 'debug' }}
+        run: |
+          SHORT_SHA="${{ github.sha }}"
+          SHORT_SHA="${SHORT_SHA:0:7}"
+          SRC="build/app/outputs/flutter-apk/app-debug.apk"
+          DEST="build/app/outputs/flutter-apk/crashguard-debug-${SHORT_SHA}.apk"
+          mv "$SRC" "$DEST"
+          echo "APK_DEBUG=$DEST" >> "$GITHUB_ENV"
+          echo "SHORT_SHA=${SHORT_SHA}" >> "$GITHUB_ENV"
+
+      # ── Upload release: arm64 APK (recommended for install) ─────────────────
+      - name: Upload arm64-v8a APK (recommended)
+        if: ${{ env.BUILD_TYPE != 'debug' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: crashguard-release-arm64-v8a-${{ env.SHORT_SHA }}
+          path: ${{ env.APK_ARM64 }}
+          retention-days: 30
+
+      # ── Upload release: all split APKs in one zip ────────────────────────────
+      - name: Upload all split APKs
+        if: ${{ env.BUILD_TYPE != 'debug' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: crashguard-release-all-abis-${{ env.SHORT_SHA }}
+          path: ${{ env.APK_DIR }}/crashguard-release-*.apk
+          retention-days: 30
+
+      # ── Upload debug symbol maps (for crash symbolication) ───────────────────
+      - name: Upload debug symbols
+        if: ${{ env.BUILD_TYPE != 'debug' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: crashguard-debug-symbols-${{ env.SHORT_SHA }}
+          path: build/debug-info/
+          retention-days: 90
+
+      # ── Upload debug APK ─────────────────────────────────────────────────────
+      - name: Upload debug APK
+        if: ${{ env.BUILD_TYPE == 'debug' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: crashguard-debug-${{ env.SHORT_SHA }}
+          path: ${{ env.APK_DEBUG }}
+          retention-days: 7
+
+      # ── Job summary ──────────────────────────────────────────────────────────
+      - name: Write job summary
+        run: |
+          BUILD="${{ github.event.inputs.build_type || 'release' }}"
+          echo "## CrashGuard AI APK Build ✅" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|---|---|" >> $GITHUB_STEP_SUMMARY
+          echo "| Build type | \`${BUILD}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Commit | \`${{ github.sha }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Branch | \`${{ github.ref_name }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Flutter | ${{ env.FLUTTER_VERSION }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "$BUILD" = "release" ]; then
+            echo "### 📱 Install on Android (recommended: arm64-v8a)" >> $GITHUB_STEP_SUMMARY
+            echo "1. Download **crashguard-release-arm64-v8a-\`${{ env.SHORT_SHA }}\`.apk** from Artifacts" >> $GITHUB_STEP_SUMMARY
+            echo "2. **Settings → Security → Install unknown apps** → allow Files/browser" >> $GITHUB_STEP_SUMMARY
+            echo "3. Open downloaded APK → tap **Install**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "> ℹ️ arm64-v8a covers >95% of Android phones made after 2016." >> $GITHUB_STEP_SUMMARY
+            echo "> Use armeabi-v7a only for very old 32-bit devices." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ⚠️ Debug build — for development only" >> $GITHUB_STEP_SUMMARY
+            echo "Debug APKs are large (~180 MB) and include debug tooling." >> $GITHUB_STEP_SUMMARY
+            echo "Use release builds for distribution." >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Add secrets for full functionality" >> $GITHUB_STEP_SUMMARY
+          echo "Go to **Settings → Secrets → Actions** and add:" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SUPABASE_URL\` — your Supabase project URL" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SUPABASE_ANON_KEY\` — your Supabase anon/public key" >> $GITHUB_STEP_SUMMARY
+          echo "- \`POWERSYNC_URL\` — PowerSync instance URL (optional)" >> $GITHUB_STEP_SUMMARY
+          echo "- \`SMS_DISPATCH_URL\` — SMS relay endpoint (optional)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "> The app works without secrets — cloud triage and family tracking degrade to offline mode." >> $GITHUB_STEP_SUMMARY

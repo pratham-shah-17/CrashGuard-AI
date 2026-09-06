@@ -1,0 +1,19 @@
+{
+  "$schema": "https://cursor.sh/schemas/environment.json",
+  "_comment": [
+    "Cursor cloud-agent environment for RoadSOS.",
+    "`install` runs once when the agent VM is built/snapshotted and bakes:",
+    "  - OpenJDK 17",
+    "  - Android SDK (platform-tools, platforms;android-34 + android-36,",
+    "    build-tools;34.0.0 + 36.0.0, ndk;26.1.10909125, cmake;3.22.1) at",
+    "    /opt/android-sdk",
+    "  - Linux desktop deps (ninja-build, libgtk-3-dev, mesa-utils)",
+    "  - Supabase CLI (binary release; `npm i -g supabase` is not supported)",
+    "After snapshotting, future agents start with `flutter doctor` green and",
+    "can run `flutter build apk --debug` without re-installing anything.",
+    "See .cursor/setup.sh for the actual implementation."
+  ],
+  "install": "bash .cursor/setup.sh",
+  "start": "",
+  "terminals": []
+}

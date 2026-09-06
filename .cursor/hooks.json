@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "hooks": {
+    "beforeShellExecution": [
+      {
+        "type": "prompt",
+        "prompt": "RoadSOS rulebook (Phase 3 — Environment): staging or committing `.env` or bypassing hooks can expose secrets. Confirm `.env` is gitignored, only `.env.example` is committed, and no real keys are in the command. Command: $ARGUMENTS",
+        "matcher": "git\\s+add\\b.*\\\\.env(?!\\.example)|git\\s+commit\\s+.*--no-verify",
+        "timeout": 20
+      }
+    ]
+  }
+}

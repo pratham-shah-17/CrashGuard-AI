@@ -1,0 +1,351 @@
+{
+  "nodes": [
+    {
+      "id": "flutter_app",
+      "label": "CrashGuard AI",
+      "type": "client"
+    },
+    {
+      "id": "env_supabase_url",
+      "label": "SUPABASE_URL",
+      "type": "config"
+    },
+    {
+      "id": "env_supabase_anon_key",
+      "label": "SUPABASE_ANON_KEY",
+      "type": "config"
+    },
+    {
+      "id": "env_powersync_url",
+      "label": "POWERSYNC_URL",
+      "type": "config"
+    },
+    {
+      "id": "edge_sync-osm-facilities",
+      "label": "Function: sync-osm-facilities",
+      "type": "backend"
+    },
+    {
+      "id": "edge_triage-gemini",
+      "label": "Function: triage-gemini",
+      "type": "backend"
+    },
+    {
+      "id": "edge_gemini-generate",
+      "label": "Function: gemini-generate",
+      "type": "backend"
+    },
+    {
+      "id": "edge_sms-dispatch",
+      "label": "Function: sms-dispatch",
+      "type": "backend"
+    },
+    {
+      "id": "edge_family-track",
+      "label": "Function: family-track",
+      "type": "backend"
+    },
+    {
+      "id": "module_services",
+      "label": "Library: services",
+      "type": "module"
+    },
+    {
+      "id": "file_first_aid_repository",
+      "label": "first_aid_repository",
+      "type": "file"
+    },
+    {
+      "id": "file_roadsos_assistant_service",
+      "label": "roadsos_assistant_service",
+      "type": "file"
+    },
+    {
+      "id": "file_wake_lock_service",
+      "label": "wake_lock_service",
+      "type": "file"
+    },
+    {
+      "id": "file_safe_walk_notification_service",
+      "label": "safe_walk_notification_service",
+      "type": "file"
+    },
+    {
+      "id": "file_emergency_sms_dispatch_service",
+      "label": "emergency_sms_dispatch_service",
+      "type": "file"
+    },
+    {
+      "id": "module_ui",
+      "label": "Library: ui",
+      "type": "module"
+    },
+    {
+      "id": "file_profile_editor_screen",
+      "label": "profile_editor_screen",
+      "type": "file"
+    },
+    {
+      "id": "file_dashboard",
+      "label": "dashboard",
+      "type": "file"
+    },
+    {
+      "id": "file_map_widget",
+      "label": "map_widget",
+      "type": "file"
+    },
+    {
+      "id": "file_safe_walk_overlay",
+      "label": "safe_walk_overlay",
+      "type": "file"
+    },
+    {
+      "id": "file_privacy_policy_screen",
+      "label": "privacy_policy_screen",
+      "type": "file"
+    },
+    {
+      "id": "module_models",
+      "label": "Library: models",
+      "type": "module"
+    },
+    {
+      "id": "file_dispatch_channel_status",
+      "label": "dispatch_channel_status",
+      "type": "file"
+    },
+    {
+      "id": "file_sos_activity_record",
+      "label": "sos_activity_record",
+      "type": "file"
+    },
+    {
+      "id": "file_facility",
+      "label": "facility",
+      "type": "file"
+    },
+    {
+      "id": "dep_flutter",
+      "label": "Pkg: flutter",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_flutter_localizations",
+      "label": "Pkg: flutter_localizations",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_intl",
+      "label": "Pkg: intl",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_path",
+      "label": "Pkg: path",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_flutter_markdown",
+      "label": "Pkg: flutter_markdown",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_cupertino_icons",
+      "label": "Pkg: cupertino_icons",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_google_fonts",
+      "label": "Pkg: google_fonts",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_supabase_flutter",
+      "label": "Pkg: supabase_flutter",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_powersync",
+      "label": "Pkg: powersync",
+      "type": "dependency"
+    },
+    {
+      "id": "dep_sqlite3_flutter_libs",
+      "label": "Pkg: sqlite3_flutter_libs",
+      "type": "dependency"
+    }
+  ],
+  "edges": [
+    {
+      "source": "flutter_app",
+      "target": "env_supabase_url",
+      "relation": "requires env var"
+    },
+    {
+      "source": "flutter_app",
+      "target": "env_supabase_anon_key",
+      "relation": "requires env var"
+    },
+    {
+      "source": "flutter_app",
+      "target": "env_powersync_url",
+      "relation": "requires env var"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_sync-osm-facilities",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_triage-gemini",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_gemini-generate",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_sms-dispatch",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_family-track",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "module_services",
+      "relation": "contains"
+    },
+    {
+      "source": "module_services",
+      "target": "file_first_aid_repository",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_roadsos_assistant_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_wake_lock_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_safe_walk_notification_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_emergency_sms_dispatch_service",
+      "relation": "implements"
+    },
+    {
+      "source": "flutter_app",
+      "target": "module_ui",
+      "relation": "contains"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_profile_editor_screen",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_dashboard",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_map_widget",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_safe_walk_overlay",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_privacy_policy_screen",
+      "relation": "implements"
+    },
+    {
+      "source": "flutter_app",
+      "target": "module_models",
+      "relation": "contains"
+    },
+    {
+      "source": "module_models",
+      "target": "file_dispatch_channel_status",
+      "relation": "implements"
+    },
+    {
+      "source": "module_models",
+      "target": "file_sos_activity_record",
+      "relation": "implements"
+    },
+    {
+      "source": "module_models",
+      "target": "file_facility",
+      "relation": "implements"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_flutter",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_flutter_localizations",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_intl",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_path",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_flutter_markdown",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_cupertino_icons",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_google_fonts",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_supabase_flutter",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_powersync",
+      "relation": "depends on"
+    },
+    {
+      "source": "flutter_app",
+      "target": "dep_sqlite3_flutter_libs",
+      "relation": "depends on"
+    }
+  ]
+}

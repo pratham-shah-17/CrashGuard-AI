@@ -1,0 +1,22 @@
+---
+description: RoadSOS master rulebook — phase order, CRITICAL checks, pointer to canonical checklist in docs/.
+alwaysApply: true
+---
+
+# RoadSOS Master Development Rulebook
+
+The canonical checklist is **`docs/DEVELOPMENT_RULEBOOK.md`** (200+ rules, 9 phases). Follow phases in the **priority order** in that file’s “Quick reference — priority order” section (Security and Planning before implementation).
+
+## Definitions
+
+- **`[CRITICAL]`**: Ignoring this risks failure, legal liability, or harm to life — must be verified for any touched code path in review.
+- Use tags `[COLLAB]`, `[INDIA]`, `[AI/ML]`, `[SECURITY]` as filters when scoping work and reviews.
+
+## Agent / review behavior
+
+1. Before new features: confirm **Phase 1** (unconscious-user test, MVP SOS, failure modes, Real vs Simulated) and **Phase 5** when data or auth is involved.
+2. On every PR: for each file changed, skim **all `[CRITICAL]` items** that apply to that area (dispatch, orchestrator, AI triage, BLE, maps, secrets).
+3. Never ship **Simulated** behavior as **Real**; document honest feature status (README / internal table per rulebook Phase 8).
+4. Prefer small, reviewable PRs and Conventional Commits per Phase 8; two reviewers for `EmergencyOrchestrator` changes.
+
+When in doubt, open the `docs/` checklist and quote the relevant phase and tag in the PR or commit message context.

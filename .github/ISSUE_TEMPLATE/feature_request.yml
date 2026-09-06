@@ -1,0 +1,30 @@
+name: Feature request
+description: Suggest an idea or improvement for CrashGuard AI
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping shape CrashGuard AI! Please check open issues/PRs first to avoid duplicates.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Who is affected, and what is the real-world scenario?
+      placeholder: e.g. "A bystander with no signal can't confirm dispatch succeeded"
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any other approaches you thought about
+    validations:
+      required: false

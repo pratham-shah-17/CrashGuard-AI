@@ -1,0 +1,178 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NETWORK — Required for ALL HTTP calls.
+         Without INTERNET, every Supabase Edge triage call, SMS relay,
+         ERSS ingest, and map tile fetch silently fails on Android.
+         This was the #1 critical missing permission.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         EMERGENCY ALERTS — SMS dispatch + haptic emergency feedback
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CAMERA — bystander crash-scene photo capture (Gemma 4 vision tier)
+         Required by image_picker for ImageSource.camera.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         LOCATION — crash-detection GPS speed channel + SOS dispatch
+         ACCESS_BACKGROUND_LOCATION is required for crash detection
+         to work when screen is off (driving scenario).
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BLUETOOTH — BLE mesh SOS beacon (advertise) + peer scan
+         neverForLocation on BLUETOOTH_SCAN avoids unnecessary
+         location permission prompt for BLE on Android 12+.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         VOICE — STT for in-car SOS voice confirmation; mic + audio routing
+         for WebRTC in-app Family Circle voice calls (speakerphone toggle).
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOREGROUND SERVICE — EmergencyBackgroundService
+         Enables crash detection + safe-walk watchdog to run
+         continuously with a visible notification even when the app
+         is backgrounded or the screen is locked (driving scenario).
+         FOREGROUND_SERVICE_LOCATION is required on Android 14+
+         when the service accesses GPS.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         WAKE LOCK — Keep CPU + screen alive during active SOS.
+         flutter_background_service acquires the CPU wake lock.
+         WakeLockService (wakelock_plus) acquires the screen wake lock.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BOOT RECEIVER — Auto-restart crash monitoring after reboot.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BATTERY OPTIMIZATION EXEMPTION — Doze mode exemption.
+         Without this, Doze restricts the foreground service wake-lock
+         after ~30 min of screen-off, pausing crash detection on long
+         night drives. Requested at runtime via permission_handler.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         EXACT ALARM — precise safe-walk escalation on Android 12+.
+    ═══════════════════════════════════════════════════════════════ -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <application
+        android:label="RoadSOS"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+            <!-- App shortcuts — long-press the launcher icon for SOS + Safe Walk. -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- Background-capable SOS: user must enable under Settings → Accessibility.
+             Handles hardware volume-button SOS trigger globally. -->
+        <service
+            android:name=".SosAccessibilityService"
+            android:exported="false"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+
+        <!-- flutter_background_service foreground service.
+             serviceType="location" enables GPS access from the background process.
+             stopWithTask="false" keeps crash detection alive even if the user
+             swipes the app away from the recents list. -->
+        <service
+            android:name="id.flutter.flutter_background_service.BackgroundService"
+            android:exported="false"
+            android:foregroundServiceType="location"
+            android:stopWithTask="false"
+            tools:replace="android:exported">
+        </service>
+
+        <!-- Quick Settings tile — lets users toggle crash monitoring from the
+             notification shade without opening the app (Android 7.0+, API 24).
+             Exported=true is required so the system can bind to TileService.
+             BIND_QUICK_SETTINGS_TILE prevents third-party apps from binding. -->
+        <service
+            android:name=".SosQuickSettingsTile"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/qs_tile_label_on"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Required to resolve tel: deep links for emergency dialer (108/112). -->
+        <intent>
+            <action android:name="android.intent.action.DIAL"/>
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.CALL"/>
+        </intent>
+    </queries>
+</manifest>

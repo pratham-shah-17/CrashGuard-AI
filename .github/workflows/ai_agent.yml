@@ -1,0 +1,101 @@
+name: AI Agent PR Review and Documentation
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  ai-review:
+    name: AI PR Code Review
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run AI Code Review
+        uses: anc95/ChatGPT-CodeReview@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MODEL: "gpt-4-turbo"
+        with:
+          language: "en"
+
+  ai-doc-agent:
+    name: AI Documentation Agent
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install openai PyGithub
+
+      - name: Analyze PR for Architectural Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          REPO_NAME: ${{ github.repository }}
+        run: |
+          python -c "
+          import os
+          import openai
+          from github import Github
+          from github import Auth
+
+          # Initialize APIs
+          auth = Auth.Token(os.environ.get('GITHUB_TOKEN'))
+          gh = Github(auth=auth)
+          repo = gh.get_repo(os.environ.get('REPO_NAME'))
+          pr = repo.get_pull(int(os.environ.get('PR_NUMBER')))
+
+          api_key = os.environ.get('OPENAI_API_KEY')
+          if not api_key:
+              api_key = 'dummy-key'
+          client = openai.OpenAI(api_key=api_key)
+
+          # Get PR Diff
+          files = pr.get_files()
+          diffs = ''
+          for file in files:
+              diffs += f'\nFile: {file.filename}\nPatch:\n{file.patch}'
+
+          prompt = f'''
+          Analyze the following PR diff for architectural changes.
+          Does this change external APIs, database schemas, core module dependencies, or infrastructure?
+          Provide a summary of the architectural impact and suggest which documentation files (like README.md, docs/architecture.md) need updating.
+
+          Diff:
+          {diffs[:15000]} # Trim to fit context window
+          '''
+
+          try:
+              response = client.chat.completions.create(
+                  model='gpt-4o',
+                  messages=[
+                      {'role': 'system', 'content': 'You are a staff-level software architect agent.'},
+                      {'role': 'user', 'content': prompt}
+                  ]
+              )
+
+              analysis_result = response.choices[0].message.content
+              pr.create_issue_comment(f'🤖 **AI Architecture Agent Review**:\n\n{analysis_result}')
+              print('Successfully posted AI architecture review.')
+          except Exception as e:
+              print(f'AI Agent encountered an error: {e}')
+          "

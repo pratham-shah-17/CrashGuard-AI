@@ -1,0 +1,94 @@
+name: roadsos
+description: "CrashGuard AI — Gemma 4 powered offline-first road emergency platform for India."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  path: ^1.9.1
+  flutter_markdown: ^0.7.7
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.3.3
+  supabase_flutter: ^2.14.1
+  powersync: ^2.2.0
+  sqlite3_flutter_libs: ^0.6.0+eol
+  path_provider: ^2.1.5
+  flutter_riverpod: ^2.5.1
+  flutter_blue_plus: ^2.3.7
+  url_launcher: ^6.3.2
+  geolocator: ^14.0.2
+  uuid: ^4.5.3
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
+  flutter_map_animations: ^0.7.0
+  sensors_plus: ^7.0.0
+  flutter_ble_peripheral: ^2.1.1
+  country_codes: ^3.3.0
+  http: ^1.6.0
+  flutter_dotenv: ^6.0.1
+  flutter_tts: ^4.2.5
+  speech_to_text: ^7.4.0
+  cryptography: ^2.9.0
+  shared_preferences: ^2.5.5
+  cryptography_flutter: ^2.3.4
+  flutter_background_service: ^5.1.0
+  flutter_local_notifications: ^21.0.0
+  package_info_plus: ^10.1.0
+  encrypt: ^5.0.3
+  crypto: ^3.0.7
+  flutter_secure_storage: ^10.3.1
+  logger: ^2.6.2
+  permission_handler: ^12.0.3
+  flutter_map_tile_caching: ^10.0.0
+  image_picker: ^1.1.2
+  flutter_inappwebview: ^6.0.0
+  qr_flutter: ^4.1.0
+  wakelock_plus: ^1.1.5
+  connectivity_plus: ^7.1.1
+  flutter_gemma: ^0.16.4
+  torch_light: ^1.1.0
+  just_audio: ^0.10.5
+  firebase_core: ^4.10.0
+  firebase_messaging: ^16.3.0
+  flutter_webrtc: ^1.4.1
+  flutter_compass: ^0.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.14.1
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  image_path: assets/images/roadsos_logo.png
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: assets/images/roadsos_logo.png
+  web:
+    generate: true
+    image_path: assets/images/roadsos_logo.png
+    background_color: "#FFFFFF"
+    theme_color: "#C11B17"
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/roadsos_logo.png
+    - assets/env.template
+    - assets/first_aid/corpus.json
+    - assets/data/government_facilities_seed.json
+    - assets/legal/privacy_policy_en.txt
+    - assets/legal/privacy_policy_hi.txt

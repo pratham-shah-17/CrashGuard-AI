@@ -1,0 +1,9 @@
+# Graphify ignore file
+.dart_tool/
+.pub-cache/
+build/
+graphify-out/
+.git/
+*.g.dart
+*.freezed.dart
+*.mocks.dart

@@ -1,0 +1,21 @@
+{
+  "@@locale": "te",
+  "sosButton": "అత్యవసరం",
+  "secondsLabel": "సెకన్లు",
+  "sosDispatchWarning": "ఇంకా ఏమీ పంపలేదు — తప్పు అయితే కింద రద్దు చేయండి.",
+  "sosIdleTools": "మరిన్ని",
+  "sosIdleToolsTitle": "అత్యవసర సాధనాలు & స్థితి",
+  "sosButtonSub": "అత్యవసరాన్ని ప్రారంభించడానికి నొక్కండి",
+  "cancelSos": "రద్దు",
+  "orchestratorAcquiringLocation": "స్థానం పొందుతున్నాం…",
+  "orchestratorAiBrief": "క్లౌడ్ AI పరిస్థితి అంచనా…",
+  "orchestratorDispatching": "అన్ని చానల్‌లకు పంపుతున్నాం…",
+  "orchestratorSosLive": "SOS సక్రియం",
+  "triageResultTitle": "AI ట్రయేజ్ ఫలితం",
+  "triageDegradedTitle": "AI (ఆఫ్‌లైన్)",
+  "firstAidGuidance": "మొదటి చికిత్స",
+  "settingsLanguage": "భాష",
+  "settingsLanguageSubtitle": "UI మరియు వాయిస్",
+  "incidentVoiceHint": "మీరు చూసేది చెప్పండి…",
+  "thinkingOffline": "ఆఫ్‌లైన్ నియమాలు."
+}

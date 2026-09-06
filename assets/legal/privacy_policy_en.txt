@@ -1,0 +1,26 @@
+CrashGuard AI Privacy Notice (India — Digital Personal Data Protection Act, 2023)
+
+Last updated: April 2026
+
+Data fiduciary: CrashGuard AI operates this application. Contact details should be published on your deployment’s website or in-app support channel.
+
+What we process
+• Location and motion/crash-related signals to detect emergencies and route help.
+• Optional medical profile information you enter (blood group, allergies, conditions) to assist responders.
+• Device identifiers needed for optional push notifications (Nearby SOS via Firebase Cloud Messaging).
+
+Lawful basis
+We collect and process personal data only after you provide explicit consent on first launch. You may withdraw consent by discontinuing use and deleting the app; optional cloud retention can be toggled in Settings.
+
+Retention
+• Cloud incident summaries: deleted automatically after 90 days unless you enable “extended retention” in Settings.
+• Local encrypted copies on your device follow your device backup settings.
+
+Sharing
+Data may be transmitted to configured emergency contacts, responders, mesh peers, or your Supabase backend for sync — limited to providing assistance. We do not sell personal data.
+
+Your rights (summary)
+You may request access, correction, or erasure where applicable by contacting the fiduciary; regional-language copies of this notice are available in-app.
+
+Nearby SOS (FCM)
+If you opt in, Google Firebase may process a device token for topic-based alerts. You can disable this at any time in Settings.

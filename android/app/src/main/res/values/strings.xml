@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accessibility_sos_description">RoadSOS emergency gesture: press volume up three times and volume down three times within two seconds. Intercepts volume keys while enabled—use only if you accept that behavior.</string>
+
+    <!-- Quick Settings tile — crash-monitor toggle -->
+    <string name="qs_tile_label_on">Crash Monitor: ON</string>
+    <string name="qs_tile_label_off">Crash Monitor: OFF</string>
+    <string name="qs_tile_desc_on">Crash monitoring is active. Tap to pause.</string>
+    <string name="qs_tile_desc_off">Crash monitoring is paused. Tap to activate.</string>
+
+    <!-- App shortcut labels (shown in launcher long-press menu) -->
+    <string name="shortcut_sos_short">SOS</string>
+    <string name="shortcut_sos_long">Send Emergency SOS</string>
+    <string name="shortcut_sos_disabled">RoadSOS is not available</string>
+    <string name="shortcut_safewalk_short">Safe Walk</string>
+    <string name="shortcut_safewalk_long">Start Safe Walk Timer</string>
+    <string name="shortcut_safewalk_disabled">RoadSOS is not available</string>
+</resources>
