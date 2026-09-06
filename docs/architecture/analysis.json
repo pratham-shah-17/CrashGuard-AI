@@ -69,12 +69,12 @@
     ]
   },
   "file_statistics": {
+    ".json": 11,
     ".lock": 1,
     ".md": 91,
     ".yaml": 5,
     ".mjs": 1,
     ".html": 2,
-    ".json": 10,
     ".sh": 2,
     ".py": 6,
     ".toml": 1,

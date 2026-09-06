@@ -4,7 +4,7 @@
 
 ```mermaid
 graph TD
-    Client[CrashGuard AI Mobile/Web] 
+    Client[Roadsos Mobile/Web] 
     Client --> Function_sync_osm_facilities[Supabase Edge: sync-osm-facilities]
     Function_sync_osm_facilities --> SupabaseDB[(Supabase PostgreSQL)]
     Client --> Function_triage_gemini[Supabase Edge: triage-gemini]

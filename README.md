@@ -320,10 +320,10 @@ encryption/privacy design — rather than opening a public issue.
 MIT — open-weight AI, open-source code, open to any state emergency service in India.
 See [`CHANGELOG.md`](CHANGELOG.md) for release history.
 <!-- AUTO-GEN: TECH-STACK -->
-- Flutter & Dart
-- Supabase Edge Functions (Deno / TypeScript)
-- Gemma 4 (27B & E4B models)
-- BLE Encrypted Mesh Network
+- Flutter
+- Dart
+- Supabase Edge Functions
+- Deno/TypeScript
 <!-- /AUTO-GEN: TECH-STACK -->
 
 [View Detailed Architecture Diagrams](docs/architecture/architecture.md)
