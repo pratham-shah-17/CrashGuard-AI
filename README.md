@@ -331,3 +331,4 @@ See [`CHANGELOG.md`](CHANGELOG.md) for release history.
 ---
 Developed with ❤️ for saving lives on highways.
 
+\n<!-- Trigger workflow -->
