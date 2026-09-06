@@ -18,7 +18,7 @@ def get_git_stats():
     # Real stats from local git if Github API not used or as fallback
     try:
         commits = run_cmd('git rev-list --count HEAD').strip()
-        contributors = run_cmd('git shortlog -sn HEAD | wc -l').strip()
+        contributors = str(len(run_cmd('git shortlog -sn HEAD').splitlines()))
         return {
             "commit_frequency": f"{commits} total",
             "active_contributors": int(contributors) if contributors.isdigit() else 0,
