@@ -21,23 +21,23 @@
       "type": "config"
     },
     {
-      "id": "edge_sync-osm-facilities",
-      "label": "Function: sync-osm-facilities",
-      "type": "backend"
-    },
-    {
-      "id": "edge_triage-gemini",
-      "label": "Function: triage-gemini",
-      "type": "backend"
-    },
-    {
       "id": "edge_gemini-generate",
       "label": "Function: gemini-generate",
       "type": "backend"
     },
     {
+      "id": "edge_sync-osm-facilities",
+      "label": "Function: sync-osm-facilities",
+      "type": "backend"
+    },
+    {
       "id": "edge_sms-dispatch",
       "label": "Function: sms-dispatch",
+      "type": "backend"
+    },
+    {
+      "id": "edge_triage-gemini",
+      "label": "Function: triage-gemini",
       "type": "backend"
     },
     {
@@ -51,28 +51,28 @@
       "type": "module"
     },
     {
-      "id": "file_first_aid_repository",
-      "label": "first_aid_repository",
+      "id": "file_sms_permission_bootstrap_stub",
+      "label": "sms_permission_bootstrap_stub",
       "type": "file"
     },
     {
-      "id": "file_roadsos_assistant_service",
-      "label": "roadsos_assistant_service",
+      "id": "file_sms_direct_send_io",
+      "label": "sms_direct_send_io",
       "type": "file"
     },
     {
-      "id": "file_wake_lock_service",
-      "label": "wake_lock_service",
+      "id": "file_facility_query_service",
+      "label": "facility_query_service",
       "type": "file"
     },
     {
-      "id": "file_safe_walk_notification_service",
-      "label": "safe_walk_notification_service",
+      "id": "file_nearby_services_broadcast_service",
+      "label": "nearby_services_broadcast_service",
       "type": "file"
     },
     {
-      "id": "file_emergency_sms_dispatch_service",
-      "label": "emergency_sms_dispatch_service",
+      "id": "file_location_service",
+      "label": "location_service",
       "type": "file"
     },
     {
@@ -81,28 +81,28 @@
       "type": "module"
     },
     {
-      "id": "file_profile_editor_screen",
-      "label": "profile_editor_screen",
+      "id": "file_bystander_radar",
+      "label": "bystander_radar",
       "type": "file"
     },
     {
-      "id": "file_dashboard",
-      "label": "dashboard",
+      "id": "file_sos_activity_log_screen",
+      "label": "sos_activity_log_screen",
       "type": "file"
     },
     {
-      "id": "file_map_widget",
-      "label": "map_widget",
+      "id": "file_ai_explainability_view",
+      "label": "ai_explainability_view",
       "type": "file"
     },
     {
-      "id": "file_safe_walk_overlay",
-      "label": "safe_walk_overlay",
+      "id": "file_roadsos_logo",
+      "label": "roadsos_logo",
       "type": "file"
     },
     {
-      "id": "file_privacy_policy_screen",
-      "label": "privacy_policy_screen",
+      "id": "file_crisis_companion_overlay",
+      "label": "crisis_companion_overlay",
       "type": "file"
     },
     {
@@ -111,8 +111,8 @@
       "type": "module"
     },
     {
-      "id": "file_dispatch_channel_status",
-      "label": "dispatch_channel_status",
+      "id": "file_facility",
+      "label": "facility",
       "type": "file"
     },
     {
@@ -121,8 +121,8 @@
       "type": "file"
     },
     {
-      "id": "file_facility",
-      "label": "facility",
+      "id": "file_dispatch_channel_status",
+      "label": "dispatch_channel_status",
       "type": "file"
     },
     {
@@ -194,22 +194,22 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_sync-osm-facilities",
-      "relation": "calls API"
-    },
-    {
-      "source": "flutter_app",
-      "target": "edge_triage-gemini",
-      "relation": "calls API"
-    },
-    {
-      "source": "flutter_app",
       "target": "edge_gemini-generate",
       "relation": "calls API"
     },
     {
       "source": "flutter_app",
+      "target": "edge_sync-osm-facilities",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
       "target": "edge_sms-dispatch",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
+      "target": "edge_triage-gemini",
       "relation": "calls API"
     },
     {
@@ -224,27 +224,27 @@
     },
     {
       "source": "module_services",
-      "target": "file_first_aid_repository",
+      "target": "file_sms_permission_bootstrap_stub",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_roadsos_assistant_service",
+      "target": "file_sms_direct_send_io",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_wake_lock_service",
+      "target": "file_facility_query_service",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_safe_walk_notification_service",
+      "target": "file_nearby_services_broadcast_service",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_emergency_sms_dispatch_service",
+      "target": "file_location_service",
       "relation": "implements"
     },
     {
@@ -254,27 +254,27 @@
     },
     {
       "source": "module_ui",
-      "target": "file_profile_editor_screen",
+      "target": "file_bystander_radar",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_dashboard",
+      "target": "file_sos_activity_log_screen",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_map_widget",
+      "target": "file_ai_explainability_view",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_safe_walk_overlay",
+      "target": "file_roadsos_logo",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_privacy_policy_screen",
+      "target": "file_crisis_companion_overlay",
       "relation": "implements"
     },
     {
@@ -284,7 +284,7 @@
     },
     {
       "source": "module_models",
-      "target": "file_dispatch_channel_status",
+      "target": "file_facility",
       "relation": "implements"
     },
     {
@@ -294,7 +294,7 @@
     },
     {
       "source": "module_models",
-      "target": "file_facility",
+      "target": "file_dispatch_channel_status",
       "relation": "implements"
     },
     {
