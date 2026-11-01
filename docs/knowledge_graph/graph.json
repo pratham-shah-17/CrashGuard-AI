@@ -21,13 +21,8 @@
       "type": "config"
     },
     {
-      "id": "edge_gemini-generate",
-      "label": "Function: gemini-generate",
-      "type": "backend"
-    },
-    {
-      "id": "edge_sync-osm-facilities",
-      "label": "Function: sync-osm-facilities",
+      "id": "edge_triage-gemini",
+      "label": "Function: triage-gemini",
       "type": "backend"
     },
     {
@@ -36,8 +31,8 @@
       "type": "backend"
     },
     {
-      "id": "edge_triage-gemini",
-      "label": "Function: triage-gemini",
+      "id": "edge_gemini-generate",
+      "label": "Function: gemini-generate",
       "type": "backend"
     },
     {
@@ -46,33 +41,38 @@
       "type": "backend"
     },
     {
+      "id": "edge_sync-osm-facilities",
+      "label": "Function: sync-osm-facilities",
+      "type": "backend"
+    },
+    {
       "id": "module_services",
       "label": "Library: services",
       "type": "module"
     },
     {
-      "id": "file_sms_permission_bootstrap_stub",
-      "label": "sms_permission_bootstrap_stub",
-      "type": "file"
-    },
-    {
-      "id": "file_sms_direct_send_io",
-      "label": "sms_direct_send_io",
-      "type": "file"
-    },
-    {
-      "id": "file_facility_query_service",
-      "label": "facility_query_service",
-      "type": "file"
-    },
-    {
-      "id": "file_nearby_services_broadcast_service",
-      "label": "nearby_services_broadcast_service",
-      "type": "file"
-    },
-    {
       "id": "file_location_service",
       "label": "location_service",
+      "type": "file"
+    },
+    {
+      "id": "file_sos_activity_log_service",
+      "label": "sos_activity_log_service",
+      "type": "file"
+    },
+    {
+      "id": "file_india_offline_dispatch",
+      "label": "india_offline_dispatch",
+      "type": "file"
+    },
+    {
+      "id": "file_bluetooth_vehicle_monitor",
+      "label": "bluetooth_vehicle_monitor",
+      "type": "file"
+    },
+    {
+      "id": "file_ios_lifecycle_service",
+      "label": "ios_lifecycle_service",
       "type": "file"
     },
     {
@@ -81,28 +81,28 @@
       "type": "module"
     },
     {
-      "id": "file_bystander_radar",
-      "label": "bystander_radar",
+      "id": "file_profile_editor_screen",
+      "label": "profile_editor_screen",
       "type": "file"
     },
     {
-      "id": "file_sos_activity_log_screen",
-      "label": "sos_activity_log_screen",
+      "id": "file_incident_reporting_screen",
+      "label": "incident_reporting_screen",
       "type": "file"
     },
     {
-      "id": "file_ai_explainability_view",
-      "label": "ai_explainability_view",
+      "id": "file_vehicle_rescue_screen",
+      "label": "vehicle_rescue_screen",
       "type": "file"
     },
     {
-      "id": "file_roadsos_logo",
-      "label": "roadsos_logo",
+      "id": "file_dispatch_status_panel",
+      "label": "dispatch_status_panel",
       "type": "file"
     },
     {
-      "id": "file_crisis_companion_overlay",
-      "label": "crisis_companion_overlay",
+      "id": "file_vital_scan_screen",
+      "label": "vital_scan_screen",
       "type": "file"
     },
     {
@@ -111,13 +111,13 @@
       "type": "module"
     },
     {
-      "id": "file_facility",
-      "label": "facility",
+      "id": "file_sos_activity_record",
+      "label": "sos_activity_record",
       "type": "file"
     },
     {
-      "id": "file_sos_activity_record",
-      "label": "sos_activity_record",
+      "id": "file_facility",
+      "label": "facility",
       "type": "file"
     },
     {
@@ -194,12 +194,7 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_gemini-generate",
-      "relation": "calls API"
-    },
-    {
-      "source": "flutter_app",
-      "target": "edge_sync-osm-facilities",
+      "target": "edge_triage-gemini",
       "relation": "calls API"
     },
     {
@@ -209,7 +204,7 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_triage-gemini",
+      "target": "edge_gemini-generate",
       "relation": "calls API"
     },
     {
@@ -219,32 +214,37 @@
     },
     {
       "source": "flutter_app",
+      "target": "edge_sync-osm-facilities",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
       "target": "module_services",
       "relation": "contains"
     },
     {
       "source": "module_services",
-      "target": "file_sms_permission_bootstrap_stub",
-      "relation": "implements"
-    },
-    {
-      "source": "module_services",
-      "target": "file_sms_direct_send_io",
-      "relation": "implements"
-    },
-    {
-      "source": "module_services",
-      "target": "file_facility_query_service",
-      "relation": "implements"
-    },
-    {
-      "source": "module_services",
-      "target": "file_nearby_services_broadcast_service",
-      "relation": "implements"
-    },
-    {
-      "source": "module_services",
       "target": "file_location_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_sos_activity_log_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_india_offline_dispatch",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_bluetooth_vehicle_monitor",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_ios_lifecycle_service",
       "relation": "implements"
     },
     {
@@ -254,27 +254,27 @@
     },
     {
       "source": "module_ui",
-      "target": "file_bystander_radar",
+      "target": "file_profile_editor_screen",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_sos_activity_log_screen",
+      "target": "file_incident_reporting_screen",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_ai_explainability_view",
+      "target": "file_vehicle_rescue_screen",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_roadsos_logo",
+      "target": "file_dispatch_status_panel",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_crisis_companion_overlay",
+      "target": "file_vital_scan_screen",
       "relation": "implements"
     },
     {
@@ -284,12 +284,12 @@
     },
     {
       "source": "module_models",
-      "target": "file_facility",
+      "target": "file_sos_activity_record",
       "relation": "implements"
     },
     {
       "source": "module_models",
-      "target": "file_sos_activity_record",
+      "target": "file_facility",
       "relation": "implements"
     },
     {
