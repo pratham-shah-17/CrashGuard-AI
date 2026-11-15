@@ -5,16 +5,16 @@
 ```mermaid
 graph TD
     Client[Roadsos Mobile/Web] 
-    Client --> Function_triage_gemini[Supabase Edge: triage-gemini]
-    Function_triage_gemini --> SupabaseDB[(Supabase PostgreSQL)]
     Client --> Function_sms_dispatch[Supabase Edge: sms-dispatch]
     Function_sms_dispatch --> SupabaseDB[(Supabase PostgreSQL)]
     Client --> Function_gemini_generate[Supabase Edge: gemini-generate]
     Function_gemini_generate --> SupabaseDB[(Supabase PostgreSQL)]
-    Client --> Function_family_track[Supabase Edge: family-track]
-    Function_family_track --> SupabaseDB[(Supabase PostgreSQL)]
+    Client --> Function_triage_gemini[Supabase Edge: triage-gemini]
+    Function_triage_gemini --> SupabaseDB[(Supabase PostgreSQL)]
     Client --> Function_sync_osm_facilities[Supabase Edge: sync-osm-facilities]
     Function_sync_osm_facilities --> SupabaseDB[(Supabase PostgreSQL)]
+    Client --> Function_family_track[Supabase Edge: family-track]
+    Function_family_track --> SupabaseDB[(Supabase PostgreSQL)]
     Client --> EnvVars{Environment Config}
     Client --> UI[User Interface Layer]
     Client --> Services[Business Logic & Services]

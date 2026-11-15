@@ -21,11 +21,6 @@
       "type": "config"
     },
     {
-      "id": "edge_triage-gemini",
-      "label": "Function: triage-gemini",
-      "type": "backend"
-    },
-    {
       "id": "edge_sms-dispatch",
       "label": "Function: sms-dispatch",
       "type": "backend"
@@ -36,8 +31,8 @@
       "type": "backend"
     },
     {
-      "id": "edge_family-track",
-      "label": "Function: family-track",
+      "id": "edge_triage-gemini",
+      "label": "Function: triage-gemini",
       "type": "backend"
     },
     {
@@ -46,14 +41,14 @@
       "type": "backend"
     },
     {
+      "id": "edge_family-track",
+      "label": "Function: family-track",
+      "type": "backend"
+    },
+    {
       "id": "module_services",
       "label": "Library: services",
       "type": "module"
-    },
-    {
-      "id": "file_location_service",
-      "label": "location_service",
-      "type": "file"
     },
     {
       "id": "file_sos_activity_log_service",
@@ -61,18 +56,23 @@
       "type": "file"
     },
     {
-      "id": "file_india_offline_dispatch",
-      "label": "india_offline_dispatch",
+      "id": "file_india_government_crash_contribution_service",
+      "label": "india_government_crash_contribution_service",
       "type": "file"
     },
     {
-      "id": "file_bluetooth_vehicle_monitor",
-      "label": "bluetooth_vehicle_monitor",
+      "id": "file_sos_location_tracker",
+      "label": "sos_location_tracker",
       "type": "file"
     },
     {
-      "id": "file_ios_lifecycle_service",
-      "label": "ios_lifecycle_service",
+      "id": "file_privacy_consent_service",
+      "label": "privacy_consent_service",
+      "type": "file"
+    },
+    {
+      "id": "file_user_profile_service",
+      "label": "user_profile_service",
       "type": "file"
     },
     {
@@ -81,8 +81,13 @@
       "type": "module"
     },
     {
-      "id": "file_profile_editor_screen",
-      "label": "profile_editor_screen",
+      "id": "file_dashboard",
+      "label": "dashboard",
+      "type": "file"
+    },
+    {
+      "id": "file_vehicle_rescue_data",
+      "label": "vehicle_rescue_data",
       "type": "file"
     },
     {
@@ -91,18 +96,13 @@
       "type": "file"
     },
     {
-      "id": "file_vehicle_rescue_screen",
-      "label": "vehicle_rescue_screen",
-      "type": "file"
-    },
-    {
-      "id": "file_dispatch_status_panel",
-      "label": "dispatch_status_panel",
-      "type": "file"
-    },
-    {
       "id": "file_vital_scan_screen",
       "label": "vital_scan_screen",
+      "type": "file"
+    },
+    {
+      "id": "file_sos_countdown_widget",
+      "label": "sos_countdown_widget",
       "type": "file"
     },
     {
@@ -111,13 +111,13 @@
       "type": "module"
     },
     {
-      "id": "file_sos_activity_record",
-      "label": "sos_activity_record",
+      "id": "file_facility",
+      "label": "facility",
       "type": "file"
     },
     {
-      "id": "file_facility",
-      "label": "facility",
+      "id": "file_sos_activity_record",
+      "label": "sos_activity_record",
       "type": "file"
     },
     {
@@ -194,11 +194,6 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_triage-gemini",
-      "relation": "calls API"
-    },
-    {
-      "source": "flutter_app",
       "target": "edge_sms-dispatch",
       "relation": "calls API"
     },
@@ -209,7 +204,7 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_family-track",
+      "target": "edge_triage-gemini",
       "relation": "calls API"
     },
     {
@@ -219,13 +214,13 @@
     },
     {
       "source": "flutter_app",
-      "target": "module_services",
-      "relation": "contains"
+      "target": "edge_family-track",
+      "relation": "calls API"
     },
     {
-      "source": "module_services",
-      "target": "file_location_service",
-      "relation": "implements"
+      "source": "flutter_app",
+      "target": "module_services",
+      "relation": "contains"
     },
     {
       "source": "module_services",
@@ -234,17 +229,22 @@
     },
     {
       "source": "module_services",
-      "target": "file_india_offline_dispatch",
+      "target": "file_india_government_crash_contribution_service",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_bluetooth_vehicle_monitor",
+      "target": "file_sos_location_tracker",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_ios_lifecycle_service",
+      "target": "file_privacy_consent_service",
+      "relation": "implements"
+    },
+    {
+      "source": "module_services",
+      "target": "file_user_profile_service",
       "relation": "implements"
     },
     {
@@ -254,7 +254,12 @@
     },
     {
       "source": "module_ui",
-      "target": "file_profile_editor_screen",
+      "target": "file_dashboard",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_vehicle_rescue_data",
       "relation": "implements"
     },
     {
@@ -264,17 +269,12 @@
     },
     {
       "source": "module_ui",
-      "target": "file_vehicle_rescue_screen",
-      "relation": "implements"
-    },
-    {
-      "source": "module_ui",
-      "target": "file_dispatch_status_panel",
-      "relation": "implements"
-    },
-    {
-      "source": "module_ui",
       "target": "file_vital_scan_screen",
+      "relation": "implements"
+    },
+    {
+      "source": "module_ui",
+      "target": "file_sos_countdown_widget",
       "relation": "implements"
     },
     {
@@ -284,12 +284,12 @@
     },
     {
       "source": "module_models",
-      "target": "file_sos_activity_record",
+      "target": "file_facility",
       "relation": "implements"
     },
     {
       "source": "module_models",
-      "target": "file_facility",
+      "target": "file_sos_activity_record",
       "relation": "implements"
     },
     {
