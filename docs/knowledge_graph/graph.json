@@ -26,6 +26,11 @@
       "type": "backend"
     },
     {
+      "id": "edge_family-track",
+      "label": "Function: family-track",
+      "type": "backend"
+    },
+    {
       "id": "edge_gemini-generate",
       "label": "Function: gemini-generate",
       "type": "backend"
@@ -41,38 +46,33 @@
       "type": "backend"
     },
     {
-      "id": "edge_family-track",
-      "label": "Function: family-track",
-      "type": "backend"
-    },
-    {
       "id": "module_services",
       "label": "Library: services",
       "type": "module"
     },
     {
-      "id": "file_sos_activity_log_service",
-      "label": "sos_activity_log_service",
+      "id": "file_connectivity_service",
+      "label": "connectivity_service",
       "type": "file"
     },
     {
-      "id": "file_india_government_crash_contribution_service",
-      "label": "india_government_crash_contribution_service",
+      "id": "file_nearby_sos_push_service",
+      "label": "nearby_sos_push_service",
       "type": "file"
     },
     {
-      "id": "file_sos_location_tracker",
-      "label": "sos_location_tracker",
+      "id": "file_first_aid_store",
+      "label": "first_aid_store",
       "type": "file"
     },
     {
-      "id": "file_privacy_consent_service",
-      "label": "privacy_consent_service",
+      "id": "file_sms_direct_send_io",
+      "label": "sms_direct_send_io",
       "type": "file"
     },
     {
-      "id": "file_user_profile_service",
-      "label": "user_profile_service",
+      "id": "file_facility_query_service",
+      "label": "facility_query_service",
       "type": "file"
     },
     {
@@ -81,39 +81,34 @@
       "type": "module"
     },
     {
-      "id": "file_dashboard",
-      "label": "dashboard",
+      "id": "file_privacy_policy_screen",
+      "label": "privacy_policy_screen",
       "type": "file"
     },
     {
-      "id": "file_vehicle_rescue_data",
-      "label": "vehicle_rescue_data",
+      "id": "file_onboarding_gate",
+      "label": "onboarding_gate",
       "type": "file"
     },
     {
-      "id": "file_incident_reporting_screen",
-      "label": "incident_reporting_screen",
+      "id": "file_voice_call_overlay",
+      "label": "voice_call_overlay",
       "type": "file"
     },
     {
-      "id": "file_vital_scan_screen",
-      "label": "vital_scan_screen",
+      "id": "file_crisis_companion_overlay",
+      "label": "crisis_companion_overlay",
       "type": "file"
     },
     {
-      "id": "file_sos_countdown_widget",
-      "label": "sos_countdown_widget",
+      "id": "file_status_indicator",
+      "label": "status_indicator",
       "type": "file"
     },
     {
       "id": "module_models",
       "label": "Library: models",
       "type": "module"
-    },
-    {
-      "id": "file_facility",
-      "label": "facility",
-      "type": "file"
     },
     {
       "id": "file_sos_activity_record",
@@ -123,6 +118,11 @@
     {
       "id": "file_dispatch_channel_status",
       "label": "dispatch_channel_status",
+      "type": "file"
+    },
+    {
+      "id": "file_facility",
+      "label": "facility",
       "type": "file"
     },
     {
@@ -199,6 +199,11 @@
     },
     {
       "source": "flutter_app",
+      "target": "edge_family-track",
+      "relation": "calls API"
+    },
+    {
+      "source": "flutter_app",
       "target": "edge_gemini-generate",
       "relation": "calls API"
     },
@@ -214,37 +219,32 @@
     },
     {
       "source": "flutter_app",
-      "target": "edge_family-track",
-      "relation": "calls API"
-    },
-    {
-      "source": "flutter_app",
       "target": "module_services",
       "relation": "contains"
     },
     {
       "source": "module_services",
-      "target": "file_sos_activity_log_service",
+      "target": "file_connectivity_service",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_india_government_crash_contribution_service",
+      "target": "file_nearby_sos_push_service",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_sos_location_tracker",
+      "target": "file_first_aid_store",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_privacy_consent_service",
+      "target": "file_sms_direct_send_io",
       "relation": "implements"
     },
     {
       "source": "module_services",
-      "target": "file_user_profile_service",
+      "target": "file_facility_query_service",
       "relation": "implements"
     },
     {
@@ -254,27 +254,27 @@
     },
     {
       "source": "module_ui",
-      "target": "file_dashboard",
+      "target": "file_privacy_policy_screen",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_vehicle_rescue_data",
+      "target": "file_onboarding_gate",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_incident_reporting_screen",
+      "target": "file_voice_call_overlay",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_vital_scan_screen",
+      "target": "file_crisis_companion_overlay",
       "relation": "implements"
     },
     {
       "source": "module_ui",
-      "target": "file_sos_countdown_widget",
+      "target": "file_status_indicator",
       "relation": "implements"
     },
     {
@@ -284,17 +284,17 @@
     },
     {
       "source": "module_models",
-      "target": "file_facility",
-      "relation": "implements"
-    },
-    {
-      "source": "module_models",
       "target": "file_sos_activity_record",
       "relation": "implements"
     },
     {
       "source": "module_models",
       "target": "file_dispatch_channel_status",
+      "relation": "implements"
+    },
+    {
+      "source": "module_models",
+      "target": "file_facility",
       "relation": "implements"
     },
     {
